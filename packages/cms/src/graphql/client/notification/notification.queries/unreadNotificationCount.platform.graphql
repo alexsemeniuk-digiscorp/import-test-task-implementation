@@ -1,0 +1,15 @@
+query unreadNotificationCount {
+  userNotifications(
+    filters: { hasBeenSeen: { eq: false } }
+    pagination: { limit: 100 }
+  ) {
+    data {
+      id
+    }
+    meta {
+      pagination {
+        total
+      }
+    }
+  }
+}

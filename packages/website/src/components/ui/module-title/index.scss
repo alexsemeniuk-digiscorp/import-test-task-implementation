@@ -1,0 +1,11 @@
+.module-title-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 576px) {
+    justify-content: center;
+  }
+}

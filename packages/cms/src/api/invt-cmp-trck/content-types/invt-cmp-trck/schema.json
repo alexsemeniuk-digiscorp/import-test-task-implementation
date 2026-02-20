@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_cmp_trcks",
+  "info": {
+    "singularName": "invt-cmp-trck",
+    "pluralName": "invt-cmp-trcks",
+    "displayName": "Composite Product Cost Tracker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "color": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invt-cmp-color.invt-cmp-color"
+    },
+    "size": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invt-cmp-size.invt-cmp-size"
+    },
+    "costTrackerItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invt-cmp-trck-itm.invt-cmp-trck-itm",
+      "mappedBy": "costTrackerInfo"
+    },
+    "compositeProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::composite-product.composite-product",
+      "inversedBy": "costTrackerInfo"
+    },
+    "margin": {
+      "type": "float"
+    },
+    "cmpAttrOpts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::invt-cmp-attr-opt.invt-cmp-attr-opt",
+      "inversedBy": "cmpCostTrcks"
+    },
+    "multiplier": {
+      "type": "float"
+    }
+  }
+}

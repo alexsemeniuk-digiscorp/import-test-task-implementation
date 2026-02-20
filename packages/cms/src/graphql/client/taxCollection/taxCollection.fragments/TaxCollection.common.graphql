@@ -1,0 +1,10 @@
+fragment TaxCollection on TaxCollectionEntity {
+  ...TaxCollectionMin
+  attributes {
+    taxes {
+      data {
+        ...TaxMin
+      }
+    }
+  }
+}

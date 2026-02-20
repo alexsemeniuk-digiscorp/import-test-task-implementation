@@ -1,0 +1,15 @@
+query productInventoryItemsSelect(
+  $filters: ProductInventoryItemFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  productInventoryItems(
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...ProductInventoryItemSelect
+    }
+  }
+}

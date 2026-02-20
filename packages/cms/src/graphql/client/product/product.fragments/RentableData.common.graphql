@@ -1,0 +1,10 @@
+fragment RentableData on RentableDataEntity {
+  id
+  attributes {
+    pricePerPeriod
+    lostFee
+    minimumRentalPeriod
+    period
+    enabled
+  }
+}

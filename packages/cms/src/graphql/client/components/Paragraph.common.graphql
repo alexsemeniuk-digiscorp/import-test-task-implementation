@@ -1,0 +1,5 @@
+fragment Paragraph on ComponentUiParagraph {
+  id
+  title
+  value
+}

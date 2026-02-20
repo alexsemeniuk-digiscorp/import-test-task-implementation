@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "approval_methods",
+  "info": {
+    "singularName": "approval-method",
+    "pluralName": "approval-methods",
+    "displayName": "TASKS: Approval Method",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query inventoryAuditMin(
+  $filters: InventoryAuditFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  inventoryAudits(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InventoryAuditMin
+    }
+  }
+}

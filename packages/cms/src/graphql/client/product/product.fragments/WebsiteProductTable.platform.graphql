@@ -1,0 +1,32 @@
+fragment WebsiteProductTable on ProductEntity {
+  id
+  attributes {
+    name
+    defaultPrice
+    productId
+    barcode
+    uuid
+    createdAt
+    serialNumber
+    active
+    brand {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    productType {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+  }
+}

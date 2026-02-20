@@ -1,0 +1,7 @@
+mutation createProductAttribute($input: ProductAttributeInput!) {
+  createProductAttribute(data: $input) {
+    data {
+      ...ProductAttributeMin
+    }
+  }
+}

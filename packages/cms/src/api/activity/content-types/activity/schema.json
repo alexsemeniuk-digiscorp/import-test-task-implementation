@@ -1,0 +1,158 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "singularName": "activity",
+    "pluralName": "activities",
+    "displayName": "Activity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "notes": {
+      "type": "text",
+      "maxLength": 10000
+    },
+    "contact_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "activities"
+    },
+    "company_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "activities"
+    },
+    "lead_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lead.lead",
+      "inversedBy": "activities"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "assignees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "due_date": {
+      "type": "datetime"
+    },
+    "appointmentDate": {
+      "type": "datetime"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task",
+      "inversedBy": "activity"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "amount": {
+      "type": "float"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "task",
+        "meeting",
+        "email",
+        "voice mail",
+        "points",
+        "call",
+        "purchase",
+        "record",
+        "review",
+        "conversation",
+        "return",
+        "appraisal",
+        "deal",
+        "note",
+        "shopify",
+        "send"
+      ],
+      "default": "meeting"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "inactive"
+      ],
+      "default": "low"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    },
+    "call": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::call.call"
+    },
+    "completedDate": {
+      "type": "datetime"
+    },
+    "review": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::review.review"
+    },
+    "conversation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::conversation.conversation"
+    },
+    "customCreationDate": {
+      "type": "datetime"
+    },
+    "returnInfo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::return.return"
+    },
+    "deal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deal.deal"
+    },
+    "appraisal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::appraisal.appraisal"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    }
+  }
+}

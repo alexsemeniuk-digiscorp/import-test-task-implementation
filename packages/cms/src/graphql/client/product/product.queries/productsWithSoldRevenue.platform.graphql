@@ -1,0 +1,17 @@
+query productsWithSoldRevenue(
+  $filters: ProductFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+  $startDate: DateTime!
+  $endDate: DateTime!
+  $businessLocationId: Int
+) {
+  products(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductWithSoldRevenue
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

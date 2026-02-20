@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chart_subcategories",
+  "info": {
+    "singularName": "chart-subcategory",
+    "pluralName": "chart-subcategories",
+    "displayName": "Chart Subcategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "chartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "chartSubcategories"
+    },
+    "chartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "chartSubcategories"
+    },
+    "dealTransactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal-transaction.deal-transaction",
+      "mappedBy": "chartSubcategory"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "accProductMappings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-product-mapping.acc-product-mapping",
+      "mappedBy": "chartSubcategory"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "costChartSubcategory"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service",
+      "mappedBy": "costChartSubcategory"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class",
+      "mappedBy": "costChartSubcategory"
+    },
+    "memberships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class",
+      "mappedBy": "costChartSubcategory"
+    }
+  }
+}

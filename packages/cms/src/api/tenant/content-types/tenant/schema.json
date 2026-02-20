@@ -1,0 +1,285 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenants",
+  "info": {
+    "singularName": "tenant",
+    "pluralName": "tenants",
+    "displayName": "Tenant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "companyName",
+      "required": false
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "tenant"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location",
+      "mappedBy": "tenant"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "tenant"
+    },
+    "nylas_connection": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::nylas-connection.nylas-connection",
+      "mappedBy": "tenant"
+    },
+    "selling_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "tenant"
+    },
+    "dealTransactionReminders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal-transaction-reminder.deal-transaction-reminder",
+      "mappedBy": "tenant"
+    },
+    "dealTransactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal-transaction.deal-transaction",
+      "mappedBy": "tenant"
+    },
+    "websites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::website.website",
+      "mappedBy": "tenant"
+    },
+    "stripe_onboarding": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stripe-onboarding.stripe-onboarding",
+      "mappedBy": "tenant"
+    },
+    "twilioConnection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::twilio-connection.twilio-connection",
+      "mappedBy": "tenant"
+    },
+    "subscriptions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tenant-stripe-subscription.tenant-stripe-subscription",
+      "mappedBy": "tenant"
+    },
+    "usages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::usage.usage",
+      "mappedBy": "tenant"
+    },
+    "credits": {
+      "type": "decimal",
+      "min": 0
+    },
+    "tenant_credit_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tenant-credit-history.tenant-credit-history",
+      "mappedBy": "tenant"
+    },
+    "thresholdBalance": {
+      "type": "decimal",
+      "min": 0
+    },
+    "rechargeToBalance": {
+      "type": "decimal",
+      "min": 0
+    },
+    "autoRechargeCredit": {
+      "type": "boolean",
+      "default": false
+    },
+    "onboarding": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::onboarding.onboarding",
+      "mappedBy": "tenant"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mainLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "websiteUrl": {
+      "type": "string"
+    },
+    "paymentGatewayType": {
+      "type": "enumeration",
+      "enum": [
+        "stripe",
+        "clearent"
+      ]
+    },
+    "clearent_onboarding": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::clearent-onboarding.clearent-onboarding",
+      "mappedBy": "tenant"
+    },
+    "clearent_terminals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::clearent-terminal.clearent-terminal",
+      "mappedBy": "tenant"
+    },
+    "ecommerceDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-detail.ecommerce-detail",
+      "mappedBy": "tenant"
+    },
+    "invoiceTerms": {
+      "type": "text"
+    },
+    "companySetting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company-setting.company-setting",
+      "mappedBy": "tenant"
+    },
+    "contactSetting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact-setting.contact-setting",
+      "mappedBy": "tenant"
+    },
+    "settingsProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-setting.product-setting",
+      "inversedBy": "tenant"
+    },
+    "ecommerceCustomAppServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-custom-app-service.ecommerce-custom-app-service",
+      "mappedBy": "tenant"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "paymentMethods": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment-method.payment-method",
+      "mappedBy": "tenant"
+    },
+    "emailSender": {
+      "type": "string",
+      "default": "no-reply"
+    },
+    "storageUsage": {
+      "type": "string"
+    },
+    "stripe_subscription_plans": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::stripe-subscription-plan.stripe-subscription-plan",
+      "mappedBy": "whichTenantCanSee"
+    },
+    "exceededServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exceeded-service.exceeded-service",
+      "mappedBy": "tenant"
+    },
+    "accServiceConns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-conn.acc-service-conn",
+      "mappedBy": "tenant"
+    },
+    "accServiceTrack": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-track.acc-service-track",
+      "mappedBy": "tenant"
+    },
+    "pdfTemplates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pdf-template.pdf-template",
+      "mappedBy": "tenant"
+    },
+    "meta_connection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meta-connection.meta-connection",
+      "mappedBy": "tenant"
+    },
+    "trackers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::time-tracker.time-tracker",
+      "mappedBy": "tenant"
+    },
+    "timeline_connection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::timeline-connection.timeline-connection",
+      "mappedBy": "tenant"
+    },
+    "zapierWebhooks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::zapier-webhook.zapier-webhook",
+      "mappedBy": "tenant"
+    },
+    "settings_chat": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::settings-chat.settings-chat",
+      "mappedBy": "tenant"
+    },
+    "settings_task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::settings-task.settings-task",
+      "mappedBy": "tenant"
+    }
+  }
+}

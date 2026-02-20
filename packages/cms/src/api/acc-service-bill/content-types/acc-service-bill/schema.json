@@ -1,0 +1,89 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_bills",
+  "info": {
+    "singularName": "acc-service-bill",
+    "pluralName": "acc-service-bills",
+    "displayName": "Acc service bill"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "syncToken": {
+      "type": "string"
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "close"
+      ],
+      "default": "open",
+      "required": false
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "accServiceTxns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-txn.acc-service-txn",
+      "mappedBy": "accServiceBill"
+    },
+    "accServiceContact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-contact.acc-service-contact",
+      "inversedBy": "accServiceBills"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "accServiceBills"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "accServiceBills"
+    },
+    "dealTransaction": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deal-transaction.deal-transaction",
+      "inversedBy": "accServiceBill"
+    },
+    "sellingOrder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "accServiceBills"
+    },
+    "accServiceFiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-file.acc-service-file",
+      "mappedBy": "accServiceBill"
+    }
+  }
+}

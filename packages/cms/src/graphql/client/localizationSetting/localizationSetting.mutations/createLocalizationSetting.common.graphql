@@ -1,0 +1,7 @@
+mutation createLocalizationSetting($input: LocalizationSettingInput!) {
+  createLocalizationSetting(data: $input) {
+    data {
+      ...LocalizationSetting
+    }
+  }
+}

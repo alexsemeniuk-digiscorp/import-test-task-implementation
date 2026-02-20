@@ -1,0 +1,13 @@
+query fetchAuditItemsStats(
+  $filters: InventoryAuditItemFiltersInput
+  $auditUuid: String!
+) {
+  fetchAuditItemsStats(filters: $filters, auditUuid: $auditUuid) {
+    all
+    scanned
+    notScanned
+    partial
+    over
+    progress
+  }
+}

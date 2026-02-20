@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_performers",
+  "info": {
+    "singularName": "service-performer",
+    "pluralName": "service-performers",
+    "displayName": "Service Performer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "performer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "pointsGiven": {
+      "type": "float"
+    },
+    "pointsRedeem": {
+      "type": "float"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "serviceLocationInfo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-location-info.service-location-info",
+      "inversedBy": "servicePerformers"
+    },
+    "selling_service_order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-order-item.service-order-item",
+      "mappedBy": "service"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "isImported": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

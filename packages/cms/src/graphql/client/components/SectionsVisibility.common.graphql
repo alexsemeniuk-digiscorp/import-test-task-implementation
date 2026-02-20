@@ -1,0 +1,9 @@
+fragment SectionsVisibility on ComponentUiSectionsVisibility {
+  id
+  pageTitle
+  isFooterVisible
+  isCustomerReviewVisible
+  isFollowUsVisible
+  isSubscribeNewsLetterVisible
+  isBlogVisible
+}

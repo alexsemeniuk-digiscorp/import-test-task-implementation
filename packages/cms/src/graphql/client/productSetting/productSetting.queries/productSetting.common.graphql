@@ -1,0 +1,14 @@
+query productsSetting(
+  $filters: ProductSettingFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  productsSetting(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductSetting
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

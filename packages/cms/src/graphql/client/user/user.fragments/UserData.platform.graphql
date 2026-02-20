@@ -1,0 +1,24 @@
+fragment UserData on UsersPermissionsUserEntity {
+  id
+  attributes {
+    firstName
+    lastName
+    fullName
+    jobTitle
+    email
+    phoneNumber
+    avatar {
+      data {
+        ...FileMin
+      }
+    }
+    role {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+}

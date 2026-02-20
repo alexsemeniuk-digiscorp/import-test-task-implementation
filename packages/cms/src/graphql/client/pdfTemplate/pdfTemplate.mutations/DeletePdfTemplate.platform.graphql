@@ -1,0 +1,7 @@
+mutation deletePdfTemplate($id: ID!) {
+  deletePdfTemplate(id: $id) {
+    data {
+      id
+    }
+  }
+}

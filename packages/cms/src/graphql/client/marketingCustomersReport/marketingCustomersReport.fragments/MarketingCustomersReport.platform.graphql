@@ -1,0 +1,54 @@
+fragment MarketingCustomersReport on MarketingCustomersReportEntity {
+  id
+  attributes {
+    createdAt
+    EMAILsent
+    SMSsent
+    enrolledContact {
+      data {
+        id
+        attributes {
+          campaign {
+            data {
+              id
+              attributes {
+                name
+              }
+            }
+          }
+          contact {
+            data {
+              id
+              attributes {
+                fullName
+              }
+            }
+          }
+        }
+      }
+    }
+    enrolledLead {
+      data {
+        id
+        attributes {
+          campaign {
+            data {
+              id
+              attributes {
+                name
+              }
+            }
+          }
+          lead {
+            data {
+              id
+              attributes {
+                fullName
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

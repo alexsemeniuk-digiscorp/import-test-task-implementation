@@ -1,0 +1,7 @@
+fragment ProductGroupAttributeOptionMin on ProductGroupAttributeOptionEntity {
+  id
+  attributes {
+    name
+    createdAt
+  }
+}

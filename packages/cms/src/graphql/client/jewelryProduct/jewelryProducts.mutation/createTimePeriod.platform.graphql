@@ -1,0 +1,7 @@
+mutation createTimePeriod($input: TimePeriodInput!) {
+  createTimePeriod(data: $input) {
+    data {
+      ...TimePeriod
+    }
+  }
+}

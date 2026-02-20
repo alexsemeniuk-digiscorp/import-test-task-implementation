@@ -1,0 +1,160 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deal_transactions",
+  "info": {
+    "singularName": "deal-transaction",
+    "pluralName": "deal-transactions",
+    "displayName": "Deal Transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dueDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Paid",
+        "Open",
+        "Running",
+        "Cancelled",
+        "Refunded"
+      ],
+      "required": true,
+      "default": "Open"
+    },
+    "summary": {
+      "type": "decimal",
+      "required": true
+    },
+    "paid": {
+      "type": "decimal"
+    },
+    "repetitive": {
+      "type": "enumeration",
+      "enum": [
+        "once",
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+      ],
+      "required": true,
+      "default": "once"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "dealTransactions"
+    },
+    "chartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "dealTransactions"
+    },
+    "chartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "dealTransactions"
+    },
+    "chartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "dealTransactions"
+    },
+    "note": {
+      "type": "text"
+    },
+    "sellingOrder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "dealTransactions"
+    },
+    "dealTransactionId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "required": true,
+      "unique": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "dealTransactions"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "dealTransactions"
+    },
+    "stripeInfo": {
+      "type": "json"
+    },
+    "paymentMethod": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment-method.payment-method"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "clearentInfo": {
+      "type": "json"
+    },
+    "paymentGatewayType": {
+      "type": "enumeration",
+      "enum": [
+        "stripe",
+        "clearent"
+      ]
+    },
+    "tipAmount": {
+      "type": "decimal"
+    },
+    "customCreationDate": {
+      "type": "datetime"
+    },
+    "clearentError": {
+      "type": "json"
+    },
+    "transactionCurrency": {
+      "type": "string"
+    },
+    "accServiceTxn": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::acc-service-txn.acc-service-txn",
+      "inversedBy": "dealTransaction"
+    },
+    "accServiceBill": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "mappedBy": "dealTransaction"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation createInvtCmpColor($input: InvtCmpColorInput!) {
+  createInvtCmpColor(data: $input) {
+    data {
+      ...InvtCmpColor
+    }
+  }
+}

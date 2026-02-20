@@ -1,0 +1,11 @@
+query itemCategories(
+  $filters: ItemCategoryFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  itemCategories(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ItemCategory
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query jewelryProductTypes(
+  $filters: JewelryProductTypeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  jewelryProductTypes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...JewelryProductType
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

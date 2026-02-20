@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_adjustments",
+  "info": {
+    "singularName": "inventory-adjustment",
+    "pluralName": "inventory-adjustments",
+    "displayName": "Inventory Adjustment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "adjustmentDate": {
+      "type": "datetime"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "adjustmentId": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "inventoryAdjustmentItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-adjustment-item.inventory-adjustment-item",
+      "mappedBy": "inventoryAdjustment"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

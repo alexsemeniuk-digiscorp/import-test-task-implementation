@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_connections",
+  "info": {
+    "singularName": "meta-connection",
+    "pluralName": "meta-connections",
+    "displayName": "Meta Connection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "meta_connection"
+    },
+    "facebookUserToken": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.page"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rates",
+  "info": {
+    "singularName": "rate",
+    "pluralName": "rates",
+    "displayName": "Rate"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "evaluation": {
+      "type": "integer"
+    },
+    "isLoved": {
+      "type": "boolean",
+      "default": false
+    },
+    "isRecommended": {
+      "type": "boolean"
+    },
+    "suggestions": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rate"
+    }
+  }
+}

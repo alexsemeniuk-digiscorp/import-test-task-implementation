@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discount_usage_events",
+  "info": {
+    "singularName": "discount-usage-event",
+    "pluralName": "discount-usage-events",
+    "displayName": "DiscountUsageEvent"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "discount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::discount.discount",
+      "inversedBy": "discountUsageEvents"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+fragment DealCard on DealEntity {
+  ...DealMin
+  id
+  attributes {
+    lead {
+      data {
+        id
+        attributes {
+          fullName
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+    contact {
+      data {
+        id
+        attributes {
+          fullName
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+    company {
+      data {
+        id
+        attributes {
+          name
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+    employee {
+      data {
+        id
+        attributes {
+          fullName
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+  }
+}

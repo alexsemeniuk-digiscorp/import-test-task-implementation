@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  justify-content: stretch;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.space {
+  display: flex;
+  gap: 64px;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}

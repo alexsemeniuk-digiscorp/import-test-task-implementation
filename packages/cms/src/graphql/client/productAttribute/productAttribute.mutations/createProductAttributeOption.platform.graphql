@@ -1,0 +1,7 @@
+mutation createProductAttributeOption($input: ProductAttributeOptionInput!) {
+  createProductAttributeOption(data: $input) {
+    data {
+      ...ProductAttributeOption
+    }
+  }
+}

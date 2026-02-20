@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exceeded_services",
+  "info": {
+    "singularName": "exceeded-service",
+    "pluralName": "exceeded-services",
+    "displayName": "Exceeded Service ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "exceeded_service"
+    },
+    "nextBillingCycle": {
+      "type": "date"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "exceededServices"
+    }
+  }
+}

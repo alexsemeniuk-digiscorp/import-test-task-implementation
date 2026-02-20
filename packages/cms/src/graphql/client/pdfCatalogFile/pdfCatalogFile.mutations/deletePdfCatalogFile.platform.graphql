@@ -1,0 +1,7 @@
+mutation deletePdfCatalogFile($id: ID!) {
+  deletePdfCatalogFile(id: $id) {
+    data {
+      id
+    }
+  }
+}

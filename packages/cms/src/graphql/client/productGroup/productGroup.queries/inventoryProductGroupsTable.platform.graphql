@@ -1,0 +1,15 @@
+query inventoryProductGroupsTable(
+  $filters: ProductGroupFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+  $businessLocationId: Int
+) {
+  productGroups(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InventoryProductGroupTable
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,71 @@
+fragment ProductInventoryItemEventReport on ProductInventoryItemEventEntity {
+  ...ProductInventoryItemEventMin
+  id
+  attributes {
+    isPartiallyReturned
+    isFullyReturned
+    returnedDate
+    expiryDate
+    isNotified
+    memoNumber
+    note
+    order {
+      data {
+        id
+        attributes {
+          orderId
+          memoNumber
+        }
+      }
+    }
+    productInventoryItem {
+      data {
+        id
+        attributes {
+          businessLocation {
+            data {
+              id
+              attributes {
+                uuid
+                name
+              }
+            }
+          }
+          product {
+            data {
+              id
+              attributes {
+                name
+                uuid
+                SKU
+                files(pagination: { limit: 1 }) {
+                  data {
+                    ...FileMin
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    itemVendor {
+      data {
+        id
+        attributes {
+          name
+          uuid
+        }
+      }
+    }
+    itemContactVendor {
+      data {
+        id
+        attributes {
+          fullName
+          uuid
+        }
+      }
+    }
+  }
+}

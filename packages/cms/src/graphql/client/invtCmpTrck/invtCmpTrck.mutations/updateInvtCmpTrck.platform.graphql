@@ -1,0 +1,7 @@
+mutation updateInvtCmpTrck($id: ID!, $input: InvtCmpTrckInput!) {
+  updateInvtCmpTrck(id: $id, data: $input) {
+    data {
+      ...InvtCmpTrckMin
+    }
+  }
+}

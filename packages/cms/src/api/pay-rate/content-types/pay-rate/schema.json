@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pay_rates",
+  "info": {
+    "singularName": "pay-rate",
+    "pluralName": "pay-rates",
+    "displayName": "Pay Rate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rate": {
+      "type": "decimal"
+    },
+    "period": {
+      "type": "enumeration",
+      "enum": [
+        "hour",
+        "month"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "payRate"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "composite_product_item_infos",
+  "info": {
+    "singularName": "composite-product-item-info",
+    "pluralName": "composite-product-item-infos",
+    "displayName": "Composite Product Item Info"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "compositeProduct": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::composite-product.composite-product",
+      "inversedBy": "compositeProductItems"
+    }
+  }
+}

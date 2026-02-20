@@ -1,0 +1,14 @@
+query timePeriods(
+  $filters: TimePeriodFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  timePeriods(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...TimePeriod
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

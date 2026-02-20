@@ -1,0 +1,7 @@
+mutation deleteWeight($id: ID!) {
+  deleteWeight(id: $id) {
+    data {
+      id
+    }
+  }
+}

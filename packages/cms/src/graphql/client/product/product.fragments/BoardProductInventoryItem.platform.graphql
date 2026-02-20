@@ -1,0 +1,10 @@
+fragment BoardProductInventoryItem on ProductInventoryItemEntity {
+  id
+  attributes {
+    product {
+      data {
+        ...BoardProductMin
+      }
+    }
+  }
+}

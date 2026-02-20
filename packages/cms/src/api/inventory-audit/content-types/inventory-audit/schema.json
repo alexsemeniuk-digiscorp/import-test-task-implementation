@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_audits",
+  "info": {
+    "singularName": "inventory-audit",
+    "pluralName": "inventory-audits",
+    "displayName": "INVENTORY Audit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "auditDate": {
+      "type": "datetime"
+    },
+    "name": {
+      "type": "string"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "auditId": {
+      "type": "string"
+    },
+    "inventoryAuditItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-audit-item.inventory-audit-item",
+      "mappedBy": "inventoryAudit"
+    },
+    "finalize": {
+      "type": "boolean",
+      "default": false
+    },
+    "adjusted": {
+      "type": "boolean",
+      "default": false
+    },
+    "isAdjustmentRequired": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

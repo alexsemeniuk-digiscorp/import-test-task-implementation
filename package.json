@@ -1,0 +1,135 @@
+{
+  "name": "vertical-saas",
+  "description": "Includes all required tools and packages to bootstrap full-stack app development using NodeJS stack",
+  "version": "2023.7.7",
+  "private": true,
+  "license": "proprietary",
+  "maintainers": [
+    {
+      "name": "BN Enginseer",
+      "email": "dev@bndigital.co",
+      "url": "https://github.com/bn-enginseer"
+    }
+  ],
+  "author": {
+    "name": "Vlad Volkov",
+    "email": "vlad.volkov@bndigital.co",
+    "url": "https://github.com/vladyslavvolkov"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn lint",
+      "yarn format"
+    ],
+    "**/*.{css,sass,scss,less}": [
+      "yarn lint-styles",
+      "yarn format"
+    ],
+    "yarn.lock": [
+      "yarn dedupe"
+    ]
+  },
+  "stylelint": {
+    "extends": "@bn-digital/stylelint-config",
+    "rules": {
+      "selector-class-pattern": null,
+      "import-notation": "string",
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": "@bn-digital/eslint-config",
+    "ignorePatterns": [
+      "webpack.config.ts",
+      "graphql.d.ts",
+      "contentTypes.d.ts",
+      "packages/website/src/graphql/index.ts",
+      "packages/customer-website/src/graphql/index.ts",
+      "packages/cms/src/types/generated/*.d.ts",
+      "packages/cms/tests/"
+    ],
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "@typescript-eslint/prefer-namespace-keyword": "off",
+      "import/no-duplicates": "error",
+      "react-hooks/exhaustive-deps": [
+        "error",
+        {
+          "enableDangerousAutofixThisMayCauseInfiniteLoops": true
+        }
+      ],
+      "no-use-before-define": [
+        "error",
+        {
+          "variables": true,
+          "allowNamedExports": false
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {
+          "alwaysTryTypes": true,
+          "project": [
+            "./packages/*/tsconfig.json",
+            "./packages/cms/src/admin/tsconfig.json"
+          ]
+        }
+      }
+    },
+    "parserOptions": {
+      "project": [
+        "./packages/*/tsconfig.json",
+        "./packages/cms/src/admin/tsconfig.json"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@bn-digital/cosmiconfig": "1.2.1",
+    "@bn-digital/prettier-config": "^2.4.1",
+    "@bn-digital/typescript-config": "^1.4.0",
+    "@bn-digital/vault-env": "1.5.6",
+    "@parcel/watcher": "^2.3.0",
+    "concurrently": "^8.2.2",
+    "eslint-plugin-import": "^2.28.1",
+    "husky": "^8.0.3",
+    "pm2": "5.3.0",
+    "typescript": "5.1.6"
+  },
+  "scripts": {
+    "start": "pm2-runtime ecosystem.config.yml",
+    "develop:cms": "yarn workspace @vertical-saas/cms run develop",
+    "develop:website": "yarn workspace @vertical-saas/website run start:novault",
+    "develop:admin": "yarn workspace @vertical-saas/admin run start:novault",
+    "start:cms": "yarn workspace @vertical-saas/cms run start",
+    "start:website": "yarn workspace @vertical-saas/website run start",
+    "start:admin": "yarn workspace @vertical-saas/admin run start",
+    "start:customer-website": "yarn workspace @vertical-saas/customer-website run start",
+    "build": "yarn workspaces foreach --exclude=root --parallel run build",
+    "lint": "NODE_OPTIONS=--max-old-space-size=6144 eslint --ext .js,.jsx,.ts,.tsx",
+    "lint-files": "yarn lint packages",
+    "lint-files:fix": "yarn lint-files --fix",
+    "format": "prettier --check",
+    "format:fix": "prettier --write",
+    "format-files": "yarn format \"packages/*/src/**/*.{js,jsx,ts,tsx,css,scss}\"",
+    "format-files:fix": "yarn format:fix \"packages/*/src/**/*.{js,jsx,ts,tsx,css,scss}\"",
+    "lint-styles": "stylelint",
+    "lint-styles:fix": "yarn lint-styles --fix"
+  },
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "eslint-import-resolver-typescript": "^3.6.1"
+  }
+}

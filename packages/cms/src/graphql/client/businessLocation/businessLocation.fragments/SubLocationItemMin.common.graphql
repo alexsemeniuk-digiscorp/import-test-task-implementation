@@ -1,0 +1,8 @@
+fragment SubLocationItemMin on SublocationItemEntity {
+  id
+  attributes {
+    quantity
+    actualQty
+    scannedQty
+  }
+}

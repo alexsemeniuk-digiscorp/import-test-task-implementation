@@ -1,0 +1,5 @@
+build
+dist
+.cache
+/.strapi-updater.json*
+/src/graphql/schema.graphql

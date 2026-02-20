@@ -1,0 +1,7 @@
+query shipmentCard($id: ID!) {
+  shipmentCard(id: $id) {
+    data {
+      ...ShipmentCard
+    }
+  }
+}

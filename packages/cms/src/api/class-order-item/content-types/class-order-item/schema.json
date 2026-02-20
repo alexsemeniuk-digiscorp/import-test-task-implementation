@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_order_items",
+  "info": {
+    "singularName": "class-order-item",
+    "pluralName": "class-order-items",
+    "displayName": "SELLING: Class Order Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "note": {
+      "type": "text"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "classes"
+    },
+    "purchaseType": {
+      "type": "enumeration",
+      "enum": [
+        "buy",
+        "rent"
+      ]
+    },
+    "itemId": {
+      "type": "string",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "discounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discount.discount"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-performer.class-performer",
+      "inversedBy": "selling_class_order_items"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "published"
+    },
+    "isShowInvoiceNote": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleInDocs": {
+      "type": "boolean",
+      "default": true
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    }
+  }
+}

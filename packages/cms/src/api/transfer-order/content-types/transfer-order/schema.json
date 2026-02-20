@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transfer_orders",
+  "info": {
+    "singularName": "transfer-order",
+    "pluralName": "transfer-orders",
+    "displayName": "TransferOrder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "transferId": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "orderDate": {
+      "type": "datetime"
+    },
+    "locationFrom": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "locationTo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "transferOrderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transfer-order-item.transfer-order-item",
+      "mappedBy": "transferOrder"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "reason": {
+      "type": "text"
+    },
+    "sublocationFrom": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "sublocationTo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "employeeConfirmed": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "employeeReceivedDate": {
+      "type": "datetime"
+    }
+  }
+}

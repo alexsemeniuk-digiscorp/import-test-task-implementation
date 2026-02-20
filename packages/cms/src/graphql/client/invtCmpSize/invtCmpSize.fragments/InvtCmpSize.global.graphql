@@ -1,0 +1,6 @@
+fragment InvtCmpSize on InvtCmpSizeEntity {
+  id
+  attributes {
+    name
+  }
+}

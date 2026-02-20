@@ -1,0 +1,7 @@
+mutation deleteProductGroupItem($id: ID!) {
+  deleteProductGroupItem(id: $id) {
+    data {
+      id
+    }
+  }
+}

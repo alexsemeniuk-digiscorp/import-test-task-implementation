@@ -1,0 +1,132 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_inventory_item_events",
+  "info": {
+    "singularName": "product-inventory-item-event",
+    "pluralName": "product-inventory-item-events",
+    "displayName": "Product Inventory Item Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "change": {
+      "type": "string",
+      "default": "0",
+      "required": true
+    },
+    "addedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "eventType": {
+      "type": "enumeration",
+      "enum": [
+        "receive",
+        "return",
+        "transfer in",
+        "transfer out",
+        "canceled return",
+        "sold",
+        "adjustment",
+        "pos order item add",
+        "pos order item remove",
+        "purchase return"
+      ],
+      "required": true,
+      "default": "receive"
+    },
+    "productInventoryItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "inversedBy": "product_inventory_item_events"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "relationUuid": {
+      "type": "text"
+    },
+    "itemCost": {
+      "type": "decimal",
+      "min": 0
+    },
+    "itemVendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "receiveDate": {
+      "type": "datetime"
+    },
+    "memo": {
+      "type": "boolean",
+      "default": false
+    },
+    "laidAway": {
+      "type": "integer",
+      "min": 0
+    },
+    "remainingQuantity": {
+      "type": "integer"
+    },
+    "relationId": {
+      "type": "string"
+    },
+    "expiryDate": {
+      "type": "datetime"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    },
+    "itemContactVendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "productInventoryItemRecords": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invt-itm-record.invt-itm-record",
+      "mappedBy": "productInventoryItemEvent"
+    },
+    "isPartiallyReturned": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFullyReturned": {
+      "type": "boolean",
+      "default": false
+    },
+    "returnedDate": {
+      "type": "datetime"
+    },
+    "isImported": {
+      "type": "boolean",
+      "default": false
+    },
+    "isNotified": {
+      "type": "boolean",
+      "default": false
+    },
+    "memoNumber": {
+      "type": "text"
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

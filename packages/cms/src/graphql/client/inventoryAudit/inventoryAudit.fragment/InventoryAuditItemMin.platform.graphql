@@ -1,0 +1,10 @@
+fragment InventoryAuditItemMin on InventoryAuditItemEntity {
+  id
+  attributes {
+    inventoryQty
+    actualQty
+    scannedQty
+    adjusted
+    auditItemId
+  }
+}

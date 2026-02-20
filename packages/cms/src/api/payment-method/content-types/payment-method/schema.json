@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_methods",
+  "info": {
+    "singularName": "payment-method",
+    "pluralName": "payment-methods",
+    "displayName": "Payment Method",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "paymentMethods"
+    },
+    "accProductMappings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-product-mapping.acc-product-mapping",
+      "mappedBy": "paymentMethod"
+    },
+    "paymentType": {
+      "type": "enumeration",
+      "enum": [
+        "billPayment",
+        "sell"
+      ],
+      "required": true,
+      "unique": false,
+      "default": "sell"
+    }
+  }
+}

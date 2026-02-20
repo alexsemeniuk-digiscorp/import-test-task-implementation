@@ -1,0 +1,11 @@
+.roundedBox {
+  width: 100%;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 16px 0 rgb(49 62 88 / 3%);
+
+  @media (max-width: 992px) {
+    padding: 12px;
+  }
+}

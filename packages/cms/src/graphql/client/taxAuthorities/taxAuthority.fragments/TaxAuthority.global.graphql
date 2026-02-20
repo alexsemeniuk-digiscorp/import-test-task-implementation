@@ -1,0 +1,6 @@
+fragment TaxAuthority on TaxAuthorityEntity {
+  id
+  attributes {
+    name
+  }
+}

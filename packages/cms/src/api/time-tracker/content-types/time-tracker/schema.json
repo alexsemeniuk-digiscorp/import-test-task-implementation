@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "time_trackers",
+  "info": {
+    "singularName": "time-tracker",
+    "pluralName": "time-trackers",
+    "displayName": "Time Tracker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startTime": {
+      "type": "datetime"
+    },
+    "endTime": {
+      "type": "datetime"
+    },
+    "shiftTime": {
+      "type": "time"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "trackers"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "trackers"
+    }
+  }
+}

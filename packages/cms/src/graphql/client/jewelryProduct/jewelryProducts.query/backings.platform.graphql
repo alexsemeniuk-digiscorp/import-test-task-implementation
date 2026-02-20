@@ -1,0 +1,14 @@
+query backings(
+  $filters: BackingFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  backings(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...Backing
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

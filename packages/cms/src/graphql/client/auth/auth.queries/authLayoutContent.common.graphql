@@ -1,0 +1,11 @@
+query authLayoutContent {
+  authLayout {
+    data {
+      attributes {
+        authContent {
+          ...AuthContent
+        }
+      }
+    }
+  }
+}

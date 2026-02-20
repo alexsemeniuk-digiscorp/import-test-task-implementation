@@ -1,0 +1,7 @@
+mutation createUsage($data: UsageInput!) {
+  createUsage(data: $data) {
+    data {
+      id
+    }
+  }
+}

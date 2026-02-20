@@ -1,0 +1,6 @@
+fragment KnotStyle on KnotStyleEntity {
+  id
+  attributes {
+    name
+  }
+}

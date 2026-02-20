@@ -1,0 +1,7 @@
+mutation createStrand($input: StrandInput!) {
+  createStrand(data: $input) {
+    data {
+      ...Strand
+    }
+  }
+}

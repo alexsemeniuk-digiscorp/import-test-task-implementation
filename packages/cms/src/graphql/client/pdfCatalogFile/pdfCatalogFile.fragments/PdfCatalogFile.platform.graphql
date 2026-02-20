@@ -1,0 +1,20 @@
+fragment PdfCatalogFile on PdfCatalogFileEntity {
+  id
+  attributes {
+    name
+    tenant {
+      data {
+        id
+      }
+    }
+    createdAt
+    file {
+      data {
+        id
+        attributes {
+          url
+        }
+      }
+    }
+  }
+}

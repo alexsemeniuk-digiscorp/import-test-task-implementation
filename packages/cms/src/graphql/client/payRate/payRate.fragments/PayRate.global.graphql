@@ -1,0 +1,7 @@
+fragment PayRate on PayRateEntity {
+  id
+  attributes {
+    rate
+    period
+  }
+}

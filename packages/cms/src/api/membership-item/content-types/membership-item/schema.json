@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "membership_items",
+  "info": {
+    "singularName": "membership-item",
+    "pluralName": "membership-items",
+    "displayName": "MembershipItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    },
+    "compositeProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::composite-product.composite-product"
+    },
+    "itemsQuantity": {
+      "type": "integer"
+    },
+    "membership": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::membership.membership",
+      "inversedBy": "membershipItems"
+    }
+  }
+}

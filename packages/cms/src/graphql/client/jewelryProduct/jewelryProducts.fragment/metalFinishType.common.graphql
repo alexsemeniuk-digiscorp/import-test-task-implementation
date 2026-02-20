@@ -1,0 +1,6 @@
+fragment MetalFinishType on MetalFinishTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

@@ -1,0 +1,15 @@
+FROM --platform=linux/amd64 public.ecr.aws/lambda/python:3.12 AS build
+LABEL name=lambda/python/clamav
+LABEL version=1.0
+
+ARG CACHE_DATE=1
+RUN dnf update -y \
+    && dnf -y install clamav clamav-update clamd \
+    && dnf clean all \
+    && pip3 install --no-cache-dir cffi awslambdaric boto3 requests aws-lambda-powertools psycopg2-binary pillow blurhash-python\
+    && ln -s /etc/freshclam.conf /tmp/freshclam.conf
+
+COPY clamd.conf /etc/clamd.conf
+COPY lambda.py /var/task/lambda.py
+ENTRYPOINT [ "/var/lang/bin/python3", "-m", "awslambdaric" ]
+CMD [ "lambda.lambda_handler" ]

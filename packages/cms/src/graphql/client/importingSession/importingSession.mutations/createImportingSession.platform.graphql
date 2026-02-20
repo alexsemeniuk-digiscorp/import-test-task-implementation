@@ -1,0 +1,7 @@
+mutation createImportingSession($input: ImportingSessionInput!) {
+  createImportingSession(data: $input) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Store",
+        "Warehouse"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "locations"
+    },
+    "zipcode": {
+      "type": "string"
+    },
+    "docAddressLine1": {
+      "type": "text"
+    },
+    "docAddressLine2": {
+      "type": "text"
+    },
+    "docAddressLine3": {
+      "type": "text"
+    },
+    "docAddressLine4": {
+      "type": "text"
+    }
+  }
+}

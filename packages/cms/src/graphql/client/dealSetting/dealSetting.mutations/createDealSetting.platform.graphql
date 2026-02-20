@@ -1,0 +1,7 @@
+mutation createDealSetting($input: DealSettingInput!) {
+  createDealSetting(data: $input) {
+    data {
+      ...DealSetting
+    }
+  }
+}

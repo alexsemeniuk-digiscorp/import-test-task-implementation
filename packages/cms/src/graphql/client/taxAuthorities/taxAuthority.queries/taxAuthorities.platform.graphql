@@ -1,0 +1,7 @@
+query taxAuthorities($filters: TaxAuthorityFiltersInput, $sort: [String]) {
+  taxAuthorities(filters: $filters, sort: $sort) {
+    data {
+      ...TaxAuthority
+    }
+  }
+}

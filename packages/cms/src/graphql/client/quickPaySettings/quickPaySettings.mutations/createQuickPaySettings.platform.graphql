@@ -1,0 +1,7 @@
+mutation createQuickPaySetting($input: QuickPaySettingInput!) {
+  createQuickPaySetting(data: $input) {
+    data {
+      id
+    }
+  }
+}

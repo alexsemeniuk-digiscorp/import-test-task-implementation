@@ -1,0 +1,14 @@
+query taxes(
+  $filters: TaxFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  taxes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...Tax
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,10 @@
+mutation updateProductInventoryItemRecord(
+  $id: ID!
+  $input: InvtItmRecordInput!
+) {
+  updateInvtItmRecord(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation updateReportsSchedule($id: ID!, $input: ReportsScheduleInput!) {
+  updateReportsSchedule(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

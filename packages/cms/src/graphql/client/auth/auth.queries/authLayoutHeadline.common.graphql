@@ -1,0 +1,11 @@
+query authLayoutHeadline {
+  authLayout {
+    data {
+      attributes {
+        headline {
+          ...Headline
+        }
+      }
+    }
+  }
+}

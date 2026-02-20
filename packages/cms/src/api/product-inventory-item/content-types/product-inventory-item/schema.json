@@ -1,0 +1,140 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_inventory_items",
+  "info": {
+    "singularName": "product-inventory-item",
+    "pluralName": "product-inventory-items",
+    "displayName": "Product Inventory Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "lowQuantity": {
+      "type": "integer",
+      "required": false
+    },
+    "maxQuantity": {
+      "type": "integer"
+    },
+    "minOrderQuantity": {
+      "type": "integer",
+      "default": 1,
+      "required": false
+    },
+    "pointsRedeemed": {
+      "type": "float"
+    },
+    "storageNotes": {
+      "type": "text"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "productInventoryItems"
+    },
+    "pointsGiven": {
+      "type": "float"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "price": {
+      "type": "decimal",
+      "required": false
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "productOrderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-order-item.product-order-item",
+      "mappedBy": "product"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "product_inventory_item_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-inventory-item-event.product-inventory-item-event",
+      "mappedBy": "productInventoryItem"
+    },
+    "jewelryProduct": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product.jewelry-product",
+      "inversedBy": "productInventoryItems"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "sublocationItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sublocation-item.sublocation-item",
+      "mappedBy": "productInventoryItem"
+    },
+    "isNegativeCount": {
+      "type": "boolean",
+      "default": false
+    },
+    "isSerializedInventory": {
+      "type": "boolean",
+      "default": false
+    },
+    "serializes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-serialize.inventory-serialize",
+      "mappedBy": "productInventoryItem"
+    },
+    "productInventoryItemRecords": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invt-itm-record.invt-itm-record",
+      "mappedBy": "productInventoryItem"
+    },
+    "customCreationDate": {
+      "type": "datetime"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    }
+  }
+}

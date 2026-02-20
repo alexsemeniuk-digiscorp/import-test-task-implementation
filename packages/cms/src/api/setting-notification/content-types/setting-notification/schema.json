@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "setting_notifications",
+  "info": {
+    "singularName": "setting-notification",
+    "pluralName": "setting-notifications",
+    "displayName": "SETTING: Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "smsNotifyOnComplete": {
+      "type": "boolean",
+      "default": false
+    },
+    "emailNotifyOnComplete": {
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "order"
+      ]
+    },
+    "config": {
+      "type": "json"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

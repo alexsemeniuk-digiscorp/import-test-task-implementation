@@ -1,0 +1,16 @@
+query inventoryAdjustmentItemsByAdjustmentUuid(
+  $uuid: String!
+  $pagination: PaginationArg = {}
+) {
+  inventoryAdjustmentItems(
+    filters: { inventoryAdjustment: { uuid: { eq: $uuid } } }
+    pagination: $pagination
+  ) {
+    data {
+      ...InventoryAdjustmentItem
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

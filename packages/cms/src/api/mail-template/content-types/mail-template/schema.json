@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mail_templates",
+  "info": {
+    "singularName": "mail-template",
+    "pluralName": "mail-templates",
+    "displayName": "Mail Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "mail_templates"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

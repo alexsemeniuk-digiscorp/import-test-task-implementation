@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "link_types",
+  "info": {
+    "singularName": "link-type",
+    "pluralName": "link-types",
+    "displayName": "INVENTORY: Link Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "linkTypes"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

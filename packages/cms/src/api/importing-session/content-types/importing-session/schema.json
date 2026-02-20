@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "importing_sessions",
+  "info": {
+    "singularName": "importing-session",
+    "pluralName": "importing-sessions",
+    "displayName": "Importing Session",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "orders",
+        "products",
+        "contacts",
+        "contactRelations",
+        "wishlist",
+        "companies",
+        "files",
+        "updateDefaultPrice"
+      ]
+    },
+    "cmpltdImports": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "updImports": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "splImports": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "regexedId": {
+      "type": "string"
+    },
+    "srcFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "progressing",
+        "completed",
+        "error"
+      ],
+      "default": "progressing",
+      "required": false
+    },
+    "jobId": {
+      "type": "integer"
+    },
+    "uploadedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

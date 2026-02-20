@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estimates",
+  "info": {
+    "singularName": "estimate",
+    "pluralName": "estimates",
+    "displayName": "Estimate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "estimateId": {
+      "type": "string"
+    },
+    "orderId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "inversedBy": "estimate"
+    },
+    "clientMessage": {
+      "type": "string"
+    },
+    "fileItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    },
+    "terms": {
+      "type": "text"
+    },
+    "isShowOrderItemsImages": {
+      "type": "boolean"
+    },
+    "shippingContact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::estimate-shipping-contact.estimate-shipping-contact",
+      "inversedBy": "estimate"
+    }
+  }
+}

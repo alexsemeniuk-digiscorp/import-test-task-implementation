@@ -1,0 +1,6 @@
+fragment SpecificType on SpecificTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

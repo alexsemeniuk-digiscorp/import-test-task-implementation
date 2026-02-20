@@ -1,0 +1,7 @@
+fragment ItemCategory on ItemCategoryEntity {
+  id
+  attributes {
+    name
+    editable
+  }
+}

@@ -1,0 +1,20 @@
+query platform {
+  platform {
+    data {
+      attributes {
+        name
+        logo {
+          data {
+            ...File
+          }
+        }
+        minifiedLogo {
+          data {
+            ...File
+          }
+        }
+        address
+      }
+    }
+  }
+}

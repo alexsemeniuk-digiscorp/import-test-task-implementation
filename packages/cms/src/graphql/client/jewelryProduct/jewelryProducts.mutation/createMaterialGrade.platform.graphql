@@ -1,0 +1,7 @@
+mutation createMaterialGrade($input: MaterialGradeInput!) {
+  createMaterialGrade(data: $input) {
+    data {
+      ...MaterialGrade
+    }
+  }
+}

@@ -1,0 +1,21 @@
+query fetchInventoryAuditItemsByUuid(
+  $uuid: String!
+  $filters: InventoryAuditItemFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  fetchInventoryAuditItemsByUuid(
+    uuid: $uuid
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    response
+    meta {
+      page
+      pageCount
+      pageSize
+      total
+    }
+  }
+}

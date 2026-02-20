@@ -1,0 +1,10 @@
+.deleteContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tableInputContainer {
+  :global(.ant-table-cell) {
+    display: none;
+  }
+}

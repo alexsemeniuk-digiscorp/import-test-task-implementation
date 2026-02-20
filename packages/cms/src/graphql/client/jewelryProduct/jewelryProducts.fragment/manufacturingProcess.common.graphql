@@ -1,0 +1,6 @@
+fragment ManufacturingProcess on ManufacturingProcessEntity {
+  id
+  attributes {
+    name
+  }
+}

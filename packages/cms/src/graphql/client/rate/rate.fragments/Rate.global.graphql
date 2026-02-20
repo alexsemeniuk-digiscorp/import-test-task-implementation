@@ -1,0 +1,10 @@
+fragment Rate on RateEntity {
+  id
+  attributes {
+    createdAt
+    suggestions
+    isRecommended
+    isLoved
+    evaluation
+  }
+}

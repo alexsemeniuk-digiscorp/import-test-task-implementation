@@ -1,0 +1,7 @@
+mutation deleteLocalizationSetting($id: ID!) {
+  deleteLocalizationSetting(id: $id) {
+    data {
+      ...LocalizationSetting
+    }
+  }
+}

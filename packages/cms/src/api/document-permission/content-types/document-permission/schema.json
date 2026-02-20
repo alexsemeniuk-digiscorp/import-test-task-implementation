@@ -1,0 +1,284 @@
+{
+  "kind": "collectionType",
+  "collectionName": "document_permissions",
+  "info": {
+    "singularName": "document-permission",
+    "pluralName": "document-permissions",
+    "displayName": "PERMISSIONS: Document Permission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "invoiceTerms": {
+      "type": "text"
+    },
+    "purchaseTerms": {
+      "type": "text"
+    },
+    "appraisalTerms": {
+      "type": "text"
+    },
+    "invoiceClientMessage": {
+      "type": "text"
+    },
+    "taskNotificationContent": {
+      "type": "text"
+    },
+    "isShowOrderItemsImages": {
+      "type": "boolean",
+      "default": false
+    },
+    "isInvoiceTermsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isInvoiceClientMessageEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isAppraisalTermsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPurchaseTermsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isInvoiceCreationDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isInvoiceDiscountEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isInvoiceTaxEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isInvoiceTipEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseCreationDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseDiscountEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseTaxEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseTipEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "invoiceSignature": {
+      "type": "boolean",
+      "default": false
+    },
+    "isInternalRepairTicketPriceEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isShowOrderNoteAtInternalRepairTicker": {
+      "type": "boolean",
+      "default": true
+    },
+    "isShowOrderNoteAtExternalRepairTicker": {
+      "type": "boolean",
+      "default": true
+    },
+    "isExternalRepairTicketPriceEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isOnboardingMessage": {
+      "type": "boolean",
+      "default": true
+    },
+    "estimateTerms": {
+      "type": "text"
+    },
+    "estimateClientMessage": {
+      "type": "text"
+    },
+    "isEstimateTermsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEstimateClientMessageEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEstimateCreationDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isEstimateDiscountEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isEstimateTaxEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isEstimateTipEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "estimateSignature": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPriceOnLabelEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isSkuOnLabelEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isBarcodeOnLabelEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "defaultLabelTemplate": {
+      "type": "string"
+    },
+    "isInvoiceShippedDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseShippedDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isEstimateShippedDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isInvoiceDueDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseDueDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isEstimateDueDateEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isInvoiceMemoTermsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "invoiceMemoTerms": {
+      "type": "text"
+    },
+    "isPurchaseMemoTermsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "purchaseMemoTerms": {
+      "type": "text"
+    },
+    "isInvoiceLocationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isPurchaseLocationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isEstimateLocationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "isInvoiceSkuEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPurchaseSkuEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEstimateSkuEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "appraisalDescriptionPrompt": {
+      "type": "text",
+      "default": "Write a detailed, professional jewelry appraisal description for the provided product.  Include key details such as the type of jewelry (ring, necklace, etc.), materials (gold, silver, platinum), gemstones (diamond, emerald, sapphire), weight, color, and craftsmanship quality.  Maintain a neutral, expert tone suitable for appraisal reports. Avoid marketing or sales language."
+    },
+    "documentImageSizeMultiplier": {
+      "type": "float",
+      "default": 1,
+      "max": 3,
+      "min": 0
+    },
+    "signature": {
+      "type": "richtext"
+    },
+    "isShowStoreAddressForAppraisal": {
+      "type": "boolean",
+      "default": true
+    },
+    "isShowCustomerNameForAppraisal": {
+      "type": "boolean",
+      "default": true
+    },
+    "isUsePdfGeneratorForInvoice": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUsePdfGeneratorForAppraisal": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUsePdfGeneratorForEstimate": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUsePdfGeneratorForPurchase": {
+      "type": "boolean",
+      "default": false
+    },
+    "isInternalRepairTicketNumberEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isExternalRepairTicketNumberEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "startRepairTicketNumber": {
+      "type": "biginteger",
+      "default": "1"
+    },
+    "isInvoiceRepairTicketNumberEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUsePdfGeneratorForInternalJobTicket": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUsePdfGeneratorForExternalJobTicket": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

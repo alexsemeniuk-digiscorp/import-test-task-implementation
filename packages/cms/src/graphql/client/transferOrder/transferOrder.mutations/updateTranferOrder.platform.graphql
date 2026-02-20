@@ -1,0 +1,7 @@
+mutation updateTransferOrder($id: ID!, $input: TransferOrderInput!) {
+  updateTransferOrder(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

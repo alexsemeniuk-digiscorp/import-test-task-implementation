@@ -1,0 +1,8 @@
+fragment TransferOrderMin on TransferOrderEntity {
+  attributes {
+    uuid
+    transferId
+    reason
+    status
+  }
+}

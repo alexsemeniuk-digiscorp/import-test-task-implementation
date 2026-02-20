@@ -1,0 +1,71 @@
+.layout {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f7f8fa;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.title_l2 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+
+.title_l4 {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.paragraph {
+  width: 490px;
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.collapse {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.row {
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto 64px !important;
+}
+
+.text {
+  color: #626670;
+  font-size: 14px;
+}
+
+.submitBtn {
+  width: 100%;
+  max-width: 150px;
+}
+
+.alert {
+  margin: 32px;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

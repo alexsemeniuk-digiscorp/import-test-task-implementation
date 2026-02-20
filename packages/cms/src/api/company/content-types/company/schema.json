@@ -1,0 +1,176 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "website": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "leadOwner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "industry": {
+      "type": "string",
+      "required": false
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact.contact",
+      "mappedBy": "company"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "company_id"
+    },
+    "todos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::todo.todo",
+      "mappedBy": "company_id"
+    },
+    "notes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::note.note",
+      "mappedBy": "company_id"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "dealTransactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal-transaction.deal-transaction",
+      "mappedBy": "company"
+    },
+    "deals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal.deal",
+      "mappedBy": "company"
+    },
+    "fileItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::file-item.file-item",
+      "mappedBy": "company"
+    },
+    "points": {
+      "type": "float",
+      "default": 0,
+      "required": false,
+      "min": 0
+    },
+    "customFields": {
+      "type": "json"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "prospect",
+        "vendor"
+      ],
+      "default": "prospect"
+    },
+    "amountSpent": {
+      "type": "decimal"
+    },
+    "amountOwes": {
+      "type": "decimal"
+    },
+    "additionalEmails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-email.crm-additional-email",
+      "mappedBy": "company"
+    },
+    "additionalAddresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-address.crm-additional-address",
+      "mappedBy": "company"
+    },
+    "additionalPhoneNumbers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-phone-number.crm-additional-phone-number",
+      "mappedBy": "company"
+    },
+    "priceGroup": {
+      "type": "enumeration",
+      "enum": [
+        "retail",
+        "wholesale"
+      ]
+    },
+    "clearentCustomerKey": {
+      "type": "string"
+    },
+    "customCreationDate": {
+      "type": "datetime"
+    },
+    "secondAddress": {
+      "type": "string"
+    },
+    "accServiceContacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-contact.acc-service-contact",
+      "mappedBy": "company"
+    },
+    "accServiceVendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-vendor.acc-service-vendor",
+      "mappedBy": "company"
+    },
+    "accServiceBills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "mappedBy": "company"
+    }
+  }
+}

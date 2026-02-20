@@ -1,0 +1,10 @@
+query productAttributes(
+  $filters: ProductAttributeFiltersInput
+  $sort: [String]
+) {
+  productAttributes(filters: $filters, pagination: { limit: -1 }, sort: $sort) {
+    data {
+      ...ProductAttribute
+    }
+  }
+}

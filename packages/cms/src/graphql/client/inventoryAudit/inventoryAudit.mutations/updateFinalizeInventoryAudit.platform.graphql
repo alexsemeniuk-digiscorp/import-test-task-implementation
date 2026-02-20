@@ -1,0 +1,5 @@
+mutation updateFinalizeInventoryAudit(
+  $input: UpdateFinalizeInventoryAuditInput!
+) {
+  updateFinalizeInventoryAudit(input: $input)
+}

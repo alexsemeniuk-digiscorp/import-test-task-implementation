@@ -1,0 +1,21 @@
+fragment Section on ComponentUiSection {
+  id
+  visible
+  heading {
+   id
+    title
+    subtitle
+    description
+    media {
+      data {
+        ...File
+      }
+    }
+  }
+  button {
+    id
+    title
+    url
+    target
+  }
+}

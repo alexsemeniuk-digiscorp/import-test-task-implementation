@@ -1,0 +1,9 @@
+fragment ResourceMin on ResourceEntity {
+  id
+  attributes {
+    name
+    maintenanceNeeded
+    createdAt
+    uuid
+  }
+}

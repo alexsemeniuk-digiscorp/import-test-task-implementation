@@ -1,0 +1,6 @@
+fragment LeadSelect on LeadEntity {
+  id
+  attributes {
+    fullName
+  }
+}

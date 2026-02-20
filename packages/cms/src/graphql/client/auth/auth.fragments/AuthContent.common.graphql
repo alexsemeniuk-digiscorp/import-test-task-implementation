@@ -1,0 +1,14 @@
+fragment AuthContent on ComponentUiAuthContent {
+  id
+  background {
+    data {
+      ...File
+    }
+  }
+  headline {
+    ...Headline
+  }
+  advantages {
+    ...Headline
+  }
+}

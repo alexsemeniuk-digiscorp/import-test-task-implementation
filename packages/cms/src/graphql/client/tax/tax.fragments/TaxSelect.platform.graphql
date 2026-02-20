@@ -1,0 +1,6 @@
+fragment TaxSelect on TaxEntity {
+  id
+  attributes {
+    name
+  }
+}

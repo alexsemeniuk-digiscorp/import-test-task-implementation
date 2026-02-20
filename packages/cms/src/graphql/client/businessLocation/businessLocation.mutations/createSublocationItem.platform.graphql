@@ -1,0 +1,7 @@
+mutation createSubLocationItem($input: SublocationItemInput!) {
+  createSublocationItem(data: $input) {
+    data {
+      id
+    }
+  }
+}

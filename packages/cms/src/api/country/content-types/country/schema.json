@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "singularName": "country",
+    "pluralName": "countries",
+    "displayName": "INVENTORY: Country",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "countries"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

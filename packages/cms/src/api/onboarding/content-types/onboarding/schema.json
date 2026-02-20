@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "onboardings",
+  "info": {
+    "singularName": "onboarding",
+    "pluralName": "onboardings",
+    "displayName": "PLATFORM : Onboarding",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "onboarding"
+    },
+    "isCompleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLogoUpload": {
+      "type": "boolean",
+      "default": false
+    },
+    "isMainLocation": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEmailAndPhone": {
+      "type": "boolean",
+      "default": false
+    },
+    "isStoreAdded": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEmployeeAdded": {
+      "type": "boolean",
+      "default": false
+    },
+    "isStripeConnected": {
+      "type": "boolean",
+      "default": false
+    },
+    "isTwilioConnected": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCustomerImported": {
+      "type": "boolean",
+      "default": false
+    },
+    "isProductsImported": {
+      "type": "boolean",
+      "default": false
+    },
+    "isQuickBooksConnected": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation updateProductGroup($id: ID!, $input: ProductGroupInput!) {
+  updateProductGroup(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

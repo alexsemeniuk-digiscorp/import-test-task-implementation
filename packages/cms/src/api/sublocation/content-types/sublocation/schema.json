@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sublocations",
+  "info": {
+    "singularName": "sublocation",
+    "pluralName": "sublocations",
+    "displayName": "LOCATION: Sublocation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "name": {
+      "type": "string"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "sublocations"
+    },
+    "sublocationItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sublocation-item.sublocation-item",
+      "mappedBy": "sublocation"
+    },
+    "regexedId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "unique": true
+    },
+    "selling_product_order_item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-order-item.product-order-item",
+      "inversedBy": "sublocations"
+    }
+  }
+}

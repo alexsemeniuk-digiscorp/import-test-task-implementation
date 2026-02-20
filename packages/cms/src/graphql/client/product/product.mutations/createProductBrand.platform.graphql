@@ -1,0 +1,7 @@
+mutation createProductBrand($input: ProductBrandInput!) {
+  createProductBrand(data: $input) {
+    data {
+      id
+    }
+  }
+}

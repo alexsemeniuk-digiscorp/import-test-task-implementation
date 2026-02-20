@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_counts",
+  "info": {
+    "singularName": "resource-count",
+    "pluralName": "resource-counts",
+    "displayName": "ResourceCount",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "count": {
+      "type": "integer"
+    },
+    "resourceInventoryItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::resource-inventory-item.resource-inventory-item"
+    },
+    "serviceLocationInfo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-location-info.service-location-info",
+      "inversedBy": "resourceCounts"
+    },
+    "classLocationInfo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-location-info.class-location-info",
+      "inversedBy": "resourceCounts"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class.class",
+      "inversedBy": "resourceCounts"
+    }
+  }
+}

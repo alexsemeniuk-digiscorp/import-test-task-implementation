@@ -1,0 +1,7 @@
+mutation deleteDownloadUserRecords {
+  deleteDownloadUserRecords {
+    data {
+      id
+    }
+  }
+}

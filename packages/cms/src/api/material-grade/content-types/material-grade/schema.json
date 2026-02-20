@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "material_grades",
+  "info": {
+    "singularName": "material-grade",
+    "pluralName": "material-grades",
+    "displayName": "INVENTORY: Material Grade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "metalType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::metal-type.metal-type",
+      "inversedBy": "materialGrades"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

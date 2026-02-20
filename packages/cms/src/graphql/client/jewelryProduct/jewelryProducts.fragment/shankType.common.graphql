@@ -1,0 +1,6 @@
+fragment ShankStyle on ShankStyleEntity {
+  id
+  attributes {
+    name
+  }
+}

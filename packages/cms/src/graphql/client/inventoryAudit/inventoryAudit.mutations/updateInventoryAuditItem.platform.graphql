@@ -1,0 +1,31 @@
+mutation updateInventoryAuditItem($id: ID!, $input: InventoryAuditItemInput!) {
+  updateInventoryAuditItem(id: $id, data: $input) {
+    data {
+      id
+      ...InventoryAuditItemMin
+      attributes {
+        productInventoryItem {
+          data {
+            id
+            attributes {
+              product {
+                data {
+                  id
+                  attributes {
+                    name
+                    barcode
+                    files {
+                      data {
+                        ...FileMin
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

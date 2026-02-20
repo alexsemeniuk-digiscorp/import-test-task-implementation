@@ -1,0 +1,12 @@
+query pdfCatalogFiles($filters: PdfCatalogFileFiltersInput,
+  $pagination: PaginationArg = {}, 
+  $sort: [String] = []) {
+  pdfCatalogFiles(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...PdfCatalogFile
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

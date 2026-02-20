@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reports_schedules",
+  "info": {
+    "singularName": "reports-schedule",
+    "pluralName": "reports-schedules",
+    "displayName": "REPORTS: Reports Schedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "scheduleSalesReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    },
+    "scheduleTaxesReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    },
+    "scheduleInventoryReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    },
+    "scheduleMarketingReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    },
+    "scheduleCustomersReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "reportsSchedule"
+    },
+    "scheduleSalesItemReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    },
+    "scheduleDailySummaryReport": {
+      "type": "enumeration",
+      "enum": [
+        "never",
+        "daily",
+        "weekly"
+      ],
+      "default": "never"
+    }
+  }
+}

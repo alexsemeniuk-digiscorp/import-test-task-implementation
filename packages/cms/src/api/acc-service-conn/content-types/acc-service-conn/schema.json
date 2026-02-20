@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_conns",
+  "info": {
+    "singularName": "acc-service-conn",
+    "pluralName": "acc-service-conns",
+    "displayName": "Acc service conn",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "accServiceConns"
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceConns"
+    },
+    "serviceJson": {
+      "type": "json",
+      "required": true
+    },
+    "accProductMappings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-product-mapping.acc-product-mapping",
+      "mappedBy": "accServiceConn"
+    },
+    "accServiceContacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-contact.acc-service-contact",
+      "mappedBy": "accServiceConn"
+    },
+    "accServiceEntities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-entity.acc-service-entity",
+      "mappedBy": "accServiceConn"
+    },
+    "accServiceVendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-vendor.acc-service-vendor",
+      "mappedBy": "accServiceConn"
+    },
+    "isProductNotSynced": {
+      "type": "boolean",
+      "default": false
+    },
+    "isServiceNotSynced": {
+      "type": "boolean",
+      "default": false
+    },
+    "isContactNotSynced": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

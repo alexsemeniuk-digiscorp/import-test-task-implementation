@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ecommerce_details",
+  "info": {
+    "singularName": "ecommerce-detail",
+    "pluralName": "ecommerce-details",
+    "displayName": "Ecommerce Details",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "storeUrl": {
+      "type": "string",
+      "required": true
+    },
+    "accessToken": {
+      "type": "text",
+      "required": false
+    },
+    "ecommerceType": {
+      "type": "enumeration",
+      "enum": [
+        "shopify",
+        "woocommerce",
+        "magento"
+      ],
+      "required": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "ecommerceDetails"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "consumerKey": {
+      "type": "text"
+    },
+    "consumerSecret": {
+      "type": "text"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "ecommerceDetails"
+    },
+    "defaultShippingService": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "ecommerceDetails"
+    },
+    "defaultShippingProduct": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "ecommerceDetails"
+    },
+    "defaultShippingType": {
+      "type": "enumeration",
+      "enum": [
+        "service",
+        "product"
+      ],
+      "required": false
+    },
+    "productWillNotSync": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

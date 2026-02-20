@@ -1,0 +1,7 @@
+mutation updateLead($id: ID!, $input: LeadInput!) {
+  updateLead(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

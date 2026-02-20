@@ -1,0 +1,55 @@
+fragment ProductInventoryItemPos on ProductInventoryItemEntity {
+  id
+  attributes {
+    uuid
+    favorite
+    quantity
+    isNegativeCount
+    price
+    wholesalePrice
+    rentalPrice
+    tax {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    taxCollection {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    sublocation {
+      data {
+        id
+      }
+    }
+    product {
+      data {
+        id
+        attributes {
+          uuid
+          name
+          defaultPrice
+          multiplier
+          wholeSaleMultiplier
+          files(pagination: { limit: 1 }) {
+            data {
+              ...FileMin
+            }
+          }
+          rentableData {
+            data {
+              ...RentableData
+            }
+          }
+        }
+      }
+    }
+  }
+}

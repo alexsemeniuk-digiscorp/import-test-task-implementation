@@ -1,0 +1,22 @@
+query productInventoryItemMemoEvents(
+  $filters: ProductInventoryItemEventFiltersInput
+  $pagination: PaginationArg
+  $sort: [String] = []
+) {
+  productInventoryItemEvents(
+    filters: {
+      eventType: { eq: "receive" }
+      memo: { eq: true }
+      and: [$filters]
+    }
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...ProductInventoryItemEventReport
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

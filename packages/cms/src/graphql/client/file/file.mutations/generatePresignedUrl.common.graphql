@@ -1,0 +1,5 @@
+mutation generatePresignedUrl($input: GeneratePresignedUrlArgsInput!) {
+  generatePresignedUrl(input: $input) {
+    presignedUrl
+  }
+}

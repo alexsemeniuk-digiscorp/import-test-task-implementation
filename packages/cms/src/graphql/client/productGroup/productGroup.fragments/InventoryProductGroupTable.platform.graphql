@@ -1,0 +1,25 @@
+fragment InventoryProductGroupTable on ProductGroupEntity {
+  id
+  attributes {
+    name
+    description
+    createdAt
+    uuid
+    productGroupAttributes {
+      data {
+        ...ProductGroupAttribute
+      }
+    }
+    productGroupItems {
+      data {
+        attributes {
+          product {
+            data {
+              ...InventoryProductTable
+            }
+          }
+        }
+      }
+    }
+  }
+}

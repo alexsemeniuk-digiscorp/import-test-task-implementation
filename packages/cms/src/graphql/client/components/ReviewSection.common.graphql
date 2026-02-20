@@ -1,0 +1,12 @@
+fragment ReviewSection on ComponentUiCustomerReviewSection {
+  id
+  title
+  description
+  reviews(pagination: { limit: 100 }) {
+    id
+    name
+    text
+    rating
+  }
+  visible
+}

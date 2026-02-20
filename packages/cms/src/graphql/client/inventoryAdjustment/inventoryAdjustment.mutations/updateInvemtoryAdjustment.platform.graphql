@@ -1,0 +1,10 @@
+mutation updateInventoryAdjustment(
+  $id: ID!
+  $input: InventoryAdjustmentInput!
+) {
+  updateInventoryAdjustment(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

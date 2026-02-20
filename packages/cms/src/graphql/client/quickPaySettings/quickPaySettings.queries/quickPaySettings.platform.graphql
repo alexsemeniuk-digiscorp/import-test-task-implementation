@@ -1,0 +1,12 @@
+query quickPaysSetting(
+  $filters: QuickPaySettingFiltersInput
+) {
+  quickPaysSetting(filters: $filters, pagination: { limit: -1 }, sort: "createdAt:desc") {
+    data {
+      ...QuickPaySettings
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

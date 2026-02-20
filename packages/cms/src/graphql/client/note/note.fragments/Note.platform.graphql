@@ -1,0 +1,23 @@
+fragment Note on NoteEntity {
+  id
+  attributes {
+    description
+    isDefault
+    createdAt
+    contact_id {
+      data {
+        id
+      }
+    }
+    contact_id {
+      data {
+        id
+      }
+    }
+    lead_id {
+      data {
+        id
+      }
+    }
+  }
+}

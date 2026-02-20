@@ -1,0 +1,8 @@
+fragment OnboardingUser on OnboardingUserEntity {
+  id
+  attributes {
+    isCompleted
+    isNylasConnected
+    isPasswordChanged
+  }
+}

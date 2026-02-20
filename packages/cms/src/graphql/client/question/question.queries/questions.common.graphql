@@ -1,0 +1,14 @@
+query questions(
+  $filters: QuestionFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  questions(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...Question
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

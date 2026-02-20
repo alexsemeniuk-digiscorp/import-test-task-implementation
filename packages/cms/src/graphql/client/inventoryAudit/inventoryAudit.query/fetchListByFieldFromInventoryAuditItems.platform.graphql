@@ -1,0 +1,6 @@
+query fetchListByFieldFromInventoryAuditItems($uuid: String!) {
+  fetchListByFieldFromInventoryAuditItems(uuid: $uuid) {
+    names
+    barcodes
+  }
+}

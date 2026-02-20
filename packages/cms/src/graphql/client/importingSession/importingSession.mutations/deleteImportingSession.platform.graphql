@@ -1,0 +1,7 @@
+mutation deleteImportingSession($id: ID!) {
+  deleteImportingSession(id: $id) {
+    data {
+      id
+    }
+  }
+}

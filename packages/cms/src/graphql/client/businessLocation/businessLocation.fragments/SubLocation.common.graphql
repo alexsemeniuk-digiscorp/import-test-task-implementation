@@ -1,0 +1,45 @@
+fragment SubLocation on SublocationEntity {
+  id
+  ...SubLocationMin
+  attributes {
+    businessLocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    sublocationItems {
+      data {
+        id
+        attributes {
+          quantity
+          actualQty
+          scannedQty
+          productInventoryItem {
+            data {
+              id
+              attributes {
+                product {
+                  data {
+                    id
+                    attributes {
+                      name
+                      barcode
+                      files(pagination: { limit: -1 }) {
+                        data {
+                          ...FileMin
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

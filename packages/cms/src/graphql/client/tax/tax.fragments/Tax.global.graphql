@@ -1,0 +1,11 @@
+fragment Tax on TaxEntity {
+  ...TaxMin
+  id
+  attributes {
+    taxAuthority {
+      data {
+        ...TaxAuthority
+      }
+    }
+  }
+}

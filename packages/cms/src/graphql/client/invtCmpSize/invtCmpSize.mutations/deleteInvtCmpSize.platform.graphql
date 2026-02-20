@@ -1,0 +1,7 @@
+mutation deleteInvtCmpSize($id: ID!) {
+  deleteInvtCmpSize(id: $id) {
+    data {
+      ...InvtCmpSize
+    }
+  }
+}

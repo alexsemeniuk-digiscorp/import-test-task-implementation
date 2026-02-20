@@ -1,0 +1,11 @@
+query dealsSetting(
+  $filters: DealSettingFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  dealsSetting(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...DealSetting
+    }
+  }
+}

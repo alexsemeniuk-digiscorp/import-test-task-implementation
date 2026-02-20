@@ -1,0 +1,14 @@
+query tenants(
+  $filters: TenantFiltersInput, 
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  tenants(filters: $filters, pagination: $pagination, sort: $sort) {
+    data{
+    ...Tenant
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.avatarUpload {
+  margin-top: 10px;
+
+  .delete,
+  .download {
+    position: absolute;
+    top: 12px;
+    z-index: 1;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .delete {
+    right: 14px;
+    color: red;
+  }
+
+  .download {
+    left: 14px;
+  }
+
+  &:hover .avatarPreview > img {
+    opacity: 0.5;
+  }
+
+  &:hover .delete {
+    opacity: 1;
+  }
+
+  &:hover .download {
+    opacity: 1;
+  }
+
+  input {
+    display: none;
+  }
+
+  .filePreview {
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,18 @@
+fragment LeadMin on LeadEntity {
+  id
+  attributes {
+    uuid
+    email
+    fullName
+    phoneNumber
+    address
+    leadSource
+    leadStage
+    avatar {
+      data {
+        ...File
+      }
+    }
+    createdAt
+  }
+}

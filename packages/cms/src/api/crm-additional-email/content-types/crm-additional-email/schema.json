@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crm_additional_emails",
+  "info": {
+    "singularName": "crm-additional-email",
+    "pluralName": "crm-additional-emails",
+    "displayName": "CRM: Additional Email",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "email"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "additionalEmails"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "additionalEmails"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lead.lead",
+      "inversedBy": "additionalEmails"
+    }
+  }
+}

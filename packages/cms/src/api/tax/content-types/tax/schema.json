@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "taxes",
+  "info": {
+    "singularName": "tax",
+    "pluralName": "taxes",
+    "displayName": "Tax",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "rate": {
+      "type": "float",
+      "required": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "taxAuthority": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tax-authority.tax-authority",
+      "inversedBy": "taxes"
+    },
+    "fixedFee": {
+      "type": "float"
+    },
+    "perUnitFee": {
+      "type": "float"
+    },
+    "taxCollections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tax-collection.tax-collection",
+      "mappedBy": "taxes"
+    },
+    "maxTaxAmount": {
+      "type": "float"
+    },
+    "startAfterPrice": {
+      "type": "decimal"
+    },
+    "endAfterPrice": {
+      "type": "decimal"
+    },
+    "exemptionThreshold": {
+      "type": "decimal"
+    },
+    "accServiceTaxes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-tax.acc-service-tax",
+      "mappedBy": "tax"
+    }
+  }
+}

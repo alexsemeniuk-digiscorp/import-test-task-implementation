@@ -1,0 +1,16 @@
+fragment ProductAttribute on ProductAttributeEntity {
+  ...ProductAttributeMin
+  id
+  attributes {
+    productAttributeOptions {
+      data {
+        ...ProductAttributeOptionMin
+      }
+    }
+    productTypes {
+      data {
+        ...ProductType
+      }
+    }
+  }
+}

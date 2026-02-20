@@ -1,0 +1,12 @@
+fragment OrderPaymentSetting on OrderSettingEntity {
+  id
+  attributes {
+    sellingPayingAmountPercentage
+    sellingOrderManagementPayingAmountPercentage
+    purchasePayingAmountPercentage
+    purchaseOrderManagementPayingAmountPercentage
+    dueDateDays
+    isVisiblePayWithPointsPaymentButton
+    isAutoMovedToShipped
+  }
+}

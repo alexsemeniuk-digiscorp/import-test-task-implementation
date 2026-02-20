@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sublocation_items",
+  "info": {
+    "singularName": "sublocation-item",
+    "pluralName": "sublocation-items",
+    "displayName": "LOCATION: Sublocation item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 0
+    },
+    "productInventoryItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "inversedBy": "sublocationItems"
+    },
+    "scannedQty": {
+      "type": "integer"
+    },
+    "actualQty": {
+      "type": "integer"
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sublocation.sublocation",
+      "inversedBy": "sublocationItems"
+    },
+    "selling_product_order_item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-order-item.product-order-item",
+      "inversedBy": "sublocationItems"
+    }
+  }
+}

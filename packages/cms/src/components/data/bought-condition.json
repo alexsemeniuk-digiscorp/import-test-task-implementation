@@ -1,0 +1,34 @@
+{
+    "collectionName": "components_data_bought_conditions",
+    "info": {
+      "displayName": "Bought Condition",
+      "description": ""
+    },
+    "options": {},
+    "attributes": {
+      "itemType": {
+        "type": "enumeration",
+        "enum": ["product", "compositeProduct", "service"]
+      },
+      "product": {
+        "type": "relation",
+        "relation": "oneToOne",
+        "target": "api::product.product"
+      },
+      "productType": {
+        "type": "relation",
+        "relation": "oneToOne",
+        "target": "api::product-type.product-type"
+      },
+      "compositeProduct": {
+        "type": "relation",
+        "relation": "oneToOne",
+        "target": "api::composite-product.composite-product"
+      },
+      "service": {
+        "type": "relation",
+        "relation": "oneToOne",
+        "target": "api::service.service"
+      }
+    }
+  }

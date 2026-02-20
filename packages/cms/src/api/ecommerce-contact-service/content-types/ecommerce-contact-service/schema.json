@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ecommerce_contact_services",
+  "info": {
+    "singularName": "ecommerce-contact-service",
+    "pluralName": "ecommerce-contact-services",
+    "displayName": "Ecommerce Contact Services",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ecommerceContactId": {
+      "type": "string",
+      "required": true
+    },
+    "isSynced": {
+      "type": "boolean",
+      "required": true
+    },
+    "syncDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "ecommerceType": {
+      "type": "enumeration",
+      "enum": [
+        "shopify",
+        "woocommerce",
+        "magento"
+      ],
+      "required": true
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "ecommerceContactServices"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

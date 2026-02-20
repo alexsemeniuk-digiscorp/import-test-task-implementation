@@ -1,0 +1,7 @@
+mutation deleteTax($id: ID!) {
+  deleteTax(id: $id) {
+    data {
+      id
+    }
+  }
+}

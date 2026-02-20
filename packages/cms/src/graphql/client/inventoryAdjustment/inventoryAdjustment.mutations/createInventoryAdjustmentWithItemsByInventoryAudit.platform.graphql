@@ -1,0 +1,7 @@
+mutation createInventoryAdjustmentWithItemsByInventoryAudit(
+  $input: CreateInventoryAdjustmentWithItemsByInventoryAuditInput!
+) {
+  createInventoryAdjustmentWithItemsByInventoryAudit(input: $input) {
+    id
+  }
+}

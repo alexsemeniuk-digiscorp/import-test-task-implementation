@@ -1,0 +1,7 @@
+mutation deleteDownloadRecord($id: ID!) {
+  deleteDownloadRecord(id: $id) {
+    data {
+      id
+    }
+  }
+}

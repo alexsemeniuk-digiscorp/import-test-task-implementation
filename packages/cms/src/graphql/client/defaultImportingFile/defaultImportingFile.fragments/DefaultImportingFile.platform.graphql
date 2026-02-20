@@ -1,0 +1,15 @@
+fragment DefaultImportingFile on DefaultImportingFileEntity {
+  id
+  attributes {
+    createdAt
+    type
+    defaultFile {
+      data {
+        attributes {
+          url
+          name
+        }
+      }
+    }
+  }
+}

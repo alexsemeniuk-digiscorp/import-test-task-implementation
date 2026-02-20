@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_groups",
+  "info": {
+    "singularName": "product-group",
+    "pluralName": "product-groups",
+    "displayName": "Product Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "productGroupItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-group-item.product-group-item",
+      "mappedBy": "productGroup"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "productGroupAttributes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-group-attribute.product-group-attribute",
+      "inversedBy": "productGroups"
+    }
+  }
+}

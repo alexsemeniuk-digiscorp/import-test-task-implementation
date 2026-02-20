@@ -1,0 +1,15 @@
+query productInventoryItemRecords(
+  $filters: InvtItmRecordFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+  $businessLocationId: Int
+) {
+  invtItmRecords(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductInventoryItemRecord
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

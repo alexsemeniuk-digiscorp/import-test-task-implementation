@@ -1,0 +1,6 @@
+fragment Size on SizeEntity {
+  id
+  attributes {
+    name
+  }
+}

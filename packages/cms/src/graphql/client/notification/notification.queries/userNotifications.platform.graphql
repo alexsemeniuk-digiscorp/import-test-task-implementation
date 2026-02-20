@@ -1,0 +1,14 @@
+query userNotifications(
+  $filters: UserNotificationFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  userNotifications(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...UserNotification
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,18 @@
+query productGroupsAttributes(
+  $filters: ProductGroupAttributeFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  productGroupAttributes(
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...ProductGroupAttribute
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

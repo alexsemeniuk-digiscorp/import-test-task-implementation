@@ -1,0 +1,14 @@
+query knotStyles(
+  $filters: KnotStyleFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  knotStyles(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...KnotStyle
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

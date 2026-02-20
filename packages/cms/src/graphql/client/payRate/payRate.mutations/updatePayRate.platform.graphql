@@ -1,0 +1,7 @@
+mutation updatePayRate($id: ID!, $input: PayRateInput!) {
+  updatePayRate(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,27 @@
+fragment InventoryAdjustmentsTable on InventoryAdjustmentEntity {
+  id
+  ...InventoryAdjustmentMin
+  attributes {
+    location {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    sublocation {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    employee {
+      data {
+        attributes {
+          fullName
+        }
+      }
+    }
+  }
+}

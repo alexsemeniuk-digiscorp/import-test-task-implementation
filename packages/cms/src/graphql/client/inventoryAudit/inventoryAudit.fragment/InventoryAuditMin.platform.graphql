@@ -1,0 +1,12 @@
+fragment InventoryAuditMin on InventoryAuditEntity {
+  id
+  attributes {
+    uuid
+    auditDate
+    auditId
+    name
+    finalize
+    adjusted
+    isAdjustmentRequired
+  }
+}

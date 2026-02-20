@@ -1,0 +1,17 @@
+fragment InvtCmpTrckItm on InvtCmpTrckItmEntity {
+  id
+  attributes {
+    name
+    quantity
+    price
+    vendor
+    invoice
+    note
+    itemId
+    costTrackerInfo {
+      data {
+        ...InvtCmpTrckMin
+      }
+    }
+  }
+}

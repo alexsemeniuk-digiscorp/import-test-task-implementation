@@ -1,0 +1,10 @@
+mutation updateProductInventoryItemEvent(
+  $id: ID!
+  $input: ProductInventoryItemEventInput!
+) {
+  updateProductInventoryItemEvent(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

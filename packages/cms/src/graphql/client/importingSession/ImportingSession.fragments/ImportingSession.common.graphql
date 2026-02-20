@@ -1,0 +1,37 @@
+fragment ImportingSession on ImportingSessionEntity {
+  id
+  attributes {
+    regexedId
+    type
+    state
+    createdAt
+    cmpltdImports {
+      data {
+        ...File
+      }
+    }
+    uploadedBy {
+      data {
+        id
+        attributes {
+          fullName
+        }
+      }
+    }
+    updImports {
+      data {
+        ...File
+      }
+    }
+    splImports {
+      data {
+        ...File
+      }
+    }
+    srcFile {
+      data {
+        ...File
+      }
+    }
+  }
+}

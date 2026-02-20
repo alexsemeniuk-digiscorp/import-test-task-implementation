@@ -1,0 +1,7 @@
+query tenantBySlug($tenantSlug: String!) {
+  tenants(filters: { slug: { eq: $tenantSlug } }) {
+    data {
+      ...Tenant
+    }
+  }
+}

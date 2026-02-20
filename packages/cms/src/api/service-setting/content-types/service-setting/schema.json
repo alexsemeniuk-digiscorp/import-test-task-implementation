@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services_setting",
+  "info": {
+    "singularName": "service-setting",
+    "pluralName": "services-setting",
+    "displayName": "SETTINGS: Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "defaultPerformer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

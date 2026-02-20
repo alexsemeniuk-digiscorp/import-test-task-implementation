@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sequence_step_infos",
+  "info": {
+    "singularName": "sequence-step-info",
+    "pluralName": "sequence-step-infos",
+    "displayName": "MARKETING: Sequence Step Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "sequenceStep": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sequence-step.sequence-step",
+      "inversedBy": "info"
+    }
+  }
+}

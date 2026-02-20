@@ -1,0 +1,7 @@
+mutation deleteQuestion($id: ID!) {
+  deleteQuestion(id: $id) {
+    data {
+      id
+    }
+  }
+}

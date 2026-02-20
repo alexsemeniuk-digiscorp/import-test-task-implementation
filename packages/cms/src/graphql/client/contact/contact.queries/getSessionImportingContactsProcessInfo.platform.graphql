@@ -1,0 +1,8 @@
+query getSessionImportingContactsProcessInfo(
+  $input: SessionImportingProcessInfoInput!
+) {
+  getSessionImportingContactsProcessInfo(input: $input) {
+    totalFields
+    processedFields
+  }
+}

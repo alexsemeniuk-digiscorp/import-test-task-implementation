@@ -1,0 +1,11 @@
+query onboardings(
+  $filters: OnboardingFiltersInput!
+  $pagination: PaginationArg! = {}
+  $sort: [String] = []
+) {
+  onboardings(sort: $sort, filters: $filters, pagination: $pagination) {
+    data {
+      ...Onboarding
+    }
+  }
+}

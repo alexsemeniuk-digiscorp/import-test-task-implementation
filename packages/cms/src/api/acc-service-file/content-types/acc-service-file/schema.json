@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_files",
+  "info": {
+    "singularName": "acc-service-file",
+    "pluralName": "acc-service-files",
+    "displayName": "Acc service file"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+    "attributes": {
+    "syncToken": {
+      "type": "string",
+      "required": true
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "accServiceOrder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-order.acc-service-order",
+      "inversedBy": "accServiceFiles"
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "accServiceBill": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "inversedBy": "accServiceFiles"
+    }
+  }
+}

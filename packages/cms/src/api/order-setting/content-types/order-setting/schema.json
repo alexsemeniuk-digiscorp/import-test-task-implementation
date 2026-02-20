@@ -1,0 +1,139 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders_setting",
+  "info": {
+    "singularName": "order-setting",
+    "pluralName": "orders-setting",
+    "displayName": "SETTINGS: Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderNote": {
+      "type": "boolean",
+      "default": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "reviewLink": {
+      "type": "string"
+    },
+    "sellingPayingAmountPercentage": {
+      "type": "float",
+      "default": 100,
+      "max": 100,
+      "min": 0
+    },
+    "purchasePayingAmountPercentage": {
+      "type": "float",
+      "default": 100,
+      "max": 100,
+      "min": 0
+    },
+    "dueDateDays": {
+      "type": "integer"
+    },
+    "isQuickPayEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVisibleProductItems": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleCompositeProductItems": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleServiceItems": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleMembershipItems": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVisibleClassItems": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVisibleDiscountItems": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleSearchBarInPos": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleSellOrders": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleLayawayOrders": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleRentOrders": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVisibleTradeInOrders": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisiblePurchaseOrders": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleEstimateOrders": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVisiblePayWithPointsPaymentButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShippedDatePeriodEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isReceiveDatePeriodEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "sellingOrderManagementPayingAmountPercentage": {
+      "type": "float",
+      "default": 100,
+      "max": 100,
+      "min": 0
+    },
+    "purchaseOrderManagementPayingAmountPercentage": {
+      "type": "float",
+      "default": 100,
+      "max": 100,
+      "min": 0
+    },
+    "isAutomaticallyMoveOrderToReadyStage": {
+      "type": "boolean",
+      "default": true
+    },
+    "isAutoSendNotification": {
+      "type": "boolean",
+      "default": true
+    },
+    "isAutoSendReview": {
+      "type": "boolean",
+      "default": true
+    },
+    "isAutoMovedToShipped": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

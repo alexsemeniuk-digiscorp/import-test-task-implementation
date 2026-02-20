@@ -1,0 +1,10 @@
+mutation updateResourceInventoryItem(
+  $id: ID!
+  $input: ResourceInventoryItemInput!
+) {
+  updateResourceInventoryItem(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

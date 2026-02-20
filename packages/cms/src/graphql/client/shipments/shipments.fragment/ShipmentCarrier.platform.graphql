@@ -1,0 +1,6 @@
+fragment ShipmentCarrier on ShipmentCarrierEntity {
+  id
+  attributes {
+    name
+  }
+}

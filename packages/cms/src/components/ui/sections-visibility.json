@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_ui_sections_visibilities",
+  "info": {
+    "displayName": "SectionsVisibility",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pageTitle": {
+      "type": "string"
+    },
+    "isFooterVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "isFollowUsVisible": {
+      "type": "boolean",
+      "default": false
+    },
+    "isSubscribeNewsLetterVisible": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCustomerReviewVisible": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBlogVisible": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query linkTypes(
+  $filters: LinkTypeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  linkTypes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...LinkType
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

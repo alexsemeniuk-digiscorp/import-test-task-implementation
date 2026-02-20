@@ -1,0 +1,11 @@
+query businessLocationsSelect(
+  $filters: BusinessLocationFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  businessLocations(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...BusinessLocationSelect
+    }
+  }
+}

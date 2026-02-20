@@ -1,0 +1,14 @@
+query linkStyles(
+  $filters: LinkStyleFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  linkStyles(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...LinkStyle
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

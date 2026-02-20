@@ -1,0 +1,14 @@
+query pieces(
+  $filters: PieceFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  pieces(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...Piece
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

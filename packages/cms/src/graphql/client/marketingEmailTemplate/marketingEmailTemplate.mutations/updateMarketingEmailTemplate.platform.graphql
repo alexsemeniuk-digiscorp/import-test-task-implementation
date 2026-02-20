@@ -1,0 +1,10 @@
+mutation updateMarketingEmailTemplate(
+  $id: ID!
+  $input: MarketingEmailTemplateInput!
+) {
+  updateMarketingEmailTemplate(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

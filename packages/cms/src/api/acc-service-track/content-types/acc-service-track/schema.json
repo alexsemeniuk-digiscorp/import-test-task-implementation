@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_tracks",
+  "info": {
+    "singularName": "acc-service-track",
+    "pluralName": "acc-service-tracks",
+    "displayName": "Acc service track"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "accServiceTrack"
+    }
+  }
+}

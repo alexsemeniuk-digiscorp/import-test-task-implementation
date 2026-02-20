@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_serializes",
+  "info": {
+    "singularName": "inventory-serialize",
+    "pluralName": "inventory-serializes",
+    "displayName": "INVENTORY: Serialize"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    },
+    "sellingProductOrderItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-order-item.product-order-item",
+      "inversedBy": "serializes"
+    },
+    "productInventoryItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "inversedBy": "serializes"
+    },
+    "returnItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::return-item.return-item",
+      "inversedBy": "serializes"
+    },
+    "inventoryAdjustmentItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::inventory-adjustment-item.inventory-adjustment-item",
+      "inversedBy": "serializes"
+    },
+    "transferOrderItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::transfer-order-item.transfer-order-item",
+      "inversedBy": "serializes"
+    },
+    "salesItemReport": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sales-item-report.sales-item-report",
+      "mappedBy": "serialize"
+    }
+  }
+}

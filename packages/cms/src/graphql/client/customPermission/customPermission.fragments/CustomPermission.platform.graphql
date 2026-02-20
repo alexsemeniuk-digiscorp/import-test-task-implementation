@@ -1,0 +1,11 @@
+fragment CustomPermission on CustomPermissionEntity {
+  id
+  attributes {
+    permissions
+    tenant {
+      data {
+        id
+      }
+    }
+  }
+}

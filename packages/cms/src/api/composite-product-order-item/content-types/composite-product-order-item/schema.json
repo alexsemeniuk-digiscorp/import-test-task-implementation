@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "composite_product_order_items",
+  "info": {
+    "singularName": "composite-product-order-item",
+    "pluralName": "composite-product-order-items",
+    "displayName": "SELLING: Composite Product Order Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "purchaseType": {
+      "type": "enumeration",
+      "enum": [
+        "buy",
+        "rent"
+      ]
+    },
+    "note": {
+      "type": "text"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "compositeProducts"
+    },
+    "itemId": {
+      "type": "string",
+      "required": true,
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "discounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discount.discount"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "compositeProduct": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::composite-product-location-info.composite-product-location-info",
+      "inversedBy": "compositeProductOrderItems"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "published"
+    },
+    "isShowInvoiceNote": {
+      "type": "boolean",
+      "default": true
+    },
+    "isVisibleInDocs": {
+      "type": "boolean",
+      "default": true
+    },
+    "productOrderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-order-item.product-order-item",
+      "mappedBy": "compositeProductOrderItem"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    }
+  }
+}

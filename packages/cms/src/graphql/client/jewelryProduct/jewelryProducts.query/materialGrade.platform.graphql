@@ -1,0 +1,14 @@
+query materialGrades(
+  $filters: MaterialGradeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  materialGrades(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...MaterialGrade
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

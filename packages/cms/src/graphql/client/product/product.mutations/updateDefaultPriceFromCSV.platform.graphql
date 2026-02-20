@@ -1,0 +1,5 @@
+mutation updateDefaultPriceFromCSV(
+  $input: UpdateDefaultPriceFromCSVInput!
+) {
+  updateDefaultPriceFromCSV(input: $input)
+}

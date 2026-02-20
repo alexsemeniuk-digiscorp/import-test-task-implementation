@@ -1,0 +1,14 @@
+fragment Question on QuestionEntity {
+  id
+  attributes {
+    title
+    answer
+    active
+    createdAt
+    owner {
+      data {
+        id
+      }
+    }
+  }
+}

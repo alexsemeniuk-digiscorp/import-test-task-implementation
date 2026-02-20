@@ -1,0 +1,7 @@
+mutation createInventoryAuditItem($input: InventoryAuditItemInput!) {
+  createInventoryAuditItem(data: $input) {
+    data {
+      id
+    }
+  }
+}

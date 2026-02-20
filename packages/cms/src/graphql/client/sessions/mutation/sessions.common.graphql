@@ -1,0 +1,14 @@
+mutation sessions {
+  sessions {
+    currentSession {
+      device
+      browser
+      ip
+    }
+    otherSessions {
+      device
+      browser
+      ip
+    }
+  }
+}

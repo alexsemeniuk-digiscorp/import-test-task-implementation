@@ -1,0 +1,7 @@
+mutation updateShipment($id: ID!, $input: ShipmentInput!) {
+  updateShipment(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

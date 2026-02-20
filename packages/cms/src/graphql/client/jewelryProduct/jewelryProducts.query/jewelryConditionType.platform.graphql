@@ -1,0 +1,14 @@
+query jewelryConditionTypes(
+  $filters: ConditionTypeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  conditionTypes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...JewelryConditionType
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

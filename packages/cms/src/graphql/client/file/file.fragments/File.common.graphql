@@ -1,0 +1,11 @@
+fragment File on UploadFileEntity {
+  id
+  attributes {
+    previewUrl
+    alternativeText
+    url
+    size
+    name
+    mime
+  }
+}

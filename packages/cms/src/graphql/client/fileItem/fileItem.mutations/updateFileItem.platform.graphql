@@ -1,0 +1,7 @@
+mutation updateFileItem($id: ID!, $input: FileItemInput!) {
+  updateFileItem(id: $id, data: $input) {
+    data {
+      ...FileItem
+    }
+  }
+}

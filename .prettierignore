@@ -1,0 +1,6 @@
+**/**/dist/*
+**/**/build/*
+**/**/node_modules/*
+**/**/*.d.ts
+packages/website/src/graphql/index.ts
+packages/customer-website/src/graphql/index.ts

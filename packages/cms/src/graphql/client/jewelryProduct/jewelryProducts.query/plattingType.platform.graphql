@@ -1,0 +1,14 @@
+query plattingTypes(
+  $filters: PlattingTypeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  plattingTypes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...PlattingType
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

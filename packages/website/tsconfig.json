@@ -1,0 +1,32 @@
+{
+  "extends": "@bn-digital/typescript-config/react",
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": ".",
+    "paths": {
+      // top level paths
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"],
+      "@router/*": ["src/router/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@assets/*": ["src/assets/*"],
+      // component paths
+      "@app": ["src/components/app"],
+      "@app/*": ["src/components/app/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "@form": ["src/components/form"],
+      "@form/*": ["src/components/form/*"],
+      "@filters/*": ["src/components/filters/*"],
+      "@drawer": ["src/components/drawer"],
+      "@drawer/*": ["src/components/drawer/*"],
+      // module paths
+      "@auth/*": ["src/components/auth/*"],
+      "@crm/*": ["src/components/crm/*"],
+      "@inventory/*": ["src/components/inventory/*"]
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "vite.config.ts"]
+}

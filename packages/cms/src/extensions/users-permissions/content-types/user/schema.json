@@ -1,0 +1,247 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 8,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordTokenExpiration": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "firstName": {
+      "type": "string",
+      "required": false
+    },
+    "lastName": {
+      "type": "string",
+      "required": false
+    },
+    "phoneNumber": {
+      "type": "string",
+      "minLength": 10
+    },
+    "leads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lead.lead",
+      "mappedBy": "user"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "users"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "sales"
+    },
+    "mail_templates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mail-template.mail-template",
+      "mappedBy": "owner"
+    },
+    "payRate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pay-rate.pay-rate",
+      "mappedBy": "user"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::business-location.business-location",
+      "mappedBy": "users"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "owner"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question",
+      "mappedBy": "owner"
+    },
+    "rate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rate.rate",
+      "mappedBy": "user"
+    },
+    "fileItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::file-item.file-item",
+      "mappedBy": "uploadedBy"
+    },
+    "birthdayDate": {
+      "type": "date"
+    },
+    "shipmentCards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shipment-card.shipment-card",
+      "mappedBy": "owner"
+    },
+    "conversations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::conversation.conversation",
+      "mappedBy": "user"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead"
+    },
+    "reportsSchedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reports-schedule.reports-schedule",
+      "inversedBy": "user"
+    },
+    "nylasConnection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::nylas-connection.nylas-connection",
+      "inversedBy": "user"
+    },
+    "onboardingUser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::onboarding-user.onboarding-user",
+      "mappedBy": "user"
+    },
+    "exceeded_service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exceeded-service.exceeded-service",
+      "mappedBy": "employee"
+    },
+    "service_performer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-performer.service-performer",
+      "inversedBy": "performer"
+    },
+    "schedulingAppointments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scheduling-appointment.scheduling-appointment",
+      "mappedBy": "user"
+    },
+    "clearentCustomerKey": {
+      "type": "string",
+      "mappedBy": "users"
+    },
+    "salesCommission": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sales-commission.sales-commission",
+      "mappedBy": "user"
+    },
+    "preferredCurrency": {
+      "type": "string"
+    },
+    "defaultRoute": {
+      "type": "string"
+    },
+    "trackers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::time-tracker.time-tracker",
+      "mappedBy": "user"
+    },
+    "isGoogleAddressInputEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "defaultPaymentTerminalId": {
+      "type": "string"
+    }
+  }
+}

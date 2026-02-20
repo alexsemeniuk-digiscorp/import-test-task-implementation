@@ -1,0 +1,19 @@
+fragment ResourceInventoryItem on ResourceInventoryItemEntity {
+  id
+  attributes {
+    quantity
+    store {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    resource {
+      data {
+        ...ResourceMin
+      }
+    }
+  }
+}

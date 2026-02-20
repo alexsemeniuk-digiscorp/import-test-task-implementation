@@ -1,0 +1,10 @@
+fragment ProductInventoryItemEventMin on ProductInventoryItemEventEntity {
+  id
+  attributes {
+    eventType
+    remainingQuantity
+    change
+    receiveDate
+    itemCost
+  }
+}

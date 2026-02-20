@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_locations",
+  "info": {
+    "singularName": "task-location",
+    "pluralName": "task-locations",
+    "displayName": "Task Location"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

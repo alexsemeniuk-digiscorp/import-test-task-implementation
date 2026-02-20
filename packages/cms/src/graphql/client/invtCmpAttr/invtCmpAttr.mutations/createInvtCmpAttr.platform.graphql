@@ -1,0 +1,7 @@
+mutation createInvtCmpAttr($input: InvtCmpAttrInput!) {
+  createInvtCmpAttr(data: $input) {
+    data {
+      ...InvtCmpAttr
+    }
+  }
+}

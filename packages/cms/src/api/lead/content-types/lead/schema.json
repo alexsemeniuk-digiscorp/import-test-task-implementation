@@ -1,0 +1,149 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "Lead",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": false
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "leads"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "leadOwner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "uuid": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "lead_id"
+    },
+    "todos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::todo.todo",
+      "mappedBy": "lead_id"
+    },
+    "notes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::note.note",
+      "mappedBy": "lead_id"
+    },
+    "deals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal.deal",
+      "mappedBy": "lead"
+    },
+    "fileItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::file-item.file-item",
+      "mappedBy": "lead"
+    },
+    "campaignEnrolledLeads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign-enrolled-lead.campaign-enrolled-lead",
+      "mappedBy": "lead"
+    },
+    "birthdayDate": {
+      "type": "date"
+    },
+    "customFields": {
+      "type": "json"
+    },
+    "presentContact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact",
+      "mappedBy": "pastLead"
+    },
+    "leadSource": {
+      "type": "enumeration",
+      "enum": [
+        "walk in",
+        "external referral",
+        "online store",
+        "website",
+        "advertisement",
+        "google ad",
+        "facebook ad",
+        "instagram",
+        "tik tok",
+        "google search",
+        "unknown"
+      ]
+    },
+    "leadStage": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "success",
+        "warning",
+        "error"
+      ]
+    },
+    "additionalEmails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-email.crm-additional-email",
+      "mappedBy": "lead"
+    },
+    "additionalAddresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-address.crm-additional-address",
+      "mappedBy": "lead"
+    },
+    "additionalPhoneNumbers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-phone-number.crm-additional-phone-number",
+      "mappedBy": "lead"
+    }
+  }
+}

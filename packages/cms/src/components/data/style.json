@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_data_styles",
+  "info": {
+    "displayName": "Style",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "fillColor": {
+      "type": "string"
+    },
+    "fontFamily": {
+      "type": "string"
+    },
+    "ignoreDefaultStyle": {
+      "type": "boolean"
+    },
+    "image": {
+      "type": "text"
+    },
+    "labelPadding": {
+      "type": "integer"
+    },
+    "overflow": {
+      "type": "string"
+    },
+    "rotation": {
+      "type": "integer"
+    },
+    "shape": {
+      "type": "string"
+    },
+    "spacing": {
+      "type": "integer"
+    },
+    "strokeColor": {
+      "type": "string"
+    },
+    "strokeWidth": {
+      "type": "integer"
+    },
+    "whiteSpace": {
+      "type": "string"
+    },
+    "fontSize": {
+      "type": "integer"
+    }
+  }
+}

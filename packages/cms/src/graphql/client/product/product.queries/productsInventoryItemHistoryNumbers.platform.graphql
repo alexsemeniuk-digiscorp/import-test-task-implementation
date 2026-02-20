@@ -1,0 +1,9 @@
+query productsInventoryItemHistoryNumbers($id: ID!) {
+  productsInventoryItemHistoryNumbers(id: $id) {
+    averageCost
+    owned
+    memo
+    laidAway
+    purchase
+  }
+}

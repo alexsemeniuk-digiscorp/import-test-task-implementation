@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "default_importing_files",
+  "info": {
+    "singularName": "default-importing-file",
+    "pluralName": "default-importing-files",
+    "displayName": "Default Importing File",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "contacts",
+        "products",
+        "orders",
+        "contactRelations",
+        "wishlist",
+        "companies"
+      ]
+    },
+    "defaultFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

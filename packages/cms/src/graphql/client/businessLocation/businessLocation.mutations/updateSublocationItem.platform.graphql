@@ -1,0 +1,7 @@
+mutation updateSublocationItem($id: ID!, $input: SublocationItemInput!) {
+  updateSublocationItem(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

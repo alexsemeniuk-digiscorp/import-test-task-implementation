@@ -1,0 +1,14 @@
+mutation createProductInventoryItem($input: ProductInventoryItemInput!) {
+  createProductInventoryItem(data: $input) {
+    data {
+      id
+      attributes {
+        businessLocation {
+          data {
+            id
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.drawer {
+  :global(.ant-drawer-header-title) {
+    flex-direction: row-reverse;
+    color: inherit;
+
+    div {
+      color: inherit;
+    }
+  }
+
+  :global(.ant-drawer-body) {
+    padding: 0 !important;
+  }
+
+  :global(.ant-drawer-close) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+  }
+}

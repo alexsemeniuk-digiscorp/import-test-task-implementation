@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contract_templates",
+  "info": {
+    "singularName": "contract-template",
+    "pluralName": "contract-templates",
+    "displayName": "CONTRACTS: ContractTemplate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "companySignature": {
+      "type": "richtext"
+    },
+    "companySignName": {
+      "type": "string"
+    },
+    "companySignDate": {
+      "type": "datetime"
+    },
+    "templateId": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

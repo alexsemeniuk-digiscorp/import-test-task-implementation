@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_notifications",
+  "info": {
+    "singularName": "chat-notification",
+    "pluralName": "chat-notifications",
+    "displayName": "MESSAGING: Chat Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "conversation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::conversation.conversation",
+      "inversedBy": "chatNotifications"
+    },
+    "webChatConversation": {
+      "type": "string"
+    }
+  }
+}

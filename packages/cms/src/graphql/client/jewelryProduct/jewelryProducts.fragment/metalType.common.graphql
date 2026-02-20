@@ -1,0 +1,11 @@
+fragment MetalType on MetalTypeEntity {
+  id
+  attributes {
+    name
+    materialGrades {
+      data {
+        ...MaterialGrade
+      }
+    }
+  }
+}

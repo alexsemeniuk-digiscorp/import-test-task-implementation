@@ -1,0 +1,9 @@
+fragment LocalizationSetting on LocalizationSettingEntity {
+  id
+  attributes {
+    createdAt
+    dateFormat
+    timeZone
+    timeFormat
+  }
+}

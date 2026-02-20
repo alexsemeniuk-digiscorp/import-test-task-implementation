@@ -1,0 +1,6 @@
+fragment DesignStyle on DesignStyleEntity {
+  id
+  attributes {
+    name
+  }
+}

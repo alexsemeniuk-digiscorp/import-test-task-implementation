@@ -1,0 +1,14 @@
+query invtCmpTrckItms(
+  $filters: InvtCmpTrckItmFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  invtCmpTrckItms(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InvtCmpTrckItm
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

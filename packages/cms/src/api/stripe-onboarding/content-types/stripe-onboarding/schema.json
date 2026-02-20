@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stripe_onboardings",
+  "info": {
+    "singularName": "stripe-onboarding",
+    "pluralName": "stripe-onboardings",
+    "displayName": "Stripe Onboarding",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "accountStatus": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "accountId": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "stripe_onboarding"
+    }
+  }
+}

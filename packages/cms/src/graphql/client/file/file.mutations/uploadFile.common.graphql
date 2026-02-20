@@ -1,0 +1,7 @@
+mutation uploadFile($file: Upload!, $ref: String, $refId: ID, $field: String) {
+  upload(file: $file, ref: $ref, refId: $refId, field: $field) {
+    data {
+      ...File
+    }
+  }
+}

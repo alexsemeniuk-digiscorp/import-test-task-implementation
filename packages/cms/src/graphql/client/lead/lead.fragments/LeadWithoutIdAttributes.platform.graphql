@@ -1,0 +1,15 @@
+fragment LeadWithoutIdAttributes on Lead {
+  uuid
+  email
+  fullName
+  phoneNumber
+  address
+  leadSource
+  leadStage
+  avatar {
+    data {
+      ...File
+    }
+  }
+  createdAt
+}

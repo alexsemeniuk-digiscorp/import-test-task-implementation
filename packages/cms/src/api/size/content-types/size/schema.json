@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sizes",
+  "info": {
+    "singularName": "size",
+    "pluralName": "sizes",
+    "displayName": "INVENTORY: Size",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "sizes"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

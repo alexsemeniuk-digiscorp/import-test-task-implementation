@@ -1,0 +1,12 @@
+fragment ProductInventoryItemRecordMin on InvtItmRecordEntity {
+  id
+  attributes {
+    createdAt
+    age
+    soldDate
+    grossMargin
+    price
+    memoTaken
+    memoSold
+  }
+}

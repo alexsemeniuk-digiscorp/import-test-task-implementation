@@ -1,0 +1,11 @@
+query ecommerceCustomAppServices(
+  $filters: EcommerceCustomAppServiceFiltersInput!
+  $pagination: PaginationArg! = {}
+  $sort: [String] = []
+) {
+  ecommerceCustomAppServices(sort: $sort, filters: $filters, pagination: $pagination) {
+    data {
+      ...EcommerceCustomAppService
+    }
+  }
+}

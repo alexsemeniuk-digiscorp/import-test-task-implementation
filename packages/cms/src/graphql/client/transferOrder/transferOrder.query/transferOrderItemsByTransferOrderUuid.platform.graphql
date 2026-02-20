@@ -1,0 +1,16 @@
+query transferOrderItemsByTransferOrderUuid(
+  $uuid: String!
+  $pagination: PaginationArg = {}
+) {
+  transferOrderItems(
+    filters: { transferOrder: { uuid: { eq: $uuid } } }
+    pagination: $pagination
+  ) {
+    data {
+      ...TransferOrderItem
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation createSize($input: SizeInput!) {
+  createSize(data: $input) {
+    data {
+      ...Size
+    }
+  }
+}

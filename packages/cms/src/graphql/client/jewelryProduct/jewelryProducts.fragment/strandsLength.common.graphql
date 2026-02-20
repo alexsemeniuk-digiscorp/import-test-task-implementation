@@ -1,0 +1,6 @@
+fragment StrandsLength on StrandsLengthEntity {
+  id
+  attributes {
+    name
+  }
+}

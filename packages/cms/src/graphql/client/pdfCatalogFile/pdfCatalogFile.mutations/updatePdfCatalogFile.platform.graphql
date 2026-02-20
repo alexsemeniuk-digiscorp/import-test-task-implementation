@@ -1,0 +1,10 @@
+mutation updatePdfCatalogFile(
+  $id: ID!
+  $input: PdfCatalogFileInput!
+) {
+  updatePdfCatalogFile(id: $id, data: $input) {
+    data {
+      ...PdfCatalogFile
+    }
+  }
+}

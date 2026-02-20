@@ -1,0 +1,7 @@
+query notificationSettings($filters: SettingNotificationFiltersInput) {
+  settingNotifications(filters: $filters) {
+    data {
+      ...NotificationSetting
+    }
+  }
+}

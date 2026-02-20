@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "box_papers",
+  "info": {
+    "singularName": "box-paper",
+    "pluralName": "box-papers",
+    "displayName": "INVENTORY: Box Paper",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "boxPapers"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

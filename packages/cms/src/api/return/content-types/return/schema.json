@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "returns",
+  "info": {
+    "singularName": "return",
+    "pluralName": "returns",
+    "displayName": "Return",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "returns"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "returnDate": {
+      "type": "datetime"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "returnMethod": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::return-method.return-method"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "full",
+        "partial"
+      ],
+      "required": true,
+      "default": "full"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "returnItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::return-item.return-item",
+      "mappedBy": "return"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "status": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::return-status.return-status"
+    }
+  }
+}

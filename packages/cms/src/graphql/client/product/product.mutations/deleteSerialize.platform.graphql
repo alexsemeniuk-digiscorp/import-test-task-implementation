@@ -1,0 +1,7 @@
+mutation deleteSerialize($id: ID!) {
+  deleteInventorySerialize(id: $id) {
+    data {
+      id
+    }
+  }
+}

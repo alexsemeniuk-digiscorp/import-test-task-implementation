@@ -1,0 +1,11 @@
+query documentPermissions(
+  $filters: DocumentPermissionFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  documentPermissions(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...DocumentPermission
+    }
+  }
+}

@@ -1,0 +1,12 @@
+export const COMPANIES_EXPECTED_VALUES = [
+  'NAME',
+  'EMAIL',
+  'PHONE NUMBER',
+  'ADDRESS',
+  'SECOND ADDRESS',
+  'CREATED DATE',
+  'POINTS',
+  'TYPE',
+  'PRICE GROUP',
+  'AVATAR ID',
+];

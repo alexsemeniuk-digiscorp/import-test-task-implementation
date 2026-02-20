@@ -1,0 +1,14 @@
+fragment ShipmentCardMin on ShipmentCardEntity {
+  id
+  attributes {
+    firstName
+    lastName
+    email
+    streetName
+    apartment
+    companyName
+    postcode
+    phoneNumber
+    isDefault
+  }
+}

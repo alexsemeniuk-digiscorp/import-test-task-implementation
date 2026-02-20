@@ -1,0 +1,11 @@
+fragment FileItem on FileItemEntity {
+  ...FileItemMin
+  id
+  attributes {
+    uploadedBy {
+      data {
+        ...UserMin
+      }
+    }
+  }
+}

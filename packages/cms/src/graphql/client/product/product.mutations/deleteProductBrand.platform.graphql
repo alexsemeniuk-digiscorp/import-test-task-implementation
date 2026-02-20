@@ -1,0 +1,7 @@
+mutation deleteProductBrand($id: ID!) {
+  deleteProductBrand(id: $id) {
+    data {
+      id
+    }
+  }
+}

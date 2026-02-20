@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "twilio_connections",
+  "info": {
+    "singularName": "twilio-connection",
+    "pluralName": "twilio-connections",
+    "displayName": "Twilio Connection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "twilioConnection"
+    },
+    "messagingServiceSid": {
+      "type": "text"
+    },
+    "token": {
+      "type": "text"
+    },
+    "conversationServiceSid": {
+      "type": "text"
+    },
+    "keySid": {
+      "type": "text"
+    },
+    "friendlyName": {
+      "type": "string"
+    },
+    "accountSid": {
+      "type": "text"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "transcriptionEnabled": {
+      "type": "boolean"
+    },
+    "transcriptionServiceSid": {
+      "type": "string"
+    },
+    "keySecret": {
+      "type": "string"
+    },
+    "allowedOrigins": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.set"
+    },
+    "flexDeploymentKeyWebChat": {
+      "type": "string"
+    },
+    "flexAccountSid": {
+      "type": "string"
+    },
+    "flexAccountToken": {
+      "type": "string"
+    },
+    "waNumber": {
+      "type": "string"
+    }
+  }
+}

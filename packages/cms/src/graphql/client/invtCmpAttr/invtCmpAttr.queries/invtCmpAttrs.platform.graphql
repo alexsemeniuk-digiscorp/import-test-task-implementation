@@ -1,0 +1,14 @@
+query invtCmpAttrs(
+  $filters: InvtCmpAttrFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  invtCmpAttrs(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InvtCmpAttr
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

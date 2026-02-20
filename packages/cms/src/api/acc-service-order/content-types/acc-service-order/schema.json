@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_orders",
+  "info": {
+    "singularName": "acc-service-order",
+    "pluralName": "acc-service-orders",
+    "displayName": "Acc service order"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "syncToken": {
+      "type": "string"
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "sellingOrder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "accServiceOrders"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceOrders"
+    },
+    "accServiceFiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-file.acc-service-file",
+      "mappedBy": "accServiceOrder"
+    },
+    "invoiceLineItems": {
+      "type": "json"
+    }
+  }
+}

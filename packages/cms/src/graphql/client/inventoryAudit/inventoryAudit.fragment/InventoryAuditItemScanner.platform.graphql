@@ -1,0 +1,27 @@
+fragment InventoryAuditItemScanner on InventoryAuditItemEntity {
+  id
+  ...InventoryAuditItemMin
+  attributes {
+    productInventoryItem {
+      data {
+        id
+        attributes {
+          product {
+            data {
+              id
+              attributes {
+                barcode
+              }
+            }
+          }
+          sublocationItems {
+            data {
+              id
+              ...SubLocationItemMin
+            }
+          }
+        }
+      }
+    }
+  }
+}

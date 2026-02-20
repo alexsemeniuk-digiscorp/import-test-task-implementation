@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_data_bulk_products_ai_prompts",
+  "info": {
+    "displayName": "Bulk Products AI Prompt"
+  },
+  "options": {},
+  "attributes": {
+    "productName": {
+      "type": "text"
+    },
+    "MPN": {
+      "type": "text"
+    },
+    "quantity": {
+      "type": "text"
+    },
+    "unit": {
+      "type": "text"
+    },
+    "weight": {
+      "type": "text"
+    },
+    "SKU": {
+      "type": "text"
+    },
+    "brand": {
+      "type": "text"
+    },
+    "productType": {
+      "type": "text"
+    },
+    "metalType": {
+      "type": "text"
+    },
+    "metalGrade": {
+      "type": "text"
+    },
+    "defaultPrice": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "discount": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nylas_connections",
+  "info": {
+    "singularName": "nylas-connection",
+    "pluralName": "nylas-connections",
+    "displayName": "Nylas Connection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "grantId": {
+      "type": "text",
+      "required": true,
+      "private": true,
+      "unique": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "nylasConnection"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "nylas_connection"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "expired",
+        "active"
+      ],
+      "default": "active"
+    },
+    "attachedEmail": {
+      "type": "string"
+    }
+  }
+}

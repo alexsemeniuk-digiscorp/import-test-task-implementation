@@ -1,0 +1,77 @@
+fragment ProductReport on ProductEntity {
+  id
+  attributes {
+    createdAt
+    uuid
+    barcode
+    name
+    SKU
+    defaultPrice
+    productId
+    rentableData {
+      data {
+        id
+        attributes {
+          enabled
+        }
+      }
+    }
+    quantity(
+      businessLocationId: $businessLocationId
+      sublocationId: $sublocationId
+    )
+    totalQuantitySold(businessLocationId: $businessLocationId)
+    numberLocationsPresented
+    grossMargin
+    quantityOnOrder(businessLocationId: $businessLocationId)
+    productInventoryItems(pagination: { limit: -1 }) {
+      data {
+        attributes {
+          businessLocation {
+            data {
+              attributes {
+                uuid
+                name
+              }
+            }
+          }
+          sublocationItems(pagination: { limit: -1 }) {
+            data {
+              id
+              attributes {
+                sublocation {
+                  data {
+                    attributes {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    weight {
+      data {
+        id
+        attributes {
+          value
+          unit
+        }
+      }
+    }
+    productType {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+  }
+}

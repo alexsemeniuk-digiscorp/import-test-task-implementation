@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deals_setting",
+  "info": {
+    "singularName": "deal-setting",
+    "pluralName": "deals-setting",
+    "displayName": "SETTINGS: Deal"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "templateNote": {
+      "type": "text"
+    },
+    "isTemplateNoteEnabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

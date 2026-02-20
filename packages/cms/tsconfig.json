@@ -1,0 +1,24 @@
+{
+  "extends": "@bn-digital/typescript-config/strapi-server.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "types": ["@bn-digital/strapi-types", "@strapi/strapi", "jest"]
+  },
+  "include": ["./src", "config", "./src/**/*.json", "*.d.ts"],
+  "exclude": [
+    "tests/",
+    "tests/helpers/strapi.ts",
+    "node_modules/",
+    "**/*.test.ts",
+    "build/",
+    "public",
+    "dist/",
+    ".cache/",
+    ".tmp/",
+    "src/admin/",
+    "src/plugins/**"
+  ]
+}

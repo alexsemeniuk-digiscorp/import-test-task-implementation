@@ -1,0 +1,7 @@
+mutation deleteEcommerceCustomAppService($id: ID!) {
+  deleteEcommerceCustomAppService(id: $id) {
+    data {
+      ...EcommerceCustomAppService
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "backings",
+  "info": {
+    "singularName": "backing",
+    "pluralName": "backings",
+    "displayName": "INVENTORY: Backing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "backings"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

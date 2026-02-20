@@ -1,0 +1,22 @@
+query serializesWithoutProduct(
+  $filters: InventorySerializeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  inventorySerializes(
+    filters: {
+      productInventoryItem: { id: { null: true } }
+      sellingProductOrderItem: { id: { null: true } }
+      and: [$filters]
+    }
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...Serialize
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "knot_styles",
+  "info": {
+    "singularName": "knot-style",
+    "pluralName": "knot-styles",
+    "displayName": "INVENTORY: Knot Style",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "knotStyles"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

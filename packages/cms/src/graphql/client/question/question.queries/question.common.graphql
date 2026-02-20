@@ -1,0 +1,7 @@
+query question($id: ID!) {
+  question(id: $id) {
+    data {
+      ...Question
+    }
+  }
+}

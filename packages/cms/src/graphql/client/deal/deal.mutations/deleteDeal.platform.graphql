@@ -1,0 +1,7 @@
+mutation deleteDeal($id: ID!) {
+  deleteDeal(id: $id) {
+    data {
+      id
+    }
+  }
+}

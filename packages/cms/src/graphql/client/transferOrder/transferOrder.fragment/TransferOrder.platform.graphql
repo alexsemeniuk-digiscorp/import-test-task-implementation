@@ -1,0 +1,38 @@
+fragment TransferOrder on TransferOrderEntity {
+  ...TransferOrderMin
+  id
+  attributes {
+    notes
+    createdAt
+    locationTo {
+      data {
+        id
+      }
+    }
+    sublocationTo {
+      data {
+        id
+      }
+    }
+    locationFrom {
+      data {
+        id
+      }
+    }
+    sublocationFrom {
+      data {
+        id
+      }
+    }
+    employeeConfirmed {
+      data {
+        id
+      }
+    }
+    files {
+      data {
+        ...File
+      }
+    }
+  }
+}

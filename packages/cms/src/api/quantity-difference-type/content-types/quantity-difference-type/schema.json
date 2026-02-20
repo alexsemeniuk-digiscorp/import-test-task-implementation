@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quantity_difference_types",
+  "info": {
+    "singularName": "quantity-difference-type",
+    "pluralName": "quantity-difference-types",
+    "displayName": "Quantity Difference Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Subtracted",
+        "Added"
+      ]
+    }
+  }
+}

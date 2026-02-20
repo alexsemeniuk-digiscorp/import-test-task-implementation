@@ -1,0 +1,17 @@
+
+mutation addEmployee($input: EmployeeUserRegisterInput!) {
+  addEmployee(input: $input) {
+    jwt
+    user {
+      id
+      username
+      email
+      blocked
+      confirmed
+      role {
+        id
+        name
+      }
+    }
+  }
+}

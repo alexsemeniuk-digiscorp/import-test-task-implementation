@@ -1,0 +1,7 @@
+mutation deleteRentableData($id: ID!) {
+  deleteRentableData(id: $id) {
+    data {
+      id
+    }
+  }
+}

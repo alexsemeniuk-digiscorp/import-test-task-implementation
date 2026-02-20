@@ -1,0 +1,152 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "houseCall": {
+      "type": "boolean",
+      "default": false
+    },
+    "defaultPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "serviceLocationInfos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-location-info.service-location-info",
+      "mappedBy": "service"
+    },
+    "selling_service_order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-order-item.service-order-item",
+      "mappedBy": "service"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "serviceId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "unique": true
+    },
+    "revenue": {
+      "type": "string",
+      "required": false
+    },
+    "cost": {
+      "type": "string"
+    },
+    "accServiceEntities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-entity.acc-service-entity",
+      "mappedBy": "class"
+    },
+    "revenueChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "services"
+    },
+    "revenueChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "services"
+    },
+    "revenueChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "services"
+    },
+    "costChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "services"
+    },
+    "costChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "services"
+    },
+    "costChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "services"
+    },
+    "ecommerceDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-detail.ecommerce-detail",
+      "mappedBy": "defaultShippingService"
+    },
+    "isTaskCreationEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "templateNote": {
+      "type": "text"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    },
+    "itemCategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::item-category.item-category"
+    }
+  }
+}

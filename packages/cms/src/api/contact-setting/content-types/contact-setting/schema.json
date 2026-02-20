@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts_setting",
+  "info": {
+    "singularName": "contact-setting",
+    "pluralName": "contacts-setting",
+    "displayName": "SETTINGS: Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "boolean",
+      "default": true
+    },
+    "email": {
+      "type": "boolean",
+      "default": true
+    },
+    "contactOwner": {
+      "type": "boolean",
+      "default": false
+    },
+    "phoneNumber": {
+      "type": "boolean",
+      "default": true
+    },
+    "contactSource": {
+      "type": "boolean",
+      "default": true
+    },
+    "company": {
+      "type": "boolean",
+      "default": false
+    },
+    "address": {
+      "type": "boolean",
+      "default": true
+    },
+    "occupation": {
+      "type": "boolean",
+      "default": false
+    },
+    "birthdate": {
+      "type": "boolean",
+      "default": false
+    },
+    "anniversaryDate": {
+      "type": "boolean",
+      "default": false
+    },
+    "priceGroup": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "contactSetting"
+    }
+  }
+}

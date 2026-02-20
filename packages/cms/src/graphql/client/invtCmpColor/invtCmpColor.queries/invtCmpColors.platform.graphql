@@ -1,0 +1,14 @@
+query invtCmpColors(
+  $filters: InvtCmpColorFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  invtCmpColors(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InvtCmpColor
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

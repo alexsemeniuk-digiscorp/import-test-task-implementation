@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deal_transaction_reminders",
+  "info": {
+    "singularName": "deal-transaction-reminder",
+    "pluralName": "deal-transaction-reminders",
+    "displayName": "Deal Transaction Reminder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "daysAmount": {
+      "type": "integer",
+      "required": true,
+      "default": 3
+    },
+    "timing": {
+      "type": "enumeration",
+      "enum": [
+        "before",
+        "after"
+      ],
+      "required": true,
+      "default": "before"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "dealTransactionReminders"
+    }
+  }
+}

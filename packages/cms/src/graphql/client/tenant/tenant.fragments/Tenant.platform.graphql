@@ -1,0 +1,34 @@
+fragment Tenant on TenantEntity {
+  id
+  attributes {
+    companyName
+    slug
+    credits
+    autoRechargeCredit
+    thresholdBalance
+    rechargeToBalance
+    email
+    emailSender
+    phoneNumber
+    websiteUrl
+    paymentGatewayType
+    onboarding {
+      data {
+        id
+        attributes {
+          isCompleted
+        }
+      }
+    }
+    logo {
+      data {
+        ...File
+      }
+    }
+    mainLocation {
+      data {
+        ...Location
+      }
+    }
+  }
+}

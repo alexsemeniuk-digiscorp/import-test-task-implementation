@@ -1,0 +1,49 @@
+fragment ProductInventoryItemEventTable on ProductInventoryItemEventEntity {
+  ...ProductInventoryItemEventMin
+  id
+  attributes {
+    relationId
+    relationUuid
+    memo
+    createdAt
+    itemVendor {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    itemContactVendor {
+      data {
+        id
+        attributes {
+          fullName
+        }
+      }
+    }
+    order {
+      data {
+        id
+        attributes {
+          orderId
+          inputInvoiceNum
+          memoNumber
+        }
+      }
+    }
+    addedBy {
+      data {
+        id
+        attributes {
+          fullName
+          contact {
+            data {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+}

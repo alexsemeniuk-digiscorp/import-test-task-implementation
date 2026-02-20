@@ -1,0 +1,7 @@
+mutation deleteResourceInventoryItem($id: ID!) {
+  deleteResourceInventoryItem(id: $id) {
+    data {
+      id
+    }
+  }
+}

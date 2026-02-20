@@ -1,0 +1,18 @@
+fragment ProductWithLocationAndPriceData on ProductEntity {
+  id
+  attributes {
+    name
+    SKU
+    uuid
+    defaultPrice
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+    quantity(businessLocationId: $businessLocationId)
+    quantitySoldLastWeek(businessLocationId: $businessLocationId)
+    tax(businessLocationId: $businessLocationId)
+    productInventoryItemId(businessLocationId: $businessLocationId)
+  }
+}

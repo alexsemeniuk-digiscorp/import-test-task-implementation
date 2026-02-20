@@ -1,0 +1,7 @@
+mutation createShipmentCard($input: ShipmentCardInput!) {
+  createShipmentCard(data: $input) {
+    data {
+      ...ShipmentCard
+    }
+  }
+}

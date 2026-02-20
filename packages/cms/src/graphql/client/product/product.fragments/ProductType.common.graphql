@@ -1,0 +1,8 @@
+fragment ProductType on ProductTypeEntity {
+  id
+  attributes {
+    name
+    editable
+    defaultPriceMultiplier
+  }
+}

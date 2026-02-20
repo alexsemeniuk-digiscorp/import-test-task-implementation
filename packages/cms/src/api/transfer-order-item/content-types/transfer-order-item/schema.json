@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transfer_order_items",
+  "info": {
+    "singularName": "transfer-order-item",
+    "pluralName": "transfer-order-items",
+    "displayName": "Transfer Order Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantityFrom": {
+      "type": "integer"
+    },
+    "quantityTo": {
+      "type": "integer"
+    },
+    "transferQuantity": {
+      "type": "integer"
+    },
+    "transferOrder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::transfer-order.transfer-order",
+      "inversedBy": "transferOrderItems"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "sublocationItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation-item.sublocation-item"
+    },
+    "serializes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-serialize.inventory-serialize",
+      "mappedBy": "transferOrderItem"
+    }
+  }
+}

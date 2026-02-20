@@ -1,0 +1,19 @@
+fragment User on UsersPermissionsUserEntity {
+  ...UserMin
+  id
+  attributes {
+    confirmed
+    firstName
+    lastName
+    phoneNumber
+    createdAt
+    blocked
+    fullName
+    jobTitle
+    tenant {
+      data {
+        ...Tenant
+      }
+    }
+  }
+}

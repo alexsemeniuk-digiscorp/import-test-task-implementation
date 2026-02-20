@@ -1,0 +1,7 @@
+mutation deleteProductInventoryItemRecord($id: ID!) {
+  deleteInvtItmRecord(id: $id) {
+    data {
+      id
+    }
+  }
+}

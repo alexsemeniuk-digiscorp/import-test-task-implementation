@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_cmp_colors",
+  "info": {
+    "singularName": "invt-cmp-color",
+    "pluralName": "invt-cmp-colors",
+    "displayName": "Composite Product Color"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

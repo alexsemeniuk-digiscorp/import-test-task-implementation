@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipment_carriers",
+  "info": {
+    "singularName": "shipment-carrier",
+    "pluralName": "shipment-carriers",
+    "displayName": "Shipment Carrier",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

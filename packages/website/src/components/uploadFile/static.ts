@@ -1,0 +1,1 @@
+export const UNLIMITED_ATTACHMENTS = 999;

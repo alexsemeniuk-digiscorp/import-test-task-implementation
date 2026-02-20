@@ -1,0 +1,10 @@
+mutation updateProductGroupAttributeOption(
+  $id: ID!
+  $input: ProductGroupAttributeOptionInput!
+) {
+  updateProductGroupAttributeOption(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

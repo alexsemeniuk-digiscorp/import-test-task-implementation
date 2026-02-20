@@ -1,0 +1,7 @@
+query businessLocationTax($id: ID!) {
+  businessLocation(id: $id) {
+    data {
+      ...BusinessLocationTax
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation createLinkType($input: LinkTypeInput!) {
+  createLinkType(data: $input) {
+    data {
+      ...LinkType
+    }
+  }
+}

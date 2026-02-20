@@ -1,0 +1,9 @@
+fragment DealTransactionReminder on DealTransactionReminderEntity {
+  id
+  attributes {
+    createdAt
+    timing
+    isActive
+    daysAmount
+  }
+}

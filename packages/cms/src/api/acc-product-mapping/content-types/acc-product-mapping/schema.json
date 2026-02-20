@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_product_mappings",
+  "info": {
+    "singularName": "acc-product-mapping",
+    "pluralName": "acc-product-mappings",
+    "displayName": "Acc product mapping",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "chartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "accProductMappings"
+    },
+    "serviceAccountId": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "accServiceConn": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-conn.acc-service-conn",
+      "inversedBy": "accProductMappings"
+    },
+    "chartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "accProductMappings"
+    },
+    "chartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "accProductMappings"
+    },
+    "accountType": {
+      "type": "enumeration",
+      "enum": [
+        "account",
+        "category",
+        "subCategory"
+      ],
+      "required": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "accounts",
+        "paymentMethods",
+        "paymentType"
+      ],
+      "required": true,
+      "default": "accounts"
+    },
+    "paymentMethod": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::payment-method.payment-method",
+      "inversedBy": "accProductMappings"
+    },
+    "accountingServiceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ]
+    },
+    "paymentType": {
+      "type": "enumeration",
+      "enum": [
+        "Cash",
+        "Check",
+        "CreditCard"
+      ]
+    },
+    "depositToAccount": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

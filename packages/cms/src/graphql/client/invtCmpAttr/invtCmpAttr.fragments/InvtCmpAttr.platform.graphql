@@ -1,0 +1,11 @@
+fragment InvtCmpAttr on InvtCmpAttrEntity {
+  ...InvtCmpAttrMin
+  id
+  attributes {
+    comPrAttrOps {
+      data {
+        ...InvtCmpAttrOptMin
+      }
+    }
+  }
+}

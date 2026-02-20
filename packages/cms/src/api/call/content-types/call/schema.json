@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calls",
+  "info": {
+    "singularName": "call",
+    "pluralName": "calls",
+    "displayName": "Call",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "to": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "callSid": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "identity": {
+      "type": "string"
+    },
+    "record": {
+      "type": "string"
+    },
+    "transcription": {
+      "type": "string"
+    },
+    "recordSid": {
+      "type": "string"
+    },
+    "parentCallSid": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "recordSource": {
+      "type": "string"
+    }
+  }
+}

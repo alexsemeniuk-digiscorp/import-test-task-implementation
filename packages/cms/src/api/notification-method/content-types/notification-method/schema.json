@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notification_methods",
+  "info": {
+    "singularName": "notification-method",
+    "pluralName": "notification-methods",
+    "displayName": "Notification Method"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

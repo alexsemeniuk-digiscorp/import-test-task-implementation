@@ -1,0 +1,11 @@
+fragment BoardProductMin on ProductEntity {
+  id
+  attributes {
+    name
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+  }
+}

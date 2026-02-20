@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "metal_types",
+  "info": {
+    "singularName": "metal-type",
+    "pluralName": "metal-types",
+    "displayName": "INVENTORY: Metal Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "materialGrades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::material-grade.material-grade",
+      "mappedBy": "metalType"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

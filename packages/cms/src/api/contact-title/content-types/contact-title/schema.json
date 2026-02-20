@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_titles",
+  "info": {
+    "singularName": "contact-title",
+    "pluralName": "contact-titles",
+    "displayName": "Contact Title",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

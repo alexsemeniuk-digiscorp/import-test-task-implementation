@@ -1,0 +1,7 @@
+fragment DealSetting on DealSettingEntity {
+  id
+  attributes {
+    templateNote
+    isTemplateNoteEnabled
+  }
+}

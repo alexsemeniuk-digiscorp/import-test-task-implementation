@@ -1,0 +1,14 @@
+fragment SubLocationItemInventoryTable on SublocationItemEntity {
+  id
+  attributes {
+    quantity
+    sublocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+}

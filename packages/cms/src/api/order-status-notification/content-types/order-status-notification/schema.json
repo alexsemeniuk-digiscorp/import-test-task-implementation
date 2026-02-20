@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_status_notifications",
+  "info": {
+    "singularName": "order-status-notification",
+    "pluralName": "order-status-notifications",
+    "displayName": "NOTIFICATIONS: OrderStatusNotification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userNotifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-notification.user-notification",
+      "mappedBy": "orderStatusNotification"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "incoming",
+        "preparing",
+        "ready",
+        "shipped"
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+fragment ProductGroupAttribute on ProductGroupAttributeEntity {
+  ...ProductGroupAttributeMin
+  id
+  attributes {
+    productGroupAttributeOptions {
+      data {
+        ...ProductGroupAttributeOptionMin
+      }
+    }
+  }
+}

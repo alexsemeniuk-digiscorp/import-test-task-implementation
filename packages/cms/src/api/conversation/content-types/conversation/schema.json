@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conversations",
+  "info": {
+    "singularName": "conversation",
+    "pluralName": "conversations",
+    "displayName": "MESSAGING: Conversation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "conversationSid": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "name": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "conversations"
+    },
+    "twilioConnection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::twilio-connection.twilio-connection"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "sms",
+        "mail",
+        "fb",
+        "insta",
+        "wa"
+      ]
+    },
+    "threadId": {
+      "type": "string"
+    },
+    "chatNotifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chat-notification.chat-notification",
+      "mappedBy": "conversation"
+    },
+    "replyTo": {
+      "type": "string"
+    },
+    "isAutocreated": {
+      "type": "boolean",
+      "default": false
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "scheduled": {
+      "displayName": "ScheduledMessage",
+      "type": "component",
+      "repeatable": true,
+      "component": "data.scheduled-message"
+    },
+    "mms": {
+      "displayName": "Message",
+      "type": "component",
+      "repeatable": true,
+      "component": "data.message"
+    },
+    "metaPageId": {
+      "type": "string"
+    },
+    "notificationsCount": {
+      "type": "integer"
+    }
+  }
+}

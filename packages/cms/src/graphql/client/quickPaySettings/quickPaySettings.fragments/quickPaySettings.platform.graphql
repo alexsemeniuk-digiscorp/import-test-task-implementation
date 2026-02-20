@@ -1,0 +1,22 @@
+fragment QuickPaySettings on QuickPaySettingEntity {
+  id
+  attributes {
+    title
+    sellingPayingAmountPercentage
+    sellingOrderManagementPayingAmountPercentage
+    quickPayOption
+    quickPayCardOption
+    quickPayLinkOption
+    isEnabled
+    quickPayCustomMethod {
+      data {
+        id
+      }
+    }
+    tenant {
+      data {
+        id
+      }
+    }
+  }
+}

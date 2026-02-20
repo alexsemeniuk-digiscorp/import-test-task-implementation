@@ -1,0 +1,11 @@
+fragment DownloadRecord on DownloadRecordEntity {
+  id
+  attributes {
+    createdAt
+    fileItem {
+      data {
+        ...FileItemMin
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation updateServiceSetting($id: ID!, $input: ServiceSettingInput!) {
+  updateServiceSetting(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

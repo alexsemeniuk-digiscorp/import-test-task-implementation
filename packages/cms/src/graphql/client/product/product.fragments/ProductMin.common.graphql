@@ -1,0 +1,69 @@
+fragment ProductMin on ProductEntity {
+  id
+  attributes {
+    shopifyCollections
+    woocommerceCategory
+    ecommerceDescription
+    shopifyTags
+    tagProductName
+    defaultPrice
+    productId
+    name
+    barcode
+    uuid
+    favorite
+    model
+    serialNumber
+    SKU
+    UPC
+    MPN
+    EAN
+    ISBN
+    partsWarranty
+    laborWarranty
+    ecommerceName
+    note
+    appraisalDescription
+    businessUseOnly
+    bundleUseOnly
+    expiryDate
+    returnable
+    packagingProduct
+    active
+    isNegativeCount
+    multiplier
+    wholeSaleMultiplier
+    revenue
+    cost
+    files(pagination: { limit: -1 }) {
+      data {
+        ...File
+      }
+    }
+    dimension {
+      data {
+        ...Dimension
+      }
+    }
+    weight {
+      data {
+        ...Weight
+      }
+    }
+    brand {
+      data {
+        ...ProductBrand
+      }
+    }
+    productType {
+      data {
+        ...ProductType
+      }
+    }
+    rentableData {
+      data {
+        ...RentableData
+      }
+    }
+  }
+}

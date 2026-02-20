@@ -1,0 +1,6 @@
+fragment Backing on BackingEntity {
+  id
+  attributes {
+    name
+  }
+}

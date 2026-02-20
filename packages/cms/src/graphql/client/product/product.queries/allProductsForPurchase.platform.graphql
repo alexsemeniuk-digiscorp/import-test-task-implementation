@@ -1,0 +1,37 @@
+query allProductsForPurchase(
+  $filters: ProductFiltersInput
+  $sort: [String] = []
+) {
+  products(filters: $filters, pagination: { limit: -1 }, sort: $sort) {
+    data {
+      id
+      attributes {
+        uuid
+        name
+        SKU
+        barcode
+        defaultPrice
+        productInventoryItems {
+          data {
+            id
+            attributes {
+              uuid
+              quantity
+              price
+              product {
+                data {
+                  id
+                }
+              }
+              businessLocation {
+                data {
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

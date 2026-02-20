@@ -1,0 +1,25 @@
+fragment ProductSelect on ProductEntity {
+  id
+  attributes {
+    name
+    defaultPrice
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+    productInventoryItems {
+      data {
+        attributes {
+          businessLocation {
+            data {
+              attributes {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

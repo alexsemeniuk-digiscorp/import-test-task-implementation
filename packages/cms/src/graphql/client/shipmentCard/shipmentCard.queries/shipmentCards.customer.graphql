@@ -1,0 +1,14 @@
+query shipmentCards(
+  $filters: ShipmentCardFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  shipmentCards(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ShipmentCard
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

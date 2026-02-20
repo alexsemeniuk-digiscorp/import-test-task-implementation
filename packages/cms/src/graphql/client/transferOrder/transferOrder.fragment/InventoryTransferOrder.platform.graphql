@@ -1,0 +1,50 @@
+fragment InventoryTransferOrder on TransferOrderEntity {
+  ...TransferOrderMin
+  id
+  attributes {
+    orderDate
+    employeeReceivedDate
+    employeeConfirmed {
+      data {
+        attributes {
+          fullName
+        }
+      }
+    }
+    locationFrom {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    sublocationFrom {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    locationTo {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    sublocationTo {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    employee {
+      data {
+        attributes {
+          fullName
+        }
+      }
+    }
+  }
+}

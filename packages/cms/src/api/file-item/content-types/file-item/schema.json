@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "file_items",
+  "info": {
+    "singularName": "file-item",
+    "pluralName": "file-items",
+    "displayName": "FileItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "uploadedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "fileItems"
+    },
+    "attachedFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "generated",
+        "uploaded"
+      ],
+      "default": "generated",
+      "required": true
+    },
+    "isFavourite": {
+      "type": "boolean"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "fileItems"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "fileItems"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lead.lead",
+      "inversedBy": "fileItems"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "purchaseRequest": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::purchase-request.purchase-request",
+      "mappedBy": "fileItem"
+    }
+  }
+}

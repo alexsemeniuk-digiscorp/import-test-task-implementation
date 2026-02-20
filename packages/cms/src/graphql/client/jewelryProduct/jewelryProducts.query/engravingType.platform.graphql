@@ -1,0 +1,14 @@
+query engravingTypes(
+  $filters: EngravingTypeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  engravingTypes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...EngravingType
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

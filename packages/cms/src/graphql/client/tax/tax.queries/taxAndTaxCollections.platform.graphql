@@ -1,0 +1,16 @@
+query taxAndTaxCollections(
+  $filterTaxes: TaxFiltersInput! = {}
+  $filterTaxCollections: TaxCollectionFiltersInput! = {}
+  $pagination: PaginationArg
+) {
+  taxes(filters: $filterTaxes, pagination: $pagination) {
+    data {
+      ...TaxSelect
+    }
+  }
+  taxCollections(filters: $filterTaxCollections, pagination: $pagination) {
+    data {
+      ...TaxCollectionMin
+    }
+  }
+}

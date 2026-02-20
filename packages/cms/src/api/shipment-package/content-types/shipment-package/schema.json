@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipment_packages",
+  "info": {
+    "singularName": "shipment-package",
+    "pluralName": "shipment-packages",
+    "displayName": "Shipment Package"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

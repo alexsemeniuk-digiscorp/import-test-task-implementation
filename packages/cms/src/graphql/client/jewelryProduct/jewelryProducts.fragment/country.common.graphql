@@ -1,0 +1,6 @@
+fragment Country on CountryEntity {
+  id
+  attributes {
+    name
+  }
+}

@@ -1,0 +1,6 @@
+fragment LinkStyle on LinkStyleEntity {
+  id
+  attributes {
+    name
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jewelry_product_types",
+  "info": {
+    "singularName": "jewelry-product-type",
+    "pluralName": "jewelry-product-types",
+    "displayName": "INVENTORY: Jewelry Product Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "specificTypes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::specific-type.specific-type",
+      "mappedBy": "jewelryProductType"
+    },
+    "sizes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::size.size",
+      "mappedBy": "jewelryProductType"
+    },
+    "shankStyles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shank-style.shank-style",
+      "mappedBy": "jewelryProductType"
+    },
+    "designStyles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::design-style.design-style",
+      "mappedBy": "jewelryProductType"
+    },
+    "backings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::backing.backing",
+      "mappedBy": "jewelryProductType"
+    },
+    "strands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::strand.strand",
+      "mappedBy": "jewelryProductType"
+    },
+    "strandsLengths": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::strands-length.strands-length",
+      "mappedBy": "jewelryProductType"
+    },
+    "knotStyles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::knot-style.knot-style",
+      "mappedBy": "jewelryProductType"
+    },
+    "linkStyles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link-style.link-style",
+      "mappedBy": "jewelryProductType"
+    },
+    "linkTypes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link-type.link-type",
+      "mappedBy": "jewelryProductType"
+    },
+    "pieces": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::piece.piece",
+      "mappedBy": "jewelryProductType"
+    },
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country",
+      "mappedBy": "jewelryProductType"
+    },
+    "boxPapers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::box-paper.box-paper",
+      "mappedBy": "jewelryProductType"
+    },
+    "productAttributes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-attribute.product-attribute",
+      "mappedBy": "jewelryProductTypes"
+    }
+  }
+}

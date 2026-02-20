@@ -1,0 +1,14 @@
+query shankStyles(
+  $filters: ShankStyleFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  shankStyles(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ShankStyle
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

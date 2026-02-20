@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_ui_extended_sections",
+  "info": {
+    "displayName": "ExtendedSection",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.link"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "visible": {
+      "type": "boolean",
+      "default": false
+    },
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.card"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "composite_products",
+  "info": {
+    "singularName": "composite-product",
+    "pluralName": "composite-products",
+    "displayName": "Composite Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "defaultPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": {
+      "type": "text"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "compositeProducts"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "code": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "compositeProductLocationInfos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composite-product-location-info.composite-product-location-info",
+      "mappedBy": "compositeProduct"
+    },
+    "compositeProductId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "unique": true
+    },
+    "compositeProductItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composite-product-item-info.composite-product-item-info",
+      "mappedBy": "compositeProduct"
+    },
+    "costTrackerInfo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invt-cmp-trck.invt-cmp-trck",
+      "mappedBy": "compositeProduct"
+    },
+    "files": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

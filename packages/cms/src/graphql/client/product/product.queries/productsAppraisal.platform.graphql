@@ -1,0 +1,11 @@
+query productsAppraisal(
+  $filters: ProductFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  products(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductAppraisal
+    }
+  }
+}

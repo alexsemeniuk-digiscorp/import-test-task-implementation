@@ -1,0 +1,6 @@
+fragment SubLocationItemQuantity on SublocationItemEntity {
+  id
+  attributes {
+    quantity
+  }
+}

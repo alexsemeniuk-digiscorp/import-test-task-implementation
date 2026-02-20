@@ -1,0 +1,7 @@
+mutation updateRentableData($id: ID!, $input: RentableDataInput!) {
+  updateRentableData(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenant_stripe_subscriptions",
+  "info": {
+    "singularName": "tenant-stripe-subscription",
+    "pluralName": "tenant-stripe-subscriptions",
+    "displayName": "Tenant stripe subscription",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "plan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stripe-subscription-plan.stripe-subscription-plan",
+      "inversedBy": "subscriptions"
+    },
+    "subscriptionId": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "subscriptions"
+    }
+  }
+}

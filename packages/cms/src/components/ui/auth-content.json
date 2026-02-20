@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_ui_auth_contents",
+  "info": {
+    "displayName": "authContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": true
+    },
+    "advantages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.headline"
+    }
+  }
+}

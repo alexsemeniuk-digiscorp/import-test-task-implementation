@@ -1,0 +1,7 @@
+query transferOrderByUuid($uuid: String!) {
+  transferOrders(filters: { uuid: { eq: $uuid } }) {
+    data {
+      ...TransferOrder
+    }
+  }
+}

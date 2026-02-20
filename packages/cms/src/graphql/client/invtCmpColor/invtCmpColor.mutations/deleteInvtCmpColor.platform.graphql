@@ -1,0 +1,7 @@
+mutation deleteInvtCmpColor($id: ID!) {
+  deleteInvtCmpColor(id: $id) {
+    data {
+      ...InvtCmpColor
+    }
+  }
+}

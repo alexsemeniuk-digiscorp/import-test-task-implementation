@@ -1,0 +1,33 @@
+fragment OrderSetting on OrderSettingEntity {
+  id
+  attributes {
+    orderNote
+    reviewLink
+    sellingPayingAmountPercentage
+    sellingOrderManagementPayingAmountPercentage
+    purchasePayingAmountPercentage
+    purchaseOrderManagementPayingAmountPercentage
+    dueDateDays
+    isQuickPayEnabled
+    isVisibleClassItems
+    isVisibleCompositeProductItems
+    isVisibleDiscountItems
+    isVisibleMembershipItems
+    isVisibleProductItems
+    isVisibleServiceItems
+    isVisibleSearchBarInPos
+    isVisibleRentOrders
+    isVisibleSellOrders
+    isVisibleTradeInOrders
+    isVisibleEstimateOrders
+    isVisibleLayawayOrders
+    isVisiblePurchaseOrders
+    isVisiblePayWithPointsPaymentButton
+    isShippedDatePeriodEnabled
+    isReceiveDatePeriodEnabled
+    isAutomaticallyMoveOrderToReadyStage
+    isAutoSendNotification
+    isAutoSendReview
+    isAutoMovedToShipped
+  }
+}

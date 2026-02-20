@@ -1,0 +1,12 @@
+mutation multipleUpload(
+  $files: [Upload]!
+  $ref: String
+  $refId: ID
+  $field: String
+) {
+  multipleUpload(files: $files, ref: $ref, refId: $refId, field: $field) {
+    data {
+      ...File
+    }
+  }
+}

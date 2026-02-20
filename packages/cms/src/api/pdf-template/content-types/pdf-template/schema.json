@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pdf_templates",
+  "info": {
+    "singularName": "pdf-template",
+    "pluralName": "pdf-templates",
+    "displayName": "Pdf Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "templateId": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "catalogue",
+        "appraisal",
+        "wishlist",
+        "invoice",
+        "estimate",
+        "purchase",
+        "internalJobTicket",
+        "externalJobTicket"
+      ]
+    },
+    "isDefault": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "pdfTemplates"
+    },
+    "isAllowItemWithoutImage": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

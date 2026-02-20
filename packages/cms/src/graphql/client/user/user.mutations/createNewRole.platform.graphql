@@ -1,0 +1,3 @@
+mutation createNewRole($input: CreateNewRoleInput!) {
+  createNewRole(input: $input)
+}

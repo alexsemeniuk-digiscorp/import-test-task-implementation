@@ -1,0 +1,12 @@
+fragment ProductAppraisal on ProductEntity {
+  id
+  attributes {
+    defaultPrice
+    appraisalDescription
+    files(pagination: { limit: 3 }) {
+      data {
+        ...File
+      }
+    }
+  }
+}

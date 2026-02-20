@@ -1,0 +1,7 @@
+mutation readNotification($id: ID!) {
+  updateUserNotification(id: $id, data: { hasBeenSeen: true }) {
+    data {
+      ...UserNotification
+    }
+  }
+}

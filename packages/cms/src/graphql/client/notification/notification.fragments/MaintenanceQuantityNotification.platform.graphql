@@ -1,0 +1,30 @@
+fragment MaintenanceQuantityNotification on MaintenanceQuantityNotificationEntity {
+  id
+  attributes {
+    type
+    createdAt
+    maintenance {
+      data {
+        id
+        attributes {
+          uuid
+          resourceInventoryItem {
+            data {
+              id
+              attributes {
+                resource {
+                  data {
+                    id
+                    attributes {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

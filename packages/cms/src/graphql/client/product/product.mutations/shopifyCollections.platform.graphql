@@ -1,0 +1,9 @@
+mutation shopifyCollections($input: ShopifyCollectionsArgInput!) {
+  shopifyCollections(input: $input) {
+    status
+    data {
+      id
+      title
+    }
+  }
+}

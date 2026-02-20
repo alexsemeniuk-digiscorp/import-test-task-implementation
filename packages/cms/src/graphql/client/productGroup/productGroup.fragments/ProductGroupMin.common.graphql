@@ -1,0 +1,9 @@
+fragment ProductGroupMin on ProductGroupEntity {
+  id
+  attributes {
+    name
+    description
+    createdAt
+    uuid
+  }
+}

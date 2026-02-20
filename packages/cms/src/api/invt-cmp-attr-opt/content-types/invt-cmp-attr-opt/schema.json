@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_cmp_attr_opts",
+  "info": {
+    "singularName": "invt-cmp-attr-opt",
+    "pluralName": "invt-cmp-attr-opts",
+    "displayName": "Composite Product Attribute Option"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "comPrAttr": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::invt-cmp-attr.invt-cmp-attr",
+      "inversedBy": "comPrAttrOps"
+    },
+    "cmpCostTrcks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::invt-cmp-trck.invt-cmp-trck",
+      "mappedBy": "cmpAttrOpts"
+    }
+  }
+}

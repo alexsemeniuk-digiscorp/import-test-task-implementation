@@ -1,0 +1,7 @@
+mutation updateDimension($id: ID!, $input: DimensionInput!) {
+  updateDimension(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

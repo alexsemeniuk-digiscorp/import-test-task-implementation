@@ -1,0 +1,7 @@
+mutation updateUploadFile($id: ID!, $data: UploadFileInput!) {
+  updateUploadFile(id: $id, data: $data) {
+    data {
+      ...File
+    }
+  }
+}

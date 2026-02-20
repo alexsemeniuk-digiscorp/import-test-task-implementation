@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "default_pdf_templates",
+  "info": {
+    "singularName": "default-pdf-template",
+    "pluralName": "default-pdf-templates",
+    "displayName": "Default Pdf Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "catalogue",
+        "appraisal",
+        "wishlist",
+        "invoice",
+        "estimate",
+        "purchase",
+        "internalJobTicket",
+        "externalJobTicket"
+      ]
+    },
+    "templateId": {
+      "type": "integer"
+    }
+  }
+}

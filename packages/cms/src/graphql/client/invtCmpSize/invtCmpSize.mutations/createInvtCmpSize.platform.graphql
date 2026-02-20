@@ -1,0 +1,7 @@
+mutation createInvtCmpSize($input: InvtCmpSizeInput!) {
+  createInvtCmpSize(data: $input) {
+    data {
+      ...InvtCmpSize
+    }
+  }
+}

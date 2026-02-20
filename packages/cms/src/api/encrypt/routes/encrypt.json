@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/decrypt",
+      "handler": "encrypt.decrypt",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/encrypt",
+      "handler": "encrypt.encrypt",
+      "config": {
+        "auth": false
+      }
+    }
+  ]
+}

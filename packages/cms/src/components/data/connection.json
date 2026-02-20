@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_data_connections",
+  "info": {
+    "displayName": "Connection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "accountName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "ownerName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

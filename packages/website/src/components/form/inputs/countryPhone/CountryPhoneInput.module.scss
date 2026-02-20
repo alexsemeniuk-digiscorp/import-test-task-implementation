@@ -1,0 +1,35 @@
+.phoneWrap {
+  --react-international-phone-height: 40px;
+}
+
+.phoneInput {
+  --react-international-phone-border-radius: 0 8px 8px 0;
+  --react-international-phone-text-color: #1f2933;
+  --react-international-phone-font-size: 12px;
+
+  width: 100%;
+  padding: 12px 8px;
+  font-weight: 500;
+  line-height: 16px;
+
+  &::placeholder {
+    color: rgb(0 0 0 / 25%);
+  }
+}
+
+.countrySelector {
+  --react-international-phone-border-radius: 8px 0 0 8px;
+  --react-international-phone-dropdown-item-font-size: 12px;
+
+  font-weight: 500;
+  line-height: 20px;
+
+  & button {
+    padding-right: 4px;
+    padding-left: 12px;
+  }
+}
+
+.error {
+  --react-international-phone-border-color: #c62421;
+}

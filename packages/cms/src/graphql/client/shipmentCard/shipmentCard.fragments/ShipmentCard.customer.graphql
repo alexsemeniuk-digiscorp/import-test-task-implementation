@@ -1,0 +1,11 @@
+fragment ShipmentCard on ShipmentCardEntity {
+  ...ShipmentCardMin
+  id
+  attributes {
+    owner {
+      data {
+        id
+      }
+    }
+  }
+}

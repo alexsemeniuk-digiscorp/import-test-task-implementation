@@ -1,0 +1,15 @@
+fragment PdfTemplate on PdfTemplateEntity {
+  id
+  attributes {
+    templateId
+    name
+    isDefault
+    isAllowItemWithoutImage
+    type
+    tenant {
+      data {
+        id
+      }
+    }
+  }
+}

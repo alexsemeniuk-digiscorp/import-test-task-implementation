@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rentable_datas",
+  "info": {
+    "singularName": "rentable-data",
+    "pluralName": "rentable-datas",
+    "displayName": "Rentable Data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product",
+      "inversedBy": "rentableData"
+    },
+    "pricePerPeriod": {
+      "type": "float",
+      "required": true,
+      "min": 0
+    },
+    "lostFee": {
+      "type": "float",
+      "min": 0
+    },
+    "minimumRentalPeriod": {
+      "type": "float",
+      "min": 0,
+      "required": false
+    },
+    "period": {
+      "type": "enumeration",
+      "enum": [
+        "hour",
+        "day",
+        "week"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "jewelryProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jewelry-product.jewelry-product",
+      "mappedBy": "rentableData"
+    }
+  }
+}

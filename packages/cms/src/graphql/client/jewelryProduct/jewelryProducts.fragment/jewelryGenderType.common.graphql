@@ -1,0 +1,6 @@
+fragment JewelryGenderType on GenderTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

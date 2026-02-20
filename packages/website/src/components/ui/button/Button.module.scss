@@ -1,0 +1,74 @@
+.button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  & span {
+    align-self: center !important;
+  }
+
+  &:disabled {
+    background: #fff;
+  }
+
+  &.text {
+    gap: 4px;
+    padding: 6px;
+    color: #1f2933;
+  }
+
+  &.primary {
+    &:disabled {
+      color: #b0b0b1;
+      background-color: #e7e7e7;
+    }
+  }
+
+  &.success {
+    background-color: darkgreen;
+
+    &:hover,
+    &:active {
+      background-color: green !important;
+    }
+  }
+
+  &.noGap {
+    gap: 0;
+  }
+
+  &.circle {
+    border-color: #e7ecf8;
+
+    &:hover,
+    &:focus {
+      color: #fff !important;
+      background-color: #0146c5;
+    }
+  }
+}
+
+.buttonIconLeft {
+  flex-direction: row;
+}
+
+.buttonIconRight {
+  flex-direction: row-reverse;
+}
+
+.paddingless {
+  padding: 0;
+}
+
+button.button.noHover {
+  color: #959595 !important;
+  background: none !important;
+}
+
+button.button.noHover:hover {
+  color: inherit !important;
+  background: none !important;
+}

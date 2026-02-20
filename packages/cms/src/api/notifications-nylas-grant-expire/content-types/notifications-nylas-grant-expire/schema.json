@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications_nylas_grant_expires",
+  "info": {
+    "singularName": "notifications-nylas-grant-expire",
+    "pluralName": "notifications-nylas-grant-expires",
+    "displayName": "NOTIFICATIONS: NylasGrantExpire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notifications_user_notification": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-notification.user-notification",
+      "mappedBy": "nylasGrantExpire"
+    }
+  }
+}

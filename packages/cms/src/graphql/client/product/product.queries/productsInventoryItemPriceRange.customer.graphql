@@ -1,0 +1,6 @@
+query productsInventoryItemPriceRange($id: ID!) {
+  productsInventoryItemPriceRange(id: $id) {
+    minPrice
+    maxPrice
+  }
+}

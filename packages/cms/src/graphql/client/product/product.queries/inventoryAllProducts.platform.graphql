@@ -1,0 +1,16 @@
+query inventoryAllProducts(
+  $filters: ProductFiltersInput
+  $sort: [String] = []
+) {
+  products(filters: $filters, pagination: { limit: -1 }, sort: $sort) {
+    data {
+      id
+      attributes {
+        uuid
+      }
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

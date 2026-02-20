@@ -1,0 +1,10 @@
+mutation updateProductGroupAttribute(
+  $id: ID!
+  $input: ProductGroupAttributeInput!
+) {
+  updateProductGroupAttribute(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

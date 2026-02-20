@@ -1,0 +1,7 @@
+mutation updateSerialize($id: ID!, $input: InventorySerializeInput!) {
+  updateInventorySerialize(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

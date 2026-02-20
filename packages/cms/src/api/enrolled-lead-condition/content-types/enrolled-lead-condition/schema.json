@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrolled_lead_conditions",
+  "info": {
+    "singularName": "enrolled-lead-condition",
+    "pluralName": "enrolled-lead-conditions",
+    "displayName": "MARKETING: Campaign Enrolled Lead Condition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "conditionId": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "enrolledLeadConditions"
+    },
+    "operator": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.set"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation updateLocalizationSetting($id: ID!, $input: LocalizationSettingInput!) {
+  updateLocalizationSetting(id: $id, data: $input) {
+    data {
+      ...LocalizationSetting
+    }
+  }
+}

@@ -1,0 +1,7 @@
+query taxCollection($id: ID!) {
+  taxCollection(id: $id) {
+    data {
+      ...TaxCollection
+    }
+  }
+}

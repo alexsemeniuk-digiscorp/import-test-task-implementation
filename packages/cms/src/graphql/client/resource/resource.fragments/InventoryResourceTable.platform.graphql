@@ -1,0 +1,21 @@
+fragment InventoryResourceTable on ResourceEntity {
+  id
+  attributes {
+    name
+    createdAt
+    uuid
+    creator {
+      data {
+        id
+        attributes {
+          fullName
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+  }
+}

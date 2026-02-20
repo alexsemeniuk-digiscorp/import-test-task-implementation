@@ -1,0 +1,7 @@
+mutation updateProductAttribute($id: ID!, $input: ProductAttributeInput!) {
+  updateProductAttribute(id: $id, data: $input) {
+    data {
+      ...ProductAttributeMin
+    }
+  }
+}

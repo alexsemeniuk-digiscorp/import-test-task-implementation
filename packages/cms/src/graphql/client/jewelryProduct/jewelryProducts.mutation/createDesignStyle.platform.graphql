@@ -1,0 +1,7 @@
+mutation createDesignStyle($input: DesignStyleInput!) {
+  createDesignStyle(data: $input) {
+    data {
+      ...DesignStyle
+    }
+  }
+}

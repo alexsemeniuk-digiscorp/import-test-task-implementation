@@ -1,0 +1,256 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "contacts"
+    },
+    "leadOwner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "required": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "contact_id"
+    },
+    "todos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::todo.todo",
+      "mappedBy": "contact_id"
+    },
+    "notes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::note.note",
+      "mappedBy": "contact_id"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "contact"
+    },
+    "dealTransactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal-transaction.deal-transaction",
+      "mappedBy": "contact"
+    },
+    "deals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal.deal",
+      "mappedBy": "contact"
+    },
+    "unsubscribedCampaigns": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::campaign.campaign",
+      "mappedBy": "unsubscribedContacts"
+    },
+    "fileItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::file-item.file-item",
+      "mappedBy": "contact"
+    },
+    "points": {
+      "type": "float",
+      "default": 0,
+      "required": false,
+      "min": 0
+    },
+    "campaignEnrolledContacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign-enrolled-contact.campaign-enrolled-contact",
+      "mappedBy": "contact"
+    },
+    "birthdayDate": {
+      "type": "date"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "pastLead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead",
+      "inversedBy": "presentContact"
+    },
+    "leadSource": {
+      "type": "enumeration",
+      "enum": [
+        "walk in",
+        "external referral",
+        "online store",
+        "website",
+        "advertisement",
+        "google ad",
+        "facebook ad",
+        "instagram",
+        "tik tok",
+        "google search",
+        "unknown"
+      ],
+      "default": "unknown"
+    },
+    "customCreationDate": {
+      "type": "datetime"
+    },
+    "ecommerceContactServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-contact-service.ecommerce-contact-service",
+      "mappedBy": "contact"
+    },
+    "isCreatedByOpenApi": {
+      "type": "boolean",
+      "default": false
+    },
+    "amountSpent": {
+      "type": "decimal"
+    },
+    "amountOwes": {
+      "type": "decimal"
+    },
+    "additionalEmails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-email.crm-additional-email",
+      "mappedBy": "contact"
+    },
+    "additionalAddresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-address.crm-additional-address",
+      "mappedBy": "contact"
+    },
+    "additionalPhoneNumbers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-additional-phone-number.crm-additional-phone-number",
+      "mappedBy": "contact"
+    },
+    "priceGroup": {
+      "type": "enumeration",
+      "enum": [
+        "retail",
+        "wholesale"
+      ]
+    },
+    "relation": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-relation.crm-relation",
+      "mappedBy": "fromContact"
+    },
+    "identityNumber": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "marketingOptIn": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No",
+        "N_A"
+      ],
+      "default": "N_A"
+    },
+    "customFieldValues": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::crm-custom-field-value.crm-custom-field-value",
+      "mappedBy": "contact"
+    },
+    "contactTitle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact-title.contact-title"
+    },
+    "dateAnniversary": {
+      "type": "date"
+    },
+    "clearentCustomerKey": {
+      "type": "string"
+    },
+    "accServiceContacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-contact.acc-service-contact",
+      "mappedBy": "contact"
+    },
+    "accServiceVendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-vendor.acc-service-vendor",
+      "mappedBy": "contact"
+    },
+    "accServiceBills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "mappedBy": "contact"
+    },
+    "spouseBirthdayDate": {
+      "type": "date"
+    }
+  }
+}

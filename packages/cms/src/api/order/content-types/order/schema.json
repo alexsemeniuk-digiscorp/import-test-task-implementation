@@ -1,0 +1,341 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "SELLING: Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "orders"
+    },
+    "sales": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "incoming",
+        "preparing",
+        "ready",
+        "shipped",
+        "started",
+        "paying",
+        "paid",
+        "returned",
+        "credited",
+        "placed",
+        "pending",
+        "received"
+      ]
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "enum": [
+        "card",
+        "cash",
+        "paypal",
+        "payedByPoints"
+      ]
+    },
+    "deliveryMethod": {
+      "type": "enumeration",
+      "enum": [
+        "USPS",
+        "UPS",
+        "FedEx",
+        "DHL Express",
+        "OnTrac",
+        "US Foods",
+        "Courier"
+      ]
+    },
+    "orderId": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^#[A-Z0-9]{11}$"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-order-item.service-order-item",
+      "mappedBy": "order"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-order-item.class-order-item",
+      "mappedBy": "order"
+    },
+    "memberships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership-order-item.membership-order-item",
+      "mappedBy": "order"
+    },
+    "compositeProducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composite-product-order-item.composite-product-order-item",
+      "mappedBy": "order"
+    },
+    "total": {
+      "type": "decimal",
+      "default": 0
+    },
+    "subTotal": {
+      "type": "decimal",
+      "default": 0
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "selling_orders"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-order-item.product-order-item",
+      "mappedBy": "order"
+    },
+    "dueDate": {
+      "type": "datetime"
+    },
+    "dealTransactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deal-transaction.deal-transaction",
+      "mappedBy": "sellingOrder"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "orders"
+    },
+    "discounts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::discount.discount",
+      "inversedBy": "sellingOrders"
+    },
+    "tax": {
+      "type": "decimal",
+      "required": true
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tip": {
+      "type": "decimal",
+      "default": 0
+    },
+    "recurringAmount": {
+      "type": "decimal"
+    },
+    "recurringPeriod": {
+      "type": "enumeration",
+      "enum": [
+        "once",
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+      ]
+    },
+    "invoice": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invoice.invoice",
+      "mappedBy": "orderId"
+    },
+    "points": {
+      "type": "float"
+    },
+    "pointsGiven": {
+      "type": "float"
+    },
+    "transaction": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "sellingOrder"
+    },
+    "recurringPeriodCount": {
+      "type": "integer"
+    },
+    "customerShippingInfo": {
+      "type": "json"
+    },
+    "isCustomerWebsite": {
+      "type": "boolean",
+      "default": false
+    },
+    "shipment": {
+      "type": "decimal"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "sell",
+        "layaway",
+        "rent",
+        "tradeIn",
+        "purchase",
+        "estimate"
+      ],
+      "default": "sell"
+    },
+    "rentDueDate": {
+      "type": "date"
+    },
+    "purchaseRequest": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::purchase-request.purchase-request",
+      "mappedBy": "orderId"
+    },
+    "isWarranty": {
+      "type": "boolean",
+      "default": false
+    },
+    "memo": {
+      "type": "integer"
+    },
+    "customCreationDate": {
+      "type": "datetime"
+    },
+    "ecommerceType": {
+      "type": "enumeration",
+      "enum": [
+        "shopify",
+        "woocommerce",
+        "magento",
+        "api"
+      ]
+    },
+    "orderVersion": {
+      "type": "enumeration",
+      "enum": [
+        "historical",
+        "current"
+      ],
+      "default": "current"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "order"
+    },
+    "expiryDate": {
+      "type": "datetime"
+    },
+    "salesItemReports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sales-item-report.sales-item-report",
+      "mappedBy": "order"
+    },
+    "inputInvoiceNum": {
+      "type": "string"
+    },
+    "note": {
+      "type": "text"
+    },
+    "isShowInvoiceNote": {
+      "type": "boolean",
+      "default": false
+    },
+    "estimate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::estimate.estimate",
+      "mappedBy": "orderId"
+    },
+    "lastPayment": {
+      "type": "datetime"
+    },
+    "ecommerceOrderId": {
+      "type": "string"
+    },
+    "accServiceOrders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-order.acc-service-order",
+      "mappedBy": "sellingOrder"
+    },
+    "accServiceBills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "mappedBy": "sellingOrder"
+    },
+    "billCreation": {
+      "type": "boolean",
+      "default": true
+    },
+    "billDeletetion": {
+      "type": "boolean",
+      "default": false
+    },
+    "returns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::return.return",
+      "mappedBy": "order"
+    },
+    "shippedDate": {
+      "type": "datetime"
+    },
+    "receiveDate": {
+      "type": "datetime"
+    },
+    "paid": {
+      "type": "boolean"
+    },
+    "memoNumber": {
+      "type": "text"
+    },
+    "repairTicketNumber": {
+      "type": "biginteger"
+    },
+    "repairTicketNumberIncrement": {
+      "type": "biginteger"
+    }
+  }
+}

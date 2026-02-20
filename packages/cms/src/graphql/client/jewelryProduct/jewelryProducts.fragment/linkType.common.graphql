@@ -1,0 +1,6 @@
+fragment LinkType on LinkTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

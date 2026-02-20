@@ -1,0 +1,44 @@
+fragment UserTable on UsersPermissionsUserEntity {
+  id
+  attributes {
+    firstName
+    lastName
+    fullName
+    jobTitle
+    email
+    phoneNumber
+    createdAt
+    confirmed
+    blocked
+    avatar {
+      data {
+        ...FileMin
+      }
+    }
+    role {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    businessLocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    payRate {
+      data {
+        id
+        attributes {
+          period
+          rate
+        }
+      }
+    }
+  }
+}

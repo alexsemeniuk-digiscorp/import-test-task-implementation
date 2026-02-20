@@ -1,0 +1,5 @@
+mutation fastUpdateAllProductsFromCSV(
+  $input: FastUpdateAllProductsFromCSVInput!
+) {
+  fastUpdateAllProductsFromCSV(input: $input)
+}

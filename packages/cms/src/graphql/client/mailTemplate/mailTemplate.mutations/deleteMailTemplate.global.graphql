@@ -1,0 +1,7 @@
+mutation deleteMailTemplate($id: ID!) {
+  deleteMailTemplate(id: $id) {
+    data {
+      ...MailTemplate
+    }
+  }
+}

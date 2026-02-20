@@ -1,0 +1,10 @@
+fragment EcommerceCustomAppService on EcommerceCustomAppServiceEntity {
+  id
+  attributes {
+    appName
+    apiKey
+    apiSecret
+    isInstalled
+    accessToken
+  }
+}

@@ -1,0 +1,16 @@
+fragment Onboarding on OnboardingEntity {
+  id
+  attributes {
+    isCompleted
+    isLogoUpload
+    isMainLocation
+    isEmailAndPhone
+    isStoreAdded
+    isEmployeeAdded
+    isCustomerImported
+    isProductsImported
+    isTwilioConnected
+    isStripeConnected
+    isQuickBooksConnected
+  }
+}

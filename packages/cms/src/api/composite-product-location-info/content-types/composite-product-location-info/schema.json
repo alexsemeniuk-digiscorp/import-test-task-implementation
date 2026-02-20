@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "composite_product_location_infos",
+  "info": {
+    "singularName": "composite-product-location-info",
+    "pluralName": "composite-product-location-infos",
+    "displayName": "Composite Product Location Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "compositeProduct": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::composite-product.composite-product",
+      "inversedBy": "compositeProductLocationInfos"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "compositeProductOrderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composite-product-order-item.composite-product-order-item",
+      "mappedBy": "compositeProduct"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

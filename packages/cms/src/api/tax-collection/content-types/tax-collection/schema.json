@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tax_collections",
+  "info": {
+    "singularName": "tax-collection",
+    "pluralName": "tax-collections",
+    "displayName": "Tax Collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "taxes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tax.tax",
+      "inversedBy": "taxCollections"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation createResourceInventoryItem($input: ResourceInventoryItemInput!) {
+  createResourceInventoryItem(data: $input) {
+    data {
+      id
+    }
+  }
+}

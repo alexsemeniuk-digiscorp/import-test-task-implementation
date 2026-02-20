@@ -1,0 +1,7 @@
+mutation createShankStyle($input: ShankStyleInput!) {
+  createShankStyle(data: $input) {
+    data {
+      ...ShankStyle
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation createBoxPaper($input: BoxPaperInput!) {
+  createBoxPaper(data: $input) {
+    data {
+      ...BoxPaper
+    }
+  }
+}

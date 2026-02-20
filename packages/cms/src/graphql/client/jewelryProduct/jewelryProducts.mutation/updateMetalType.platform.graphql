@@ -1,0 +1,7 @@
+mutation updateMetalType($id: ID!, $input: MetalTypeInput!) {
+  updateMetalType(id: $id, data: $input) {
+    data {
+      ...MetalType
+    }
+  }
+}

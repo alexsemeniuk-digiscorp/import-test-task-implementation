@@ -1,0 +1,4 @@
+fragment SubLocationSelect on SublocationEntity {
+  id
+  ...SubLocationMin
+}

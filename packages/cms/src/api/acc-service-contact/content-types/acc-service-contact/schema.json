@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_contacts",
+  "info": {
+    "singularName": "acc-service-contact",
+    "pluralName": "acc-service-contacts",
+    "displayName": "Acc service contact"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "accServiceContacts"
+    },
+    "syncToken": {
+      "type": "string"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceContacts"
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "accServiceConn": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-conn.acc-service-conn",
+      "inversedBy": "accServiceContacts"
+    },
+    "accServiceBills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "mappedBy": "accServiceContact"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "accServiceContacts"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Ignore everything
+*
+
+# Allow files and directories
+!/packages/cms
+!/packages/website
+!/packages/customer-website
+!/.yarn/plugins
+!/.yarn/releases
+!/.yarnrc.yml
+!/package.json
+!/yarn.lock
+!/bin
+!/ecosystem.config.yml
+
+# Ignore unnecessary files inside allowed directories
+# This should go after the allowed directories
+**/*.test.ts
+**/packages/cms/tests/
+**/*~
+**/*.log
+**/.DS_Store
+**/Thumbs.db
+**/build
+**/node_modules
+**/dist
+**/.cache
+**/.env.*
+# TODO: Remove this once we have a better way to handle envs
+!/packages/website/.env.production
+!/packages/customer-website/.env.production
+/.yarn/install-state.gz
+/packages/website/createModule.js

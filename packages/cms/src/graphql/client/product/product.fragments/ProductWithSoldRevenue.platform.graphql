@@ -1,0 +1,22 @@
+fragment ProductWithSoldRevenue on ProductEntity {
+  __typename
+  id
+  attributes {
+    name
+    SKU
+    uuid
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+    quantity(businessLocationId: $businessLocationId)
+    soldRevenue(
+      input: {
+        startDate: $startDate
+        endDate: $endDate
+        businessLocationId: $businessLocationId
+      }
+    )
+  }
+}

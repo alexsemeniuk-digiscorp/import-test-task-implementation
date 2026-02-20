@@ -1,0 +1,12 @@
+fragment ProductPrint on ProductEntity {
+  id
+  attributes {
+    name
+    tagProductName
+    SKU
+    UPC
+    MPN
+    defaultPrice
+    barcode
+  }
+}

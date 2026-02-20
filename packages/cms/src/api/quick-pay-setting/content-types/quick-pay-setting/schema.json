@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quick_pays_setting",
+  "info": {
+    "singularName": "quick-pay-setting",
+    "pluralName": "quick-pays-setting",
+    "displayName": "SETTING: Quick Pay",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "sellingPayingAmountPercentage": {
+      "type": "float",
+      "max": 100,
+      "min": 0,
+      "default": 100
+    },
+    "sellingOrderManagementPayingAmountPercentage": {
+      "type": "float",
+      "default": 100,
+      "max": 100,
+      "min": 0
+    },
+    "quickPayOption": {
+      "type": "string"
+    },
+    "quickPayCardOption": {
+      "type": "string"
+    },
+    "quickPayLinkOption": {
+      "type": "string"
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "quickPayCustomMethod": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment-method.payment-method"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

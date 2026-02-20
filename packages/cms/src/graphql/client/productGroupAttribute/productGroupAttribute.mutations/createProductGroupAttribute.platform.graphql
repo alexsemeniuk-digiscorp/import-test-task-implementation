@@ -1,0 +1,7 @@
+mutation createProductGroupAttribute($input: ProductGroupAttributeInput!) {
+  createProductGroupAttribute(data: $input) {
+    data {
+      id
+    }
+  }
+}

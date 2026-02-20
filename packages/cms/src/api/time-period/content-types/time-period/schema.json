@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "time_periods",
+  "info": {
+    "singularName": "time-period",
+    "pluralName": "time-periods",
+    "displayName": "INVENTORY: Time Period",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+fragment Serialize on InventorySerializeEntity {
+  id
+  attributes {
+    editable
+    name
+  }
+}

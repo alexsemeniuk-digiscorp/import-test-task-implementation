@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/meta/callback",
+      "handler": "meta.callback",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/meta/webhook",
+      "handler": "meta.webhook",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/meta/webhook",
+      "handler": "meta.webhook",
+      "config": {
+        "auth": false
+      }
+    }
+  ]
+}

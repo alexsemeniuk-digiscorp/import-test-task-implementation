@@ -1,0 +1,7 @@
+mutation updateUsage($id: ID!, $data: UsageInput!) {
+  updateUsage(id: $id, data: $data) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,11 @@
+fragment Location on LocationEntity {
+  id
+  attributes {
+    address
+    zipcode
+    docAddressLine1
+    docAddressLine2
+    docAddressLine3
+    docAddressLine4
+  }
+}

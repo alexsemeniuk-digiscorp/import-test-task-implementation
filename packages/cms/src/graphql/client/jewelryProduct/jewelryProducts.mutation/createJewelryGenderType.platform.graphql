@@ -1,0 +1,7 @@
+mutation createJewelryGenderType($input: GenderTypeInput!) {
+  createGenderType(data: $input) {
+    data {
+      ...JewelryGenderType
+    }
+  }
+}

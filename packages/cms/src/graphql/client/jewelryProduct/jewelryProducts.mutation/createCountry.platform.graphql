@@ -1,0 +1,7 @@
+mutation createCountry($input: CountryInput!) {
+  createCountry(data: $input) {
+    data {
+      ...Country
+    }
+  }
+}

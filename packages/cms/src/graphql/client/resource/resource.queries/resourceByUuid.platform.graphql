@@ -1,0 +1,7 @@
+query resourceByUuid($uuid: String!) {
+  resources(filters: { uuid: { eq: $uuid } }) {
+    data {
+      ...Resource
+    }
+  }
+}

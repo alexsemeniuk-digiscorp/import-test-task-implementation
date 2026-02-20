@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crm_relations",
+  "info": {
+    "singularName": "crm-relation",
+    "pluralName": "crm-relations",
+    "displayName": "CRM: Relation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fromContact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "relation"
+    },
+    "toContact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "relationType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::crm-relation-type.crm-relation-type"
+    }
+  }
+}

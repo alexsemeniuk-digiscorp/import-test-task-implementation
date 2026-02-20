@@ -1,0 +1,16 @@
+fragment SubLocationItem on SublocationItemEntity {
+  id
+  ...SubLocationItemMin
+  attributes {
+    sublocation {
+      data {
+        ...SubLocationMin
+      }
+    }
+    productInventoryItem {
+      data {
+        id
+      }
+    }
+  }
+}

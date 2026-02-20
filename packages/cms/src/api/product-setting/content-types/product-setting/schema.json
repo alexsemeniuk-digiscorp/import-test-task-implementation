@@ -1,0 +1,209 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products_setting",
+  "info": {
+    "singularName": "product-setting",
+    "pluralName": "products-setting",
+    "displayName": "SETTINGS: Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "returnableItem": {
+      "type": "boolean",
+      "default": false
+    },
+    "trackProductInventory": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "mappedBy": "settingsProduct"
+    },
+    "allowNegativeQuantity": {
+      "type": "boolean",
+      "default": false
+    },
+    "visibleItem": {
+      "type": "boolean",
+      "default": true
+    },
+    "defaultPurchaseTax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "defaultPaymentMethod": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment-method.payment-method"
+    },
+    "aiPrompt": {
+      "displayName": "AI Prompt",
+      "type": "component",
+      "repeatable": false,
+      "component": "data.ai-prompt"
+    },
+    "bulkProductsAiPrompt": {
+      "displayName": "Bulk Products AI Prompt",
+      "type": "component",
+      "repeatable": false,
+      "component": "data.bulk-products-ai-prompt"
+    },
+    "isEcommerceNameEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShopifyTagsEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShopifyCollectionEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isWoocommerceCategoryEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isRetailPriceMultiplierEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isWholesalePriceMultiplierEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBrandEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isDimensionEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isWeightEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isModelEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isSkuEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isMpnEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUpcEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isIsbnEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEanEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPartsWarrantyEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLaborWarrantyEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isAppraisalDescriptionEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isEcommerceDescriptionEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isNoteEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isRevenueEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCostEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLowQuantityEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isMaxQuantityEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isMinimumOrderQuantityEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isTaxEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isVendorEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPriceEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPointsGivenEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPointsRedeemEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isStorageNotesEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isReturnableItemEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isForBusinessOnlyEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isForBundleUseOnlyEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPackagingProductEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isExpiresEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "isRentableEnabled": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

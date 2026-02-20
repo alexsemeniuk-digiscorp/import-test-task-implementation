@@ -1,0 +1,7 @@
+mutation createRentableData($input: RentableDataInput!) {
+  createRentableData(data: $input) {
+    data {
+      id
+    }
+  }
+}

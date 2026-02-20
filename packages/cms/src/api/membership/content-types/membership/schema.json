@@ -1,0 +1,139 @@
+{
+  "kind": "collectionType",
+  "collectionName": "memberships",
+  "info": {
+    "singularName": "membership",
+    "pluralName": "memberships",
+    "displayName": "Membership",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "rewardPoints": {
+      "type": "integer"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "membershipOrderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership-order-item.membership-order-item",
+      "mappedBy": "membership"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "membershipItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership-item.membership-item",
+      "mappedBy": "membership"
+    },
+    "durationCount": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 1
+    },
+    "durationPeriod": {
+      "type": "enumeration",
+      "enum": [
+        "day",
+        "week",
+        "month",
+        "year"
+      ]
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "membershipId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "unique": true
+    },
+    "revenue": {
+      "type": "string",
+      "required": false
+    },
+    "cost": {
+      "type": "string"
+    },
+    "accServiceEntities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-entity.acc-service-entity",
+      "mappedBy": "membership"
+    },
+    "revenueChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "memberships"
+    },
+    "revenueChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "memberships"
+    },
+    "revenueChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "memberships"
+    },
+    "costChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "memberships"
+    },
+    "costChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "memberships"
+    },
+    "costChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "memberships"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    }
+  }
+}

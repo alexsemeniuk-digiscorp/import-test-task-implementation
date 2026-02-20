@@ -1,0 +1,41 @@
+.pagination {
+  :global(.ant-pagination) {
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.ant-pagination-item) {
+    display: none;
+  }
+
+  :global(.ant-pagination-prev) {
+    order: -2;
+    margin: 0;
+  }
+
+  :global(.ant-pagination-next) {
+    order: -1;
+    margin: 0;
+  }
+
+  :global(.ant-pagination-total-text),
+  :global(.ant-pagination-item-link) {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  :global(.ant-pagination-total-text) {
+    margin: 0 0 0 16px;
+  }
+}
+
+.fullWidth {
+  :global(.ant-pagination) {
+    width: 100%;
+  }
+
+  :global(.ant-pagination-options) {
+    margin-left: auto;
+  }
+}

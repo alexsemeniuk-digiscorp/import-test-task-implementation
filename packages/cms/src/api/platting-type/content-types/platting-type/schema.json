@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platting_types",
+  "info": {
+    "singularName": "platting-type",
+    "pluralName": "platting-types",
+    "displayName": "INVENTORY: Platting Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

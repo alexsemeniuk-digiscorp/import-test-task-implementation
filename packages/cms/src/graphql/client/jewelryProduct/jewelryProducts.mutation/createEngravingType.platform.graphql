@@ -1,0 +1,7 @@
+mutation createEngravingType($input: EngravingTypeInput!) {
+  createEngravingType(data: $input) {
+    data {
+      ...EngravingType
+    }
+  }
+}

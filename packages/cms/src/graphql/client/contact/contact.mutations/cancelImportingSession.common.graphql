@@ -1,0 +1,5 @@
+mutation cancelImportingSession($input: CancelImportingSessionInput!) {
+  cancelImportingSession(input: $input) {
+    success
+  }
+}

@@ -1,0 +1,7 @@
+mutation updateDeal($id: ID!, $input: DealInput!) {
+  updateDeal(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

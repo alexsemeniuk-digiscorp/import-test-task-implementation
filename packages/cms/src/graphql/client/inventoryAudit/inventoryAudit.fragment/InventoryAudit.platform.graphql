@@ -1,0 +1,64 @@
+fragment InventoryAudit on InventoryAuditEntity {
+  id
+  ...InventoryAuditMin
+  attributes {
+    inventoryAuditItems(pagination: { limit: -1 }) {
+      data {
+        id
+        ...InventoryAuditItemMin
+        attributes {
+          productInventoryItem {
+            data {
+              id
+            }
+          }
+          businessLocation {
+            data {
+              id
+              attributes {
+                name
+              }
+            }
+          }
+          sublocationItems {
+            data {
+              id
+              ...SubLocationItemMin
+              attributes {
+                sublocation {
+                  data {
+                    ...SubLocationMin
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    businessLocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    sublocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    employee {
+      data {
+        id
+        attributes {
+          fullName
+        }
+      }
+    }
+  }
+}

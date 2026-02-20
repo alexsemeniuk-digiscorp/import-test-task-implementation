@@ -1,0 +1,7 @@
+mutation createInvtCmpTrck($input: InvtCmpTrckInput!) {
+  createInvtCmpTrck(data: $input) {
+    data {
+      ...InvtCmpTrck
+    }
+  }
+}

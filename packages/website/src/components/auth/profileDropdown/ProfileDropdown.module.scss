@@ -1,0 +1,11 @@
+.menuButton {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content {
+  :global(.ant-dropdown-menu) {
+    gap: 20px;
+    overflow-x: hidden !important;
+  }
+}

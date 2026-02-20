@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "localization_settings",
+  "info": {
+    "singularName": "localization-setting",
+    "pluralName": "localization-settings",
+    "displayName": "SETTINGS: Localization Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "dateFormat": {
+      "type": "enumeration",
+      "enum": [
+        "YYYY_MM_DD",
+        "DD_MM_YYYY",
+        "MM_DD_YYYY"
+      ],
+      "default": "MM_DD_YYYY"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "timeFormat": {
+      "type": "enumeration",
+      "enum": [
+        "HH_mm",
+        "hh_mm_A"
+      ],
+      "default": "hh_mm_A"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_taxes",
+  "info": {
+    "singularName": "acc-service-tax",
+    "pluralName": "acc-service-taxes",
+    "displayName": "Acc service tax"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tax": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tax.tax",
+      "inversedBy": "accServiceTaxes"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceTaxes"
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "syncToken": {
+      "type": "string",
+      "required": true
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenant_credit_histories",
+  "info": {
+    "singularName": "tenant-credit-history",
+    "pluralName": "tenant-credit-histories",
+    "displayName": "Tenant Credit History",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "float",
+      "required": true,
+      "unique": false,
+      "min": 0
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "userCount",
+        "inventoryItemCount",
+        "callTime",
+        "callRecordingTime",
+        "transcriptionTime",
+        "smsSendCount",
+        "smsReceiveCount",
+        "mmsSendCount",
+        "mmsReceiveCount",
+        "monthlyEmailCount",
+        "giaApiCount",
+        "storage",
+        "igiApiCount"
+      ],
+      "required": false
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "running",
+        "failed",
+        "paid",
+        "completed"
+      ],
+      "default": "running",
+      "required": true
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "tenant_credit_histories"
+    },
+    "transactionType": {
+      "type": "enumeration",
+      "enum": [
+        "credit",
+        "debit"
+      ],
+      "required": true
+    },
+    "invoice": {
+      "type": "string"
+    },
+    "stripeInfo": {
+      "type": "json"
+    }
+  }
+}

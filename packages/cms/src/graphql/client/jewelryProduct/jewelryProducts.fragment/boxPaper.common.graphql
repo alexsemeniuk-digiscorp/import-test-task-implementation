@@ -1,0 +1,6 @@
+fragment BoxPaper on BoxPaperEntity {
+  id
+  attributes {
+    name
+  }
+}

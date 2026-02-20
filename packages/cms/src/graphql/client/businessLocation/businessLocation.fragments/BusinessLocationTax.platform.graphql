@@ -1,0 +1,15 @@
+fragment BusinessLocationTax on BusinessLocationEntity {
+  id
+  attributes {
+    tax {
+      data {
+        id
+      }
+    }
+    taxCollection {
+      data {
+        id
+      }
+    }
+  }
+}

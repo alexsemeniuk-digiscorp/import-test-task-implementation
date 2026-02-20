@@ -1,0 +1,7 @@
+mutation createDealTransactionReminder($input: DealTransactionReminderInput!) {
+  createDealTransactionReminder(data: $input) {
+    data {
+      ...DealTransactionReminder
+    }
+  }
+}

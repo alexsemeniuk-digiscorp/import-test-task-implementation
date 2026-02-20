@@ -1,0 +1,18 @@
+query manufacturingProcess(
+  $filters: ManufacturingProcessFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  manufacturingProcesses(
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...ManufacturingProcess
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

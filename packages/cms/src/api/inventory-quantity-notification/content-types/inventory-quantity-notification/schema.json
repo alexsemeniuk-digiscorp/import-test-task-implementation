@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_quantity_notifications",
+  "info": {
+    "singularName": "inventory-quantity-notification",
+    "pluralName": "inventory-quantity-notifications",
+    "displayName": "NOTIFICATIONS: Inventory Quantity Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userNotifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-notification.user-notification",
+      "mappedBy": "inventoryQuantityNotification"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "MinReached",
+        "NoLeft"
+      ]
+    },
+    "productInventoryItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-inventory-item.product-inventory-item"
+    }
+  }
+}

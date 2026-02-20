@@ -1,0 +1,61 @@
+.main {
+  position: relative;
+
+  .imgItem {
+    object-fit: contain;
+  }
+
+  .imgItem,
+  .videoItem {
+    position: relative;
+    z-index: 1;
+    width: 125px;
+    height: 125px;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    .imgItem,
+    .videoItem {
+      z-index: 0;
+      opacity: 0.3;
+      transition: opacity 0.2s;
+    }
+  }
+
+  .otherTypes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 125px;
+  }
+
+  .eye,
+  .delete {
+    position: absolute;
+    top: 62px;
+    z-index: 100001;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .eye {
+    left: 42px;
+  }
+
+  .delete {
+    left: 82px;
+  }
+
+  &:hover .eye,
+  &:hover .delete {
+    color: red;
+    opacity: 1;
+  }
+}

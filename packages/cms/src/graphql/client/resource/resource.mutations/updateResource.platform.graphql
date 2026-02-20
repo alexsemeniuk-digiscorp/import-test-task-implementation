@@ -1,0 +1,7 @@
+mutation updateResource($id: ID!, $input: ResourceInput!) {
+  updateResource(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

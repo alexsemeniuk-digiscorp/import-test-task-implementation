@@ -1,0 +1,21 @@
+fragment TransferOrderItem on TransferOrderItemEntity {
+  ...TransferOrderItemMin
+  id
+  attributes {
+    product {
+      data {
+        id
+      }
+    }
+    sublocationItem {
+      data {
+        id
+      }
+    }
+    serializes {
+      data {
+        id
+      }
+    }
+  }
+}

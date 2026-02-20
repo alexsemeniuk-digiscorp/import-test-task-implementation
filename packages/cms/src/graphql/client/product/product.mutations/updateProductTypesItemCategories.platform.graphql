@@ -1,0 +1,8 @@
+mutation updateProductTypesItemCategories(
+  $input: UpdateProductTypesItemCategoriesInput!
+) {
+  updateProductTypesItemCategories(input: $input) {
+    success
+    updatedCount
+  }
+}

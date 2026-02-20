@@ -1,0 +1,26 @@
+fragment InvtCmpTrck on InvtCmpTrckEntity {
+  ...InvtCmpTrckMin
+  id
+  attributes {
+    size {
+      data {
+        ...InvtCmpSize
+      }
+    }
+    color {
+      data {
+        ...InvtCmpColor
+      }
+    }
+    cmpAttrOpts {
+      data {
+        ...InvtCmpAttrOpt
+      }
+    }
+    costTrackerItems {
+      data {
+        ...InvtCmpTrckItm
+      }
+    }
+  }
+}

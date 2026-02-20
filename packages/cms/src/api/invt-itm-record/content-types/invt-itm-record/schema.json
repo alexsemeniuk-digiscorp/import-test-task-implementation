@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_itm_records",
+  "info": {
+    "singularName": "invt-itm-record",
+    "pluralName": "invt-itm-records",
+    "displayName": "PRODUCT: Inventory-item-record",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "age": {
+      "type": "integer"
+    },
+    "grossMargin": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "soldDate": {
+      "type": "datetime"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "productInventoryItemEvent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-inventory-item-event.product-inventory-item-event",
+      "inversedBy": "productInventoryItemRecords"
+    },
+    "productInventoryItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "inversedBy": "productInventoryItemRecords"
+    },
+    "memoTaken": {
+      "type": "boolean",
+      "default": false
+    },
+    "memoSold": {
+      "type": "boolean",
+      "default": false
+    },
+    "sellingOrder": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    }
+  }
+}

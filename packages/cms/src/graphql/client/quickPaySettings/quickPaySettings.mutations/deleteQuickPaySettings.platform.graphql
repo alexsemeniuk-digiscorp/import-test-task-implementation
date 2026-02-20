@@ -1,0 +1,7 @@
+mutation deleteQuickPaySetting($id: ID!) {
+  deleteQuickPaySetting(id: $id) {
+    data {
+      id
+    }
+  }
+}

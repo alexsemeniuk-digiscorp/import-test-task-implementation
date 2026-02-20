@@ -1,0 +1,6 @@
+.customPicker thead,
+.customPicker :global(.ant-picker-header),
+.customPicker :global(.ant-picker-footer),
+.customPicker :global(.ant-picker-cell:not(.ant-picker-cell-in-view)) {
+  display: none;
+}

@@ -1,0 +1,148 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "dueDate": {
+      "type": "datetime"
+    },
+    "assignees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "note": {
+      "type": "text"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::activity.activity",
+      "mappedBy": "task"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead"
+    },
+    "taskLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task-location.task-location"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "taskType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task-type.task-type"
+    },
+    "forCompanies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    },
+    "approvalMethods": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::approval-method.approval-method"
+    },
+    "approvalDueDate": {
+      "type": "datetime"
+    },
+    "approval": {
+      "type": "boolean",
+      "default": false
+    },
+    "currentVendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "tasks"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "inactive"
+      ],
+      "default": "low"
+    },
+    "taskStage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task-stage.task-stage"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "transitingTo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "completedDate": {
+      "type": "datetime"
+    },
+    "serviceOrderItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-order-item.service-order-item"
+    },
+    "appointmentDate": {
+      "type": "datetime"
+    }
+  }
+}

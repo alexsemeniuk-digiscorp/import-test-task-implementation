@@ -1,0 +1,7 @@
+mutation createJewelryConditionType($input: ConditionTypeInput!) {
+  createConditionType(data: $input) {
+    data {
+      ...JewelryConditionType
+    }
+  }
+}

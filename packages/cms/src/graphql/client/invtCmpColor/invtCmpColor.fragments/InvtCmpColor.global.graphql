@@ -1,0 +1,6 @@
+fragment InvtCmpColor on InvtCmpColorEntity {
+  id
+  attributes {
+    name
+  }
+}

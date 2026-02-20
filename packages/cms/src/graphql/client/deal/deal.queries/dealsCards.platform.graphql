@@ -1,0 +1,14 @@
+query dealsCards(
+  $filters: DealFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  deals(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...DealCard
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

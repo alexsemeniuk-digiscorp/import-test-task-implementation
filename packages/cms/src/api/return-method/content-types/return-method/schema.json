@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "return_methods",
+  "info": {
+    "singularName": "return-method",
+    "pluralName": "return-methods",
+    "displayName": "Return Method"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

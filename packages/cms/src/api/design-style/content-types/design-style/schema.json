@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "design_styles",
+  "info": {
+    "singularName": "design-style",
+    "pluralName": "design-styles",
+    "displayName": "INVENTORY: Design Style",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "designStyles"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

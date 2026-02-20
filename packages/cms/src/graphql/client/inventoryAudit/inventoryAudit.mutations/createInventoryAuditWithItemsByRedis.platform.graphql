@@ -1,0 +1,7 @@
+mutation createInventoryAuditWithItemsByRedis(
+  $input: CreateInventoryAuditWithItemsInput!
+) {
+  createInventoryAuditWithItemsByRedis(input: $input) {
+    id
+  }
+}

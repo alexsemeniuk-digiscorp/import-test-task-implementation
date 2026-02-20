@@ -1,0 +1,7 @@
+query subLocationsList($filters: SublocationFiltersInput, $sort: [String]) {
+  sublocations(filters: $filters, pagination: { limit: -1 }, sort: $sort) {
+    data {
+      ...SubLocationMin
+    }
+  }
+}

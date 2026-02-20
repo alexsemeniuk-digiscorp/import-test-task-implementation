@@ -1,0 +1,13 @@
+query defaultPdfTemplates(
+  $filters: DefaultPdfTemplateFiltersInput
+  $pagination: PaginationArg
+) {
+  defaultPdfTemplates(filters: $filters, pagination: $pagination) {
+    data {
+      ...DefaultPdfTemplate
+    }
+      meta {
+      ...Meta
+    }
+  }
+}

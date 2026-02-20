@@ -1,0 +1,7 @@
+mutation createInventoryAdjustment($input: InventoryAdjustmentInput!) {
+  createInventoryAdjustment(data: $input) {
+    data {
+      id
+    }
+  }
+}

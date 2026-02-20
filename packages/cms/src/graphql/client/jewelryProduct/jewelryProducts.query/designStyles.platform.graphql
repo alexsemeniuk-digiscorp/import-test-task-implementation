@@ -1,0 +1,14 @@
+query designStyles(
+  $filters: DesignStyleFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  designStyles(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...DesignStyle
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_group_items",
+  "info": {
+    "singularName": "product-group-item",
+    "pluralName": "product-group-items",
+    "displayName": "Product Group Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "productGroupAttributeOptions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-group-attribute-option.product-group-attribute-option"
+    },
+    "productGroup": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-group.product-group",
+      "inversedBy": "productGroupItems"
+    }
+  }
+}

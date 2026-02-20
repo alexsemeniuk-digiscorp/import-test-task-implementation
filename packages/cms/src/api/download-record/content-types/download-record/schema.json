@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "download_records",
+  "info": {
+    "singularName": "download-record",
+    "pluralName": "download-records",
+    "displayName": "DownloadRecord",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fileItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    },
+    "downloadedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

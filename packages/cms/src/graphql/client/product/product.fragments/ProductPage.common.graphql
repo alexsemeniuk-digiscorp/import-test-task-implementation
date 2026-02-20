@@ -1,0 +1,16 @@
+fragment ProductPage on ProductEntity {
+  ...ProductMin
+  id
+  attributes {
+    productInventoryItems {
+      data {
+        ...ProductInventoryItemPage
+      }
+    }
+    productAttributeOptions {
+      data {
+        ...ProductAttributeOption
+      }
+    }
+  }
+}

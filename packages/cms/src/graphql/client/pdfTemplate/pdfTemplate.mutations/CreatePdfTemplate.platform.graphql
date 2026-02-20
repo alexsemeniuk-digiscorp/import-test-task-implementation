@@ -1,0 +1,7 @@
+mutation createPdfTemplate($data: PdfTemplateInput!) {
+  createPdfTemplate(data: $data) {
+    data {
+      id
+    }
+  }
+}

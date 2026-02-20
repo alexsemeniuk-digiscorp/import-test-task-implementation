@@ -1,0 +1,14 @@
+query marketingEmailTemplates(
+  $filters: MarketingEmailTemplateFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  marketingEmailTemplates(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...MarketingEmailTemplate
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

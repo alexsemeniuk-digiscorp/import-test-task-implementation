@@ -1,0 +1,21 @@
+fragment InventoryAdjustment on InventoryAdjustmentEntity {
+  ...InventoryAdjustmentMin
+  id
+  attributes {
+    location {
+      data {
+        id
+      }
+    }
+    sublocation {
+      data {
+        id
+      }
+    }
+    files {
+      data {
+        ...File
+      }
+    }
+  }
+}

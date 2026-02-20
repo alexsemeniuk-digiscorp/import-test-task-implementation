@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "public_contracts",
+  "info": {
+    "singularName": "public-contract",
+    "pluralName": "public-contracts",
+    "displayName": "CONTRACTS: PublicContract",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "companySignature": {
+      "type": "richtext"
+    },
+    "clientSignature": {
+      "type": "richtext"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "signed",
+        "declined"
+      ]
+    },
+    "companySignDate": {
+      "type": "datetime"
+    },
+    "clientSignDate": {
+      "type": "datetime"
+    },
+    "companySignName": {
+      "type": "string"
+    },
+    "clientSignName": {
+      "type": "string"
+    }
+  }
+}

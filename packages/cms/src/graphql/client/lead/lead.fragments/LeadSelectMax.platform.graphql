@@ -1,0 +1,13 @@
+fragment LeadSelectMax on LeadEntity {
+  id
+  attributes {
+    fullName
+    email
+    phoneNumber
+    avatar {
+      data {
+        ...FileMin
+      }
+    }
+  }
+}

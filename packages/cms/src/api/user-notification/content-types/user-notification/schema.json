@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_notifications",
+  "info": {
+    "singularName": "user-notification",
+    "pluralName": "user-notifications",
+    "displayName": "NOTIFICATIONS: User Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "hasBeenSeen": {
+      "type": "boolean",
+      "default": false
+    },
+    "inventoryQuantityNotification": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::inventory-quantity-notification.inventory-quantity-notification",
+      "inversedBy": "userNotifications"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "InventoryQuantity",
+        "MaintenanceQuantity",
+        "NylasGrantExpire",
+        "BulkUpload"
+      ]
+    },
+    "maintenanceQuantityNotification": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maintenance-quantity-notification.maintenance-quantity-notification",
+      "inversedBy": "userNotifications"
+    },
+    "orderStatusNotification": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order-status-notification.order-status-notification",
+      "inversedBy": "userNotifications"
+    },
+    "nylasGrantExpire": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::notifications-nylas-grant-expire.notifications-nylas-grant-expire",
+      "inversedBy": "notifications_user_notification"
+    },
+    "imagesNotify": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bulk-images-notify.bulk-images-notify",
+      "inversedBy": "userNotifies"
+    }
+  }
+}

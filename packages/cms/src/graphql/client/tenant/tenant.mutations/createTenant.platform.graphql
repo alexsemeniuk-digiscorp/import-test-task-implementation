@@ -1,0 +1,7 @@
+mutation createTenant($data: TenantInput!) {
+  createTenant(data: $data) {
+    data {
+      id
+    }
+  }
+}

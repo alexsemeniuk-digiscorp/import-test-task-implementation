@@ -1,0 +1,7 @@
+mutation createPiece($input: PieceInput!) {
+  createPiece(data: $input) {
+    data {
+      ...Piece
+    }
+  }
+}

@@ -1,0 +1,11 @@
+fragment InventoryAdjustmentMin on InventoryAdjustmentEntity {
+  id
+  attributes {
+    reason
+    uuid
+    adjustmentDate
+    description
+    adjustmentId
+    createdAt
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scheduling_recurrences",
+  "info": {
+    "singularName": "scheduling-recurrence",
+    "pluralName": "scheduling-recurrences",
+    "displayName": "SCHEDULING: Recurrence ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recurrenceDate": {
+      "type": "datetime"
+    }
+  }
+}

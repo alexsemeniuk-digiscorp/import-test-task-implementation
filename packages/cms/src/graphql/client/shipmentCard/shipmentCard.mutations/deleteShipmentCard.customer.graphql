@@ -1,0 +1,7 @@
+mutation deleteShipmentCard($id: ID!) {
+  deleteShipmentCard(id: $id) {
+    data {
+      ...ShipmentCard
+    }
+  }
+}

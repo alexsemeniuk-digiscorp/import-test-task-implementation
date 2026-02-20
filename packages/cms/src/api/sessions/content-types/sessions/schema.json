@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_sessions",
+  "info": {
+    "singularName": "sessions",
+    "pluralName": "user-sessions",
+    "displayName": "USER: sessions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "session_id": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "user_id": {
+      "type": "string",
+      "required": true
+    },
+    "ip": {
+      "type": "string"
+    },
+    "browser": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "expired_at": {
+      "type": "biginteger"
+    }
+  }
+}

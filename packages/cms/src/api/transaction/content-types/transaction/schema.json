@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total_spent": {
+      "type": "decimal",
+      "required": true
+    },
+    "total_due": {
+      "type": "decimal",
+      "required": true
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "spent": {
+      "type": "decimal",
+      "required": true
+    },
+    "due": {
+      "type": "decimal",
+      "required": true
+    },
+    "stripeData": {
+      "type": "json",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "success",
+        "failed"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "sellingOrder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "transaction"
+    }
+  }
+}

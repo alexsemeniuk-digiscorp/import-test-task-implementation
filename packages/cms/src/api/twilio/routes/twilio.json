@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/twilio/voice",
+      "handler": "twilio.handleVoice",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/twilio/transcription",
+      "handler": "twilio.handleTranscription",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/twilio/status",
+      "handler": "twilio.handleStatus",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/twilio/token",
+      "handler": "twilio.generateToken",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/twilio/transfer",
+      "handler": "twilio.transferCall",
+      "config": {
+        "auth": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/twilio/incomingSms",
+      "handler": "twilio.handleIncomingMessage",
+      "config": {
+        "auth": false
+      }
+    }
+  ]
+}

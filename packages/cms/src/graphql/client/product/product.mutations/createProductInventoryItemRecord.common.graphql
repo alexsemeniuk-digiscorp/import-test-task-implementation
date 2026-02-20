@@ -1,0 +1,7 @@
+mutation createProductInventoryItemRecord($input: InvtItmRecordInput!) {
+  createInvtItmRecord(data: $input) {
+    data {
+      id
+    }
+  }
+}

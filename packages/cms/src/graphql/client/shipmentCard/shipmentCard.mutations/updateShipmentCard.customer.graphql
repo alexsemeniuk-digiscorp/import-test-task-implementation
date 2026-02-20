@@ -1,0 +1,7 @@
+mutation updateShipmentCard($id: ID!, $input: ShipmentCardInput!) {
+  updateShipmentCard(id: $id, data: $input) {
+    data {
+      ...ShipmentCard
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_data_scheduled_messages",
+  "info": {
+    "displayName": "ScheduledMessage",
+    "icon": "envelop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "string"
+    },
+    "scheduleId": {
+      "type": "string"
+    },
+    "closeTime": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_enrolled_leads",
+  "info": {
+    "singularName": "campaign-enrolled-lead",
+    "pluralName": "campaign-enrolled-leads",
+    "displayName": "MARKETING: Campaign Enrolled Lead",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "manually",
+        "automated"
+      ]
+    },
+    "isUnsubscribed": {
+      "type": "boolean",
+      "default": false
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lead.lead",
+      "inversedBy": "campaignEnrolledLeads"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "campaignEnrolledLeads"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "sequenceStep": {
+      "type": "integer"
+    },
+    "prevStep": {
+      "type": "integer"
+    },
+    "token": {
+      "type": "string"
+    }
+  }
+}

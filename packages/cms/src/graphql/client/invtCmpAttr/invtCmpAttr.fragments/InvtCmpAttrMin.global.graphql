@@ -1,0 +1,6 @@
+fragment InvtCmpAttrMin on InvtCmpAttrEntity {
+  id
+  attributes {
+    name
+  }
+}

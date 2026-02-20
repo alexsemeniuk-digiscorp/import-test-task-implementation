@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carriers",
+  "info": {
+    "singularName": "carrier",
+    "pluralName": "carriers",
+    "displayName": "Carrier"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+fragment Tenant on TenantEntity {
+  id
+  attributes {
+    companyName
+    slug
+    credits
+    autoRechargeCredit
+    thresholdBalance
+    rechargeToBalance
+    email
+    phoneNumber
+    websiteUrl
+  }
+}

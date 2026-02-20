@@ -1,0 +1,7 @@
+query invtCmpTrck($id: ID!) {
+  invtCmpTrck(id: $id) {
+    data {
+      ...InvtCmpTrck
+    }
+  }
+}

@@ -1,0 +1,6 @@
+fragment FileMin on UploadFileEntity {
+  id
+  attributes {
+    url
+  }
+}

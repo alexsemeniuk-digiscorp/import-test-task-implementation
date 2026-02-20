@@ -1,0 +1,6 @@
+fragment InvtCmpAttrOptMin on InvtCmpAttrOptEntity {
+  id
+  attributes {
+    name
+  }
+}

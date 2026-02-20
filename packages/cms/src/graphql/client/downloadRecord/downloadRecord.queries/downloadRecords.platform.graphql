@@ -1,0 +1,14 @@
+query downloadRecords(
+  $filters: DownloadRecordFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  downloadRecords(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...DownloadRecord
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

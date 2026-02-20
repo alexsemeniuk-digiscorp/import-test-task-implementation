@@ -1,0 +1,7 @@
+query jewelryProductByUuid($uuid: String!) {
+  jewelryProducts(filters: { uuid: { eq: $uuid } }) {
+    data {
+      ...JewelryProduct
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query ordersPeriodSetting(
+  $filters: OrderSettingFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  ordersSetting(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...OrderPeriodSetting
+    }
+  }
+}

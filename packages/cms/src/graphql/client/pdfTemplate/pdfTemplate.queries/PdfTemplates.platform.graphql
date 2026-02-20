@@ -1,0 +1,14 @@
+query pdfTemplates(
+  $filters: PdfTemplateFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  pdfTemplates(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...PdfTemplate
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query subLocationsSelect(
+  $filters: SublocationFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  sublocations(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...SubLocationSelect
+    }
+  }
+}

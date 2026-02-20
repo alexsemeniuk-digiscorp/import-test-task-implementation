@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_cmp_attrs",
+  "info": {
+    "singularName": "invt-cmp-attr",
+    "pluralName": "invt-cmp-attrs",
+    "displayName": "Composite Product Attribute",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "comPrAttrOps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invt-cmp-attr-opt.invt-cmp-attr-opt",
+      "mappedBy": "comPrAttr"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estimate_shipping_contacts",
+  "info": {
+    "singularName": "estimate-shipping-contact",
+    "pluralName": "estimate-shipping-contacts",
+    "displayName": "EstimateShippingContact"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "estimate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::estimate.estimate",
+      "mappedBy": "shippingContact"
+    }
+  }
+}

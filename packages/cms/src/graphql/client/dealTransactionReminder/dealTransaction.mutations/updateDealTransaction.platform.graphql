@@ -1,0 +1,10 @@
+mutation updateDealTransactionReminder(
+  $id: ID!
+  $input: DealTransactionReminderInput!
+) {
+  updateDealTransactionReminder(id: $id, data: $input) {
+    data {
+      ...DealTransactionReminder
+    }
+  }
+}

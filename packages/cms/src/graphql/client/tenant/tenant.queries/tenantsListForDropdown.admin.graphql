@@ -1,0 +1,17 @@
+query tenantsListForDropdown(
+  $filters: TenantFiltersInput, 
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  tenants(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+        id
+        attributes {
+            companyName
+        }
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

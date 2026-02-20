@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strands",
+  "info": {
+    "singularName": "strand",
+    "pluralName": "strands",
+    "displayName": "INVENTORY: Strand",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type",
+      "inversedBy": "strands"
+    }
+  }
+}

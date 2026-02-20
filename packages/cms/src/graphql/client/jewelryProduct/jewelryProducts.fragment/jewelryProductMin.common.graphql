@@ -1,0 +1,127 @@
+fragment JewelryProductMin on JewelryProductEntity {
+  id
+  attributes {
+    uuid
+    name
+    marginCost
+    files {
+      data {
+        ...File
+      }
+    }
+    description
+    createdAt
+    barcode
+    defaultPrice
+    designStyle {
+      data {
+        ...DesignStyle
+      }
+    }
+    shankStyle {
+      data {
+        ...ShankStyle
+      }
+    }
+    size {
+      data {
+        ...Size
+      }
+    }
+    model
+    jewelryProductType {
+      data {
+        ...JewelryProductType
+      }
+    }
+    specificType {
+      data {
+        ...SpecificType
+      }
+    }
+    engravingType {
+      data {
+        ...EngravingType
+      }
+    }
+    timePeriod {
+      data {
+        ...TimePeriod
+      }
+    }
+    metalFinishType {
+      data {
+        ...MetalFinishType
+      }
+    }
+    metalType {
+      data {
+        ...MetalType
+      }
+    }
+    materialGradeType {
+      data {
+        ...MaterialGrade
+      }
+    }
+    genderType {
+      data {
+        ...JewelryGenderType
+      }
+    }
+    conditionType {
+      data {
+        ...JewelryConditionType
+      }
+    }
+    platting {
+      data {
+        ...PlattingType
+      }
+    }
+    process {
+      data {
+        ...ManufacturingProcess
+      }
+    }
+    pieces {
+      data {
+        ...Piece
+      }
+    }
+    serialNumber
+    brand {
+      data {
+        ...ProductBrand
+      }
+    }
+    rentableData {
+      data {
+        ...RentableData
+      }
+    }
+    partsWarranty
+    returnable
+    bundleUseOnly
+    businessUseOnly
+    laborWarranty
+    packagingProduct
+    tagProductName
+    expiryDate
+    dimension {
+      data {
+        ...Dimension
+      }
+    }
+    weight {
+      data {
+        ...Weight
+      }
+    }
+    SKU
+    ISBN
+    MPN
+    UPC
+    EAN
+  }
+}

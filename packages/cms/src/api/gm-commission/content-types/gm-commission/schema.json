@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gm_commissions",
+  "info": {
+    "singularName": "gm-commission",
+    "pluralName": "gm-commissions",
+    "displayName": "Sales Commission: Gross Margin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "salesCommissions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sales-commission.sales-commission",
+      "inversedBy": "gmCommissions"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "grossMarginFrom": {
+      "type": "decimal"
+    },
+    "grossMarginTo": {
+      "type": "decimal"
+    },
+    "commission": {
+      "type": "decimal"
+    }
+  }
+}

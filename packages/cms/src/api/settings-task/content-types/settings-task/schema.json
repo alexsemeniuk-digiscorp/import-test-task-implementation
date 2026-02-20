@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settings_tasks",
+  "info": {
+    "singularName": "settings-task",
+    "pluralName": "settings-tasks",
+    "displayName": "SETTINGS: Task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "settings_task"
+    },
+    "config": {
+      "type": "json"
+    },
+    "smsNotifyOnComplete": {
+      "type": "boolean",
+      "default": false
+    },
+    "emailNotifyOnComplete": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

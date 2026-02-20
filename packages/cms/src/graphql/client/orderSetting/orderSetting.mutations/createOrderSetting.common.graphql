@@ -1,0 +1,7 @@
+mutation createOrderSetting($input: OrderSettingInput!) {
+  createOrderSetting(data: $input) {
+    data {
+      ...OrderSetting
+    }
+  }
+}

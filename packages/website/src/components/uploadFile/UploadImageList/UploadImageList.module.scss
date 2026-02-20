@@ -1,0 +1,10 @@
+.uploadImageList {
+  :global(.ant-upload-list-item-actions .ant-btn-sm) {
+    height: unset !important;
+  }
+}
+
+.centeredSpace {
+  align-items: center;
+  padding: 8px;
+}

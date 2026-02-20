@@ -1,0 +1,144 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discounts",
+  "info": {
+    "singularName": "discount",
+    "pluralName": "discounts",
+    "displayName": "Discount",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "usageLimit": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "notes": {
+      "type": "text"
+    },
+    "amount": {
+      "type": "float",
+      "min": 0.01,
+      "required": true
+    },
+    "discountUsageEvents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discount-usage-event.discount-usage-event",
+      "mappedBy": "discount"
+    },
+    "applicableProducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "applicableServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "applicableClasses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class"
+    },
+    "applicableCompositeProducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composite-product.composite-product"
+    },
+    "applicableMemberships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership.membership"
+    },
+    "applicableStores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business-location.business-location"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fixed",
+        "percentage"
+      ],
+      "default": "percentage",
+      "required": true
+    },
+    "excludedProducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "excludedClasses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class"
+    },
+    "excludedServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "excludedCompositeProducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::composite-product.composite-product"
+    },
+    "excludedMemberships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership.membership"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "sellingOrders": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::order.order",
+      "mappedBy": "discounts"
+    },
+    "discountId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "required": false,
+      "unique": true
+    }
+  }
+}

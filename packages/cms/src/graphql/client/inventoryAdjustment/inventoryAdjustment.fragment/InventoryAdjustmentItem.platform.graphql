@@ -1,0 +1,18 @@
+fragment InventoryAdjustmentItem on InventoryAdjustmentItemEntity {
+  id
+  attributes {
+    quantityAvailable
+    adjustedQuantity
+    quantityLeft
+    product {
+      data {
+        id
+      }
+    }
+    serializes {
+      data {
+        id
+      }
+    }
+  }
+}

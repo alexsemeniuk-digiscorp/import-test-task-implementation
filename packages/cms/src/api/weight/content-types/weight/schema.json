@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weights",
+  "info": {
+    "singularName": "weight",
+    "pluralName": "weights",
+    "displayName": "Weight",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "float",
+      "required": true
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "mg",
+        "g",
+        "kg",
+        "gr",
+        "oz",
+        "lb",
+        "ct",
+        "dwt"
+      ]
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product",
+      "mappedBy": "weight"
+    },
+    "jewelryProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jewelry-product.jewelry-product",
+      "inversedBy": "weight"
+    }
+  }
+}

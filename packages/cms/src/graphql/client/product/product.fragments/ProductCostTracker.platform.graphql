@@ -1,0 +1,12 @@
+fragment ProductCostTracker on ProductEntity {
+  id
+  attributes {
+    name
+    defaultPrice
+    brand {
+      data {
+        ...ProductBrand
+      }
+    }
+  }
+}

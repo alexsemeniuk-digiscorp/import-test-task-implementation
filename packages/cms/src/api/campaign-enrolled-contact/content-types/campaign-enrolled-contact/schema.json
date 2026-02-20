@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_enrolled_contacts",
+  "info": {
+    "singularName": "campaign-enrolled-contact",
+    "pluralName": "campaign-enrolled-contacts",
+    "displayName": "MARKETING: Campaign Enrolled Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "manually",
+        "automated"
+      ]
+    },
+    "isUnsubscribed": {
+      "type": "boolean",
+      "default": false
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "campaignEnrolledContacts"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "enrolledContacts"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "sequenceStep": {
+      "type": "integer"
+    },
+    "prevStep": {
+      "type": "integer"
+    },
+    "token": {
+      "type": "string"
+    }
+  }
+}

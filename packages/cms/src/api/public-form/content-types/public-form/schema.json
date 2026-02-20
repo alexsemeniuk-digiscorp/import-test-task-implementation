@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "public_forms",
+  "info": {
+    "singularName": "public-form",
+    "pluralName": "public-forms",
+    "displayName": "CONTRACTS: PublicForm",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "body": {
+      "type": "json"
+    },
+    "title": {
+      "type": "string"
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "signature": {
+      "type": "richtext"
+    },
+    "submitted": {
+      "type": "boolean"
+    },
+    "customerName": {
+      "type": "string"
+    }
+  }
+}

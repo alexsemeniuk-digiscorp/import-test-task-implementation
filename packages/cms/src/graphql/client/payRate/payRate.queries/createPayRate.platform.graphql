@@ -1,0 +1,7 @@
+mutation createPayRate($input: PayRateInput!) {
+  createPayRate(data: $input) {
+    data {
+      ...PayRate
+    }
+  }
+}

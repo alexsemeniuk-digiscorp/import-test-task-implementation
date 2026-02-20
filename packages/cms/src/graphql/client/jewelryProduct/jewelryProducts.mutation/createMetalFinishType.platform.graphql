@@ -1,0 +1,7 @@
+mutation createMetalFinishType($input: MetalFinishTypeInput!) {
+  createMetalFinishType(data: $input) {
+    data {
+      ...MetalFinishType
+    }
+  }
+}

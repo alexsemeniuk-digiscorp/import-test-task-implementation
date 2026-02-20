@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ecommerce_authentication_services",
+  "info": {
+    "singularName": "ecommerce-authentication-service",
+    "pluralName": "ecommerce-authentication-services",
+    "displayName": "Ecommerce Authentication Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": false
+    },
+    "expiry": {
+      "type": "datetime",
+      "required": true
+    },
+    "token": {
+      "type": "string"
+    },
+    "tenantId": {
+      "required": true,
+      "type": "integer"
+    },
+    "shopUrl": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

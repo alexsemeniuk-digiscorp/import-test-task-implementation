@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marketing_email_templates",
+  "info": {
+    "singularName": "marketing-email-template",
+    "pluralName": "marketing-email-templates",
+    "displayName": "MARKETING: Email Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "templateJSON": {
+      "type": "json"
+    },
+    "templateHtml": {
+      "type": "text"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    }
+  }
+}

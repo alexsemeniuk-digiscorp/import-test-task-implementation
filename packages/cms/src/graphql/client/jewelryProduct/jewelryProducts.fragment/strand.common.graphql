@@ -1,0 +1,6 @@
+fragment Strand on StrandEntity {
+  id
+  attributes {
+    name
+  }
+}

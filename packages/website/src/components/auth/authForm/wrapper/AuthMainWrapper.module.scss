@@ -1,0 +1,22 @@
+.subtitle {
+  color: #626670;
+  font-weight: 500;
+}
+
+.divider {
+  & .ant-divider-inner-text {
+    color: #b0b0b1;
+  }
+}
+
+.topMarginSmall {
+  margin-top: 32px;
+}
+
+.topMarginMedium {
+  margin-top: 64px;
+}
+
+.topMarginLarge {
+  margin-top: 112px;
+}

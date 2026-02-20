@@ -1,0 +1,15 @@
+.CurrencyInputWrapper {
+  :global(.ant-input-number-disabled) {
+    color: #1f2933;
+    background-color: transparent;
+    cursor: none;
+  }
+
+  :global(.ant-input-number-prefix) {
+    color: #1f2933;
+  }
+
+  :global(.ant-input-number-affix-wrapper) {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,15 @@
+query localizationSettings(
+  $filters: LocalizationSettingFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  localizationSettings(
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...LocalizationSetting
+    }
+  }
+}

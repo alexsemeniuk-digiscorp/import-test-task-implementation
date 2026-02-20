@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "return_statuses",
+  "info": {
+    "singularName": "return-status",
+    "pluralName": "return-statuses",
+    "displayName": "Return Status"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

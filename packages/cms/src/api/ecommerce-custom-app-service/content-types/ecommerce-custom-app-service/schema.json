@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ecommerce_custom_app_services",
+  "info": {
+    "singularName": "ecommerce-custom-app-service",
+    "pluralName": "ecommerce-custom-app-services",
+    "displayName": "Ecommerce Custom App Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "appName": {
+      "type": "string",
+      "required": true
+    },
+    "apiKey": {
+      "type": "string",
+      "required": false
+    },
+    "apiSecret": {
+      "type": "string"
+    },
+    "isInstalled": {
+      "type": "boolean",
+      "required": true
+    },
+    "accessToken": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "ecommerceCustomAppServices"
+    }
+  }
+}

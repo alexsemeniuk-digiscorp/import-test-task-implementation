@@ -1,0 +1,10 @@
+fragment DealMin on DealEntity {
+  id
+  attributes {
+    name
+    budget
+    stage
+    notes
+    startDate
+  }
+}

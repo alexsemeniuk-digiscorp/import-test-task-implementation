@@ -1,0 +1,49 @@
+fragment ProductInventoryItem on ProductInventoryItemEntity {
+  id
+  attributes {
+    price
+    quantity
+    lowQuantity
+    maxQuantity
+    minOrderQuantity
+    pointsGiven
+    customCreationDate
+    pointsRedeemed
+    storageNotes
+    favorite
+    isNegativeCount
+    isSerializedInventory
+    uuid
+    active
+    rentalPrice
+    wholesalePrice
+    product {
+      data {
+        ...ProductMin
+      }
+    }
+    serializes {
+      data {
+        ...Serialize
+      }
+    }
+    businessLocation {
+      data {
+        ...BusinessLocation
+      }
+    }
+    tax {
+      data {
+        ...Tax
+      }
+    }
+    taxCollection {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+}

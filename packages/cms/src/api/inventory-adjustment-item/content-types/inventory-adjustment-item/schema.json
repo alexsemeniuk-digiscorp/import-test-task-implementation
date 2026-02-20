@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_adjustment_items",
+  "info": {
+    "singularName": "inventory-adjustment-item",
+    "pluralName": "inventory-adjustment-items",
+    "displayName": "Inventory Adjustment Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "inventoryAdjustment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::inventory-adjustment.inventory-adjustment",
+      "inversedBy": "inventoryAdjustmentItems"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "adjustedQuantity": {
+      "type": "integer"
+    },
+    "quantityAvailable": {
+      "type": "integer"
+    },
+    "quantityLeft": {
+      "type": "integer"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "serializes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-serialize.inventory-serialize",
+      "mappedBy": "inventoryAdjustmentItem"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+query productsWithLocationData(
+  $filters: ProductFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+  $businessLocationId: Int
+) {
+  products(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductWithLocationData
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

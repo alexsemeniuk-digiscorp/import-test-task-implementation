@@ -1,0 +1,136 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_order_items",
+  "info": {
+    "singularName": "product-order-item",
+    "pluralName": "product-order-items",
+    "displayName": "SELLING: Product Order Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    },
+    "purchaseType": {
+      "type": "enumeration",
+      "enum": [
+        "buy",
+        "rent"
+      ]
+    },
+    "note": {
+      "type": "text"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "inversedBy": "productOrderItems"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "products"
+    },
+    "itemId": {
+      "type": "string",
+      "required": true,
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "rentStart": {
+      "type": "datetime"
+    },
+    "rentEnd": {
+      "type": "datetime"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "discounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discount.discount"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "published"
+    },
+    "isShowInvoiceNote": {
+      "type": "boolean",
+      "default": true
+    },
+    "sublocations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sublocation.sublocation",
+      "mappedBy": "selling_product_order_item"
+    },
+    "isVisibleInDocs": {
+      "type": "boolean",
+      "default": true
+    },
+    "serializes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-serialize.inventory-serialize",
+      "mappedBy": "sellingProductOrderItem"
+    },
+    "isCompositeProductItem": {
+      "type": "boolean",
+      "default": false
+    },
+    "compositeProductOrderItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::composite-product-order-item.composite-product-order-item",
+      "inversedBy": "productOrderItems"
+    },
+    "sublocationItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sublocation-item.sublocation-item",
+      "mappedBy": "selling_product_order_item"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    },
+    "isPartiallyReturned": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFullyReturned": {
+      "type": "boolean",
+      "default": false
+    },
+    "returnedDate": {
+      "type": "datetime"
+    },
+    "returnItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::return-item.return-item",
+      "mappedBy": "productOrderItem"
+    },
+    "reportNote": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+fragment PlattingType on PlattingTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

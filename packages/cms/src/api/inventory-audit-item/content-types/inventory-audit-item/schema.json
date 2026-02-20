@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_audit_items",
+  "info": {
+    "singularName": "inventory-audit-item",
+    "pluralName": "inventory-audit-items",
+    "displayName": "INVENTORY Audit Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "adjusted": {
+      "type": "boolean",
+      "default": false
+    },
+    "productInventoryItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-inventory-item.product-inventory-item"
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "inventoryAudit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::inventory-audit.inventory-audit",
+      "inversedBy": "inventoryAuditItems"
+    },
+    "inventoryQty": {
+      "type": "integer"
+    },
+    "actualQty": {
+      "type": "integer"
+    },
+    "scannedQty": {
+      "type": "integer"
+    },
+    "sublocationItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sublocation-item.sublocation-item"
+    },
+    "auditItemId": {
+      "type": "string"
+    }
+  }
+}

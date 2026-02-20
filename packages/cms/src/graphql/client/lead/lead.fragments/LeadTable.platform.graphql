@@ -1,0 +1,32 @@
+fragment LeadTable on LeadEntity {
+  id
+  attributes {
+    fullName
+    uuid
+    email
+    phoneNumber
+    createdAt
+    leadSource
+    leadStage
+    avatar {
+      data {
+        ...FileMin
+      }
+    }
+    leadOwner {
+      data {
+        id
+        attributes {
+          firstName
+          fullName
+          uuid
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+  }
+}

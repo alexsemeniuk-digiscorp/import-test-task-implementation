@@ -1,0 +1,7 @@
+query productByUuid($uuid: String!) {
+  products(filters: { uuid: { eq: $uuid } }) {
+    data {
+      ...ProductPage
+    }
+  }
+}

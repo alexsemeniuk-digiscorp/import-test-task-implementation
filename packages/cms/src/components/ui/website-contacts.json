@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ui_website_contacts",
+  "info": {
+    "displayName": "websiteContacts"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

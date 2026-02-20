@@ -1,0 +1,15 @@
+fragment NotificationSetting on SettingNotificationEntity {
+  id
+  attributes {
+    config
+    smsNotifyOnComplete
+    emailNotifyOnComplete
+    content
+    type
+    tenant {
+      data {
+        id
+      }
+    }
+  }
+}

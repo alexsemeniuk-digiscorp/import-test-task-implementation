@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staging_logs",
+  "info": {
+    "singularName": "staging-log",
+    "pluralName": "staging-logs",
+    "displayName": "Staging Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "log": {
+      "type": "text"
+    },
+    "error": {
+      "type": "text"
+    }
+  }
+}

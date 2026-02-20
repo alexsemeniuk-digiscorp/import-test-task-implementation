@@ -1,0 +1,11 @@
+query shipmentCarriers(
+  $filters: ShipmentCarrierFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  shipmentCarriers(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ShipmentCarrier
+    }
+  }
+}

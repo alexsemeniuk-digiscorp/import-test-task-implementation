@@ -1,0 +1,39 @@
+mutation createProductInventoryItemEvent(
+  $input: ProductInventoryItemEventInput!
+) {
+  createProductInventoryItemEvent(data: $input) {
+    data {
+      id
+      attributes {
+        change
+        productInventoryItem {
+          data {
+            id
+            attributes {
+              uuid
+              quantity
+              tax {
+                data {
+                  id
+                }
+              }
+              taxCollection {
+                data {
+                  id
+                  attributes {
+                    name
+                  }
+                }
+              }
+              businessLocation {
+                data {
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

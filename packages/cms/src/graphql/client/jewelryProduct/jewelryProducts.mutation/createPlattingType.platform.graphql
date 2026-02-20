@@ -1,0 +1,7 @@
+mutation createPlattingType($input: PlattingTypeInput!) {
+  createPlattingType(data: $input) {
+    data {
+      ...PlattingType
+    }
+  }
+}

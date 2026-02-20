@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "onboarding_users",
+  "info": {
+    "singularName": "onboarding-user",
+    "pluralName": "onboarding-users",
+    "displayName": "PLATFORM: Onboarding User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isCompleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "onboardingUser"
+    },
+    "isNylasConnected": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPasswordChanged": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

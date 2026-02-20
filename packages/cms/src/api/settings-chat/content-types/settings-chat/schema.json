@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settings_chats",
+  "info": {
+    "singularName": "settings-chat",
+    "pluralName": "settings-chats",
+    "displayName": "SETTINGS: Chat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userPrompt": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "settings_chat"
+    }
+  }
+}

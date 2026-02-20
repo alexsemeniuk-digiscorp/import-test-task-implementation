@@ -1,0 +1,7 @@
+fragment TaxCollectionMin on TaxCollectionEntity {
+  id
+  attributes {
+    name
+    createdAt
+  }
+}

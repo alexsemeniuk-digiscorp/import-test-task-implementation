@@ -1,0 +1,7 @@
+fragment Weight on WeightEntity {
+  id
+  attributes {
+    value
+    unit
+  }
+}

@@ -1,0 +1,12 @@
+fragment MailTemplate on MailTemplateEntity {
+  id
+  attributes {
+    name
+    text
+    owner {
+      data {
+        ...UserMin
+      }
+    }
+  }
+}

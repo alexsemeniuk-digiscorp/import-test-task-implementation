@@ -1,0 +1,16 @@
+query productsReport(
+  $filters: ProductFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+  $businessLocationId: Int
+  $sublocationId: Int
+) {
+  products(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductReport
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,7 @@
+query marketingEmailTemplateByUuid($uuid: String!) {
+  marketingEmailTemplates(filters: { uuid: { eq: $uuid } }) {
+    data {
+      ...MarketingEmailTemplate
+    }
+  }
+}

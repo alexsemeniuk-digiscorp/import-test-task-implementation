@@ -1,0 +1,6 @@
+fragment InventoryAuditAdjustmentAction on InventoryAuditEntity {
+  id
+  attributes {
+    auditId
+  }
+}

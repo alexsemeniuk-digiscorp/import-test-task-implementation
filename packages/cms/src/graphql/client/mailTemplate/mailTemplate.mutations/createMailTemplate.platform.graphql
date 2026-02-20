@@ -1,0 +1,7 @@
+mutation createMailTemplate($data: MailTemplateInput!) {
+  createMailTemplate(data: $data) {
+    data {
+      ...MailTemplate
+    }
+  }
+}

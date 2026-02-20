@@ -1,0 +1,11 @@
+query leadsSelect(
+  $filters: LeadFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  leads(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...LeadSelect
+    }
+  }
+}

@@ -1,0 +1,6 @@
+fragment Piece on PieceEntity {
+  id
+  attributes {
+    name
+  }
+}

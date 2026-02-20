@@ -1,0 +1,7 @@
+mutation updateTax($updateTaxId: ID!, $data: TaxInput!) {
+  updateTax(id: $updateTaxId, data: $data) {
+    data {
+      id
+    }
+  }
+}

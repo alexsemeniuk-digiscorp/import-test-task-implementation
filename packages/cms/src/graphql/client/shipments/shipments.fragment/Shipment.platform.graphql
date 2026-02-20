@@ -1,0 +1,54 @@
+fragment Shipment on ShipmentEntity {
+  id
+  attributes {
+    uuid
+    status
+    createdAt
+    shipmentDate
+    charge
+    trackingNumber
+    trackingUrl
+    notes
+    order {
+      data {
+        id
+        attributes {
+          orderId
+        }
+      }
+    }
+    carrier {
+      data {
+        ...ShipmentCarrier
+      }
+    }
+    contact {
+      data {
+        id
+        attributes {
+          uuid
+          fullName
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+    company {
+      data {
+        id
+        attributes {
+          uuid
+          name
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+  }
+}

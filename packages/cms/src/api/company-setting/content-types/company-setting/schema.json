@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies_setting",
+  "info": {
+    "singularName": "company-setting",
+    "pluralName": "companies-setting",
+    "displayName": "SETTINGS: Company",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "boolean",
+      "default": true
+    },
+    "website": {
+      "type": "boolean",
+      "default": false
+    },
+    "email": {
+      "type": "boolean",
+      "default": true
+    },
+    "companyOwner": {
+      "type": "boolean",
+      "default": true
+    },
+    "companyAddress": {
+      "type": "boolean",
+      "default": true
+    },
+    "phoneNumber": {
+      "type": "boolean",
+      "default": true
+    },
+    "companyType": {
+      "type": "boolean",
+      "default": true
+    },
+    "companyIndustry": {
+      "type": "boolean",
+      "default": true
+    },
+    "priceGroup": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "companySetting"
+    }
+  }
+}

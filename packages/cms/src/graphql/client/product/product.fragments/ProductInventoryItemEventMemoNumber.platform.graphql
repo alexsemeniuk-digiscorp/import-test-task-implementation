@@ -1,0 +1,14 @@
+fragment ProductInventoryItemEventMemoNumber on ProductInventoryItemEventEntity {
+  id
+  attributes {
+    memoNumber
+    order {
+      data {
+        id
+        attributes {
+          memoNumber
+        }
+      }
+    }
+  }
+}

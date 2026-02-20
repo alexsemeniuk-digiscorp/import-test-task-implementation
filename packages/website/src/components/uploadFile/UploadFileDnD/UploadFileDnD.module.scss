@@ -1,0 +1,16 @@
+.centeredSpace {
+  align-items: center;
+}
+
+.uploadDrag {
+  width: 100%;
+
+  :global(.ant-upload-drag-container) {
+    display: block !important;
+    height: 132px;
+  }
+
+  :global(.ant-upload-btn) {
+    padding: 42px 16px !important;
+  }
+}

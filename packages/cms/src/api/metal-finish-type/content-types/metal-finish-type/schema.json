@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "metal_finish_types",
+  "info": {
+    "singularName": "metal-finish-type",
+    "pluralName": "metal-finish-types",
+    "displayName": "INVENTORY: Metal Finish Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

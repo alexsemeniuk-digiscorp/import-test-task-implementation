@@ -1,0 +1,7 @@
+.img {
+  border-radius: 50%;
+
+  & + :global(.ant-image-mask) {
+    border-radius: 50%;
+  }
+}

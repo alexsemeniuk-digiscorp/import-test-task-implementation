@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clearent_terminals",
+  "info": {
+    "singularName": "clearent-terminal",
+    "pluralName": "clearent-terminals",
+    "displayName": "Clearent Terminal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "displayName": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "string"
+    },
+    "apiKey": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "clearent_terminals"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

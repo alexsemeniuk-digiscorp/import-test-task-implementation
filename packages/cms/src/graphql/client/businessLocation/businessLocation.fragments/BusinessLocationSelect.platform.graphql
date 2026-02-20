@@ -1,0 +1,6 @@
+fragment BusinessLocationSelect on BusinessLocationEntity {
+  id
+  attributes {
+    name
+  }
+}

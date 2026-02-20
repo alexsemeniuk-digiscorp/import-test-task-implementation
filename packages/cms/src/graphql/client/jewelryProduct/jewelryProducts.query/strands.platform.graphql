@@ -1,0 +1,14 @@
+query strands(
+  $filters: StrandFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  strands(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...Strand
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

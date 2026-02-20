@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_data_graph_items",
+  "info": {
+    "displayName": "GraphItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "geometry": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.geometry"
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.style"
+    },
+    "cellValue": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.cell-value"
+    }
+  }
+}

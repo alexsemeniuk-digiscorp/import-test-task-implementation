@@ -1,0 +1,7 @@
+mutation createResourceCount($input: ResourceCountInput!) {
+  createResourceCount(data: $input) {
+    data {
+      id
+    }
+  }
+}

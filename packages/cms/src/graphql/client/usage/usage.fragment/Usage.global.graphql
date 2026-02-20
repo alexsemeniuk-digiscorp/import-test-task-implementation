@@ -1,0 +1,13 @@
+fragment Usage on UsageEntity {
+  id
+  attributes {
+    currentMonth
+    tenant{
+     data{
+      ...Tenant
+     } 
+    }
+    updatedAt
+    usageCounts
+  }
+}

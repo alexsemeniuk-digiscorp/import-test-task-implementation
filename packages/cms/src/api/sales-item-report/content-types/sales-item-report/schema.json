@@ -1,0 +1,135 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales_item_reports",
+  "info": {
+    "singularName": "sales-item-report",
+    "pluralName": "sales-item-reports",
+    "displayName": "REPORTS: Sales Item Report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "salesItemReports"
+    },
+    "productOrderItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-order-item.product-order-item"
+    },
+    "compositeProductOrderItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::composite-product-order-item.composite-product-order-item"
+    },
+    "serviceOrderItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-order-item.service-order-item"
+    },
+    "membershipOrderItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::membership-order-item.membership-order-item"
+    },
+    "classOrderItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class-order-item.class-order-item"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "soldDate": {
+      "type": "datetime"
+    },
+    "dueDate": {
+      "type": "datetime"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "grossMargin": {
+      "type": "decimal"
+    },
+    "sales": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "product",
+        "composite_product",
+        "service",
+        "membership",
+        "class"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "sublocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sublocation.sublocation"
+    },
+    "serialize": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::inventory-serialize.inventory-serialize",
+      "inversedBy": "salesItemReport"
+    },
+    "itemCost": {
+      "type": "decimal",
+      "min": 0
+    },
+    "companyVendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "contactVendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "memoTaken": {
+      "type": "boolean",
+      "default": false
+    },
+    "memoSold": {
+      "type": "boolean",
+      "default": false
+    },
+    "productInventoryItemEvent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-inventory-item-event.product-inventory-item-event"
+    }
+  }
+}

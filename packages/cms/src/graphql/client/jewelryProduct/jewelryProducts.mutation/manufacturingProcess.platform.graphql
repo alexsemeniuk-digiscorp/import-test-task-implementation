@@ -1,0 +1,7 @@
+mutation createManufacturingProcess($input: ManufacturingProcessInput!) {
+  createManufacturingProcess(data: $input) {
+    data {
+      ...ManufacturingProcess
+    }
+  }
+}

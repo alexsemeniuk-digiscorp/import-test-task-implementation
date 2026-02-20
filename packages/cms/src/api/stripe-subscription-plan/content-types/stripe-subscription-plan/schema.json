@@ -1,0 +1,198 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stripe_subscription_plans",
+  "info": {
+    "singularName": "stripe-subscription-plan",
+    "pluralName": "stripe-subscription-plans",
+    "displayName": "Stripe subscription plan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "priceId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "subscriptions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tenant-stripe-subscription.tenant-stripe-subscription",
+      "mappedBy": "plan"
+    },
+    "applicationFee": {
+      "type": "decimal",
+      "default": 1,
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "growing",
+        "business"
+      ]
+    },
+    "plan": {
+      "type": "enumeration",
+      "enum": [
+        "year",
+        "month"
+      ],
+      "required": true
+    },
+    "userCount": {
+      "type": "integer",
+      "required": true,
+      "default": 3
+    },
+    "monthlyEmailCount": {
+      "type": "biginteger",
+      "required": true,
+      "default": "1000"
+    },
+    "storage": {
+      "type": "biginteger",
+      "required": true,
+      "default": "5120"
+    },
+    "callTime": {
+      "type": "biginteger",
+      "default": "1000",
+      "required": true
+    },
+    "inventoryItemCount": {
+      "type": "biginteger",
+      "default": "100",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "productId": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "stripePlanCategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stripe-plan-category.stripe-plan-category"
+    },
+    "callRecordingTime": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "transcriptionTime": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "smsReceiveCount": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "smsSendCount": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "mmsReceiveCount": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "mmsSendCount": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "giaApiCount": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "callRecordingCharge": {
+      "type": "float"
+    },
+    "transcriptionCharge": {
+      "type": "float"
+    },
+    "smsReceiveCharge": {
+      "type": "float"
+    },
+    "smsSendCharge": {
+      "type": "float"
+    },
+    "mmsReceiveCharge": {
+      "type": "float"
+    },
+    "mmsSendCharge": {
+      "type": "float"
+    },
+    "giaApiCharge": {
+      "type": "float"
+    },
+    "userCharge": {
+      "type": "float"
+    },
+    "emailCharge": {
+      "type": "float"
+    },
+    "storageCharge": {
+      "type": "float"
+    },
+    "callCharge": {
+      "type": "float"
+    },
+    "inventoryItemCharge": {
+      "type": "float"
+    },
+    "igiApiCount": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "igiApiCharge": {
+      "type": "float"
+    },
+    "isSubEnableTrialPeriod": {
+      "type": "boolean",
+      "default": false
+    },
+    "trialPeriodDays": {
+      "type": "integer"
+    },
+    "isSubscriptionVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "whichTenantCanSee": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tenant.tenant",
+      "inversedBy": "stripe_subscription_plans"
+    },
+    "subscriptionVisibleType": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "specific"
+      ]
+    }
+  }
+}

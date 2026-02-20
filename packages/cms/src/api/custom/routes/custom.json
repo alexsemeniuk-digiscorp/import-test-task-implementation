@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/custom",
+      "handler": "custom.applyCustomDate",
+      "config": {
+        "auth": false
+      }
+    }
+  ]
+}

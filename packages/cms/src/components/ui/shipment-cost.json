@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_ui_shipment_costs",
+  "info": {
+    "displayName": "shipmentCost",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "isFree": {
+      "type": "boolean",
+      "default": false
+    },
+    "shipmentPrice": {
+      "type": "decimal",
+      "default": 40
+    },
+    "isFreeAfterAmount": {
+      "type": "boolean",
+      "default": true
+    },
+    "freeShipmentAfter": {
+      "type": "decimal",
+      "default": 1000
+    }
+  }
+}

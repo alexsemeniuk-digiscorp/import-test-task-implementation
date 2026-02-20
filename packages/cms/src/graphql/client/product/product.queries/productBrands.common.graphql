@@ -1,0 +1,14 @@
+query productBrands(
+  $filters: ProductBrandFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  productBrands(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...ProductBrand
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

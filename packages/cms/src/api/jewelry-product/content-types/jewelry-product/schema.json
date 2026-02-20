@@ -1,0 +1,250 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jewelry_products",
+  "info": {
+    "singularName": "jewelry-product",
+    "pluralName": "jewelry-products",
+    "displayName": "INVENTORY: Jewelry Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "string"
+    },
+    "jewelryProductType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jewelry-product-type.jewelry-product-type"
+    },
+    "conditionType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::condition-type.condition-type"
+    },
+    "genderType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gender-type.gender-type"
+    },
+    "process": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manufacturing-process.manufacturing-process"
+    },
+    "platting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::platting-type.platting-type"
+    },
+    "metalType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::metal-type.metal-type"
+    },
+    "metalFinishType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::metal-finish-type.metal-finish-type"
+    },
+    "timePeriod": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::time-period.time-period"
+    },
+    "engravingType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::engraving-type.engraving-type"
+    },
+    "materialGradeType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-grade.material-grade"
+    },
+    "specificType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::specific-type.specific-type"
+    },
+    "size": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::size.size"
+    },
+    "shankStyle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shank-style.shank-style"
+    },
+    "designStyle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::design-style.design-style"
+    },
+    "backing": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::backing.backing"
+    },
+    "strandsLength": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::strands-length.strands-length"
+    },
+    "strand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::strand.strand"
+    },
+    "linkStyle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link-style.link-style"
+    },
+    "linkType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link-type.link-type"
+    },
+    "pieces": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::piece.piece"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-brand.product-brand"
+    },
+    "country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::country.country"
+    },
+    "returnable": {
+      "type": "boolean"
+    },
+    "businessUseOnly": {
+      "type": "boolean"
+    },
+    "bundleUseOnly": {
+      "type": "boolean"
+    },
+    "packagingProduct": {
+      "type": "boolean"
+    },
+    "expiryDate": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "string"
+    },
+    "SKU": {
+      "type": "string"
+    },
+    "UPC": {
+      "type": "string"
+    },
+    "MPN": {
+      "type": "string"
+    },
+    "EAN": {
+      "type": "string"
+    },
+    "ISBN": {
+      "type": "string"
+    },
+    "partsWarranty": {
+      "type": "datetime"
+    },
+    "laborWarranty": {
+      "type": "datetime"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "defaultPrice": {
+      "type": "decimal"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "knotStyle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::knot-style.knot-style"
+    },
+    "boxPaper": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::box-paper.box-paper"
+    },
+    "productAttributeOptions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-attribute-option.product-attribute-option",
+      "inversedBy": "jewelryProducts"
+    },
+    "productInventoryItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "mappedBy": "jewelryProduct"
+    },
+    "rentableData": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rentable-data.rentable-data",
+      "inversedBy": "jewelryProduct"
+    },
+    "model": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::weight.weight",
+      "mappedBy": "jewelryProduct"
+    },
+    "dimension": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dimension.dimension",
+      "mappedBy": "jewelryProduct"
+    },
+    "tagProductName": {
+      "type": "string"
+    },
+    "marginCost": {
+      "type": "decimal"
+    }
+  }
+}

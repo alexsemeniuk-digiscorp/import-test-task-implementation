@@ -1,0 +1,7 @@
+mutation createWeight($input: WeightInput!) {
+  createWeight(data: $input) {
+    data {
+      id
+    }
+  }
+}

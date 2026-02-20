@@ -1,0 +1,7 @@
+fragment OrderPeriodSetting on OrderSettingEntity {
+  id
+  attributes {
+    isShippedDatePeriodEnabled
+    isReceiveDatePeriodEnabled
+  }
+}

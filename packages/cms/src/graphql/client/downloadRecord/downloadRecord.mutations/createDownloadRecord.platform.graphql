@@ -1,0 +1,7 @@
+mutation createDownloadRecord($input: DownloadRecordInput!) {
+  createDownloadRecord(data: $input) {
+    data {
+      id
+    }
+  }
+}

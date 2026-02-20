@@ -1,0 +1,10 @@
+mutation updateBusinessLocation($id: ID!, $input: BusinessLocationInput!) {
+  updateBusinessLocation(id: $id, data: $input) {
+    data {
+      id
+      attributes {
+        archived
+      }
+    }
+  }
+}

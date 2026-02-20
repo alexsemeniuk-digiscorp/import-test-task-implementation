@@ -1,0 +1,18 @@
+fragment ProductInventoryItemSelect on ProductInventoryItemEntity {
+  id
+  attributes {
+    product {
+      data {
+        id
+        attributes {
+          name
+          files(pagination: { limit: 1 }) {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+  }
+}

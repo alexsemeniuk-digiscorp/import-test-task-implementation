@@ -1,0 +1,14 @@
+query boxPapers(
+  $filters: BoxPaperFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  boxPapers(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...BoxPaper
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

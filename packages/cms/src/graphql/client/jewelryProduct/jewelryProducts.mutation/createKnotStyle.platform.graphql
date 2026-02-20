@@ -1,0 +1,7 @@
+mutation createKnotStyle($input: KnotStyleInput!) {
+  createKnotStyle(data: $input) {
+    data {
+      ...KnotStyle
+    }
+  }
+}

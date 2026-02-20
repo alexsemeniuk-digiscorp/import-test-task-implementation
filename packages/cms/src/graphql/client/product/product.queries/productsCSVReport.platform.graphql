@@ -1,0 +1,15 @@
+query productsCsvReport(
+  $filters: ProductFiltersInput
+  $sort: [String] = []
+  $businessLocationId: Int
+  $sublocationId: Int
+) {
+  products(filters: $filters, pagination: { limit: -1 }, sort: $sort) {
+    data {
+      ...ProductReport
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_types",
+  "info": {
+    "singularName": "task-type",
+    "pluralName": "task-types",
+    "displayName": "TASKS: Task Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

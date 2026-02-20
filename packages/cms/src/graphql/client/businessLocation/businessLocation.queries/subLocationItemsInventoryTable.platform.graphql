@@ -1,0 +1,7 @@
+query sublocationItemsInventoryTable($filters: SublocationItemFiltersInput) {
+  sublocationItems(filters: $filters, pagination: { limit: -1 }) {
+    data {
+      ...SubLocationItemInventoryTable
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "MARKETING: Campaign",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "campaignOwner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "unsubscribedContacts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::contact.contact",
+      "inversedBy": "unsubscribedCampaigns"
+    },
+    "sequenceSteps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sequence-step.sequence-step",
+      "mappedBy": "campaign"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "enrolledContacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign-enrolled-contact.campaign-enrolled-contact",
+      "mappedBy": "campaign"
+    },
+    "campaignEnrolledLeads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign-enrolled-lead.campaign-enrolled-lead",
+      "mappedBy": "campaign"
+    },
+    "enrolledContactConditions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enrolled-contact-condition.enrolled-contact-condition",
+      "mappedBy": "campaign"
+    },
+    "enrolledLeadConditions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enrolled-lead-condition.enrolled-lead-condition",
+      "mappedBy": "campaign"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

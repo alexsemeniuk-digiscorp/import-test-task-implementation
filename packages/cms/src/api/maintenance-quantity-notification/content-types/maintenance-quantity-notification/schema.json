@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maintenance_quantity_notifications",
+  "info": {
+    "singularName": "maintenance-quantity-notification",
+    "pluralName": "maintenance-quantity-notifications",
+    "displayName": "NOTIFICATIONS: Maintenance Quantity Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "NoLeft",
+        "Day"
+      ]
+    },
+    "userNotifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-notification.user-notification",
+      "mappedBy": "maintenanceQuantityNotification"
+    },
+    "maintenance": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::maintenance.maintenance"
+    }
+  }
+}

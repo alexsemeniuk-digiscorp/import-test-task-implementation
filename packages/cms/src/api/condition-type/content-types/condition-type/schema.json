@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "condition_types",
+  "info": {
+    "singularName": "condition-type",
+    "pluralName": "condition-types",
+    "displayName": "INVENTORY: Condition Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

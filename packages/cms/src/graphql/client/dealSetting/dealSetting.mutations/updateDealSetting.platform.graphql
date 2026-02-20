@@ -1,0 +1,7 @@
+mutation updateDealSetting($id: ID!, $input: DealSettingInput!) {
+  updateDealSetting(id: $id, data: $input) {
+    data {
+      ...DealSetting
+    }
+  }
+}

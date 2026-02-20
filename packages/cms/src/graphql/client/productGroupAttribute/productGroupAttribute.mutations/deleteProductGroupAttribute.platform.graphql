@@ -1,0 +1,7 @@
+mutation deleteProductGroupAttribute($id: ID!) {
+  deleteProductGroupAttribute(id: $id) {
+    data {
+      id
+    }
+  }
+}

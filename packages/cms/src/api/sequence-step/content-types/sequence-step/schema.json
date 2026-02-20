@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sequence_steps",
+  "info": {
+    "singularName": "sequence-step",
+    "pluralName": "sequence-steps",
+    "displayName": "MARKETING: Sequence Step",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "mail",
+        "sms",
+        "mms",
+        "delay",
+        "call"
+      ]
+    },
+    "sequentialNumber": {
+      "type": "integer"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "sequenceSteps"
+    },
+    "info": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sequence-step-info.sequence-step-info",
+      "mappedBy": "sequenceStep"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "delay": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "emailTemplate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::marketing-email-template.marketing-email-template"
+    },
+    "file": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

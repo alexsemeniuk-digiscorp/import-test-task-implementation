@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_data_cell_values",
+  "info": {
+    "displayName": "CellValue",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cellID": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "storeID": {
+      "type": "string"
+    },
+    "shapeType": {
+      "type": "string"
+    }
+  }
+}

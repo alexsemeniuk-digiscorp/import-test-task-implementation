@@ -1,0 +1,7 @@
+mutation createShipmentCarrier($input: ShipmentCarrierInput!) {
+  createShipmentCarrier(data: $input) {
+    data {
+      id
+    }
+  }
+}

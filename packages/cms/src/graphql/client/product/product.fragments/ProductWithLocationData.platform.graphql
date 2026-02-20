@@ -1,0 +1,15 @@
+fragment ProductWithLocationData on ProductEntity {
+  id
+  attributes {
+    name
+    SKU
+    uuid
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+    quantity(businessLocationId: $businessLocationId)
+    quantitySoldLastWeek(businessLocationId: $businessLocationId)
+  }
+}

@@ -1,0 +1,10 @@
+mutation createMarketingEmailTemplate($input: MarketingEmailTemplateInput!) {
+  createMarketingEmailTemplate(data: $input) {
+    data {
+      id
+      attributes {
+        uuid
+      }
+    }
+  }
+}

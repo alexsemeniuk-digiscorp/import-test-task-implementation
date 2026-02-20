@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_txns",
+  "info": {
+    "singularName": "acc-service-txn",
+    "pluralName": "acc-service-txns",
+    "displayName": "Acc service txn"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "syncToken": {
+      "type": "string"
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceTxns"
+    },
+    "transactionType": {
+      "type": "enumeration",
+      "enum": [
+        "sell",
+        "billPayment"
+      ]
+    },
+    "accServiceBill": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-bill.acc-service-bill",
+      "inversedBy": "accServiceTxns"
+    },
+    "dealTransaction": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deal-transaction.deal-transaction",
+      "mappedBy": "accServiceTxns"
+    }
+  }
+}

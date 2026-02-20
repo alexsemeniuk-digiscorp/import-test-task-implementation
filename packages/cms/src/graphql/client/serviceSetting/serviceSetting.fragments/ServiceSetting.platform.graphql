@@ -1,0 +1,10 @@
+fragment ServiceSetting on ServiceSettingEntity {
+  id
+  attributes {
+    defaultPerformer {
+      data {
+        id
+      }
+    }
+  }
+}

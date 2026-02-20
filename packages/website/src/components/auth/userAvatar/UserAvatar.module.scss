@@ -1,0 +1,21 @@
+.avatar {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: 0.3s;
+    content: '';
+  }
+
+  &:hover {
+    &::after {
+      border-color: #0146c5;
+    }
+  }
+}

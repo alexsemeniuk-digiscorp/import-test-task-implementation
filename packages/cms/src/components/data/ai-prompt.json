@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_data_ai_prompts",
+  "info": {
+    "displayName": "AI Prompt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "productName": {
+      "type": "text",
+      "default": "Internal, factual name (e.g., \"18K Yellow Gold Solitaire Ring\")."
+    },
+    "tagProductName": {
+      "type": "text",
+      "default": "Simplified version for tagging/search (e.g., \"gold ring solitaire\")."
+    },
+    "ecommerceName": {
+      "type": "text",
+      "default": "Consumer-facing title, short and SEO-friendly (e.g., \"18K Gold Solitaire Engagement Ring\")."
+    },
+    "shopifyTags": {
+      "type": "text",
+      "default": "String of keyword tags (e.g., \"18K\", \"gold\", \"ring\", \"solitaire\")."
+    },
+    "SKU": {
+      "type": "text",
+      "default": "Short unique product identifier; generate only if none provided (format: 2–4 letters + random 4 digits, e.g., \"RNG-4832\")"
+    },
+    "appraisalDescription": {
+      "type": "text",
+      "default": "Write a detailed, professional jewelry appraisal description for the provided product. Include key details such as the type of jewelry (ring, necklace, etc.), materials (gold, silver, platinum), gemstones (diamond, emerald, sapphire), weight, color, and craftsmanship quality.  Maintain a neutral, expert tone suitable for appraisal reports. Avoid marketing or sales language."
+    },
+    "ecommerceDescription": {
+      "type": "text",
+      "default": "Marketing copy for ecommerce; persuasive but accurate. Can include bullet points, care tips, or SEO keywords if requested."
+    },
+    "note": {
+      "type": "text",
+      "default": "Internal free-text notes (conservative, optional observations)."
+    }
+  }
+}

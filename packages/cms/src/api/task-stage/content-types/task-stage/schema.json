@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_stages",
+  "info": {
+    "singularName": "task-stage",
+    "pluralName": "task-stages",
+    "displayName": "TASKS: Task Stage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

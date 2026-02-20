@@ -1,0 +1,7 @@
+mutation deleteDealTransactionReminder($id: ID!) {
+  deleteDealTransactionReminder(id: $id) {
+    data {
+      ...DealTransactionReminder
+    }
+  }
+}

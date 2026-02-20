@@ -1,0 +1,14 @@
+fragment FileItemMin on FileItemEntity {
+  id
+  attributes {
+    createdAt
+    name
+    type
+    isFavourite
+    attachedFile {
+      data {
+        ...File
+      }
+    }
+  }
+}

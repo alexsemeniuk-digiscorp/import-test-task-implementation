@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "auth_layouts",
+  "info": {
+    "singularName": "auth-layout",
+    "pluralName": "auth-layouts",
+    "displayName": "AuthLayout",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": true
+    },
+    "authContent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.auth-content",
+      "required": true
+    }
+  }
+}

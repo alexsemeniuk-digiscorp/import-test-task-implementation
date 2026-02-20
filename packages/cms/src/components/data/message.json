@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_data_messages",
+  "info": {
+    "displayName": "Message",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    }
+  }
+}

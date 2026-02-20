@@ -1,0 +1,17 @@
+@import './tiny-mce.scss';
+
+body {
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.circularCheckbox .ant-checkbox-inner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}

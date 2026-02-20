@@ -1,0 +1,11 @@
+fragment Resource on ResourceEntity {
+  ...ResourceMin
+  id
+  attributes {
+    resourceInventoryItems {
+      data {
+        ...ResourceInventoryItem
+      }
+    }
+  }
+}

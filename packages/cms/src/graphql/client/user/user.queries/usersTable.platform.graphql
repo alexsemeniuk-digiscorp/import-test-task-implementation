@@ -1,0 +1,18 @@
+query usersTable(
+  $filters: UsersPermissionsUserFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  usersPermissionsUsers(
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...UserTable
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

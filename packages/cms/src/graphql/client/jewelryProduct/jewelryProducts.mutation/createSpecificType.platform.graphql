@@ -1,0 +1,7 @@
+mutation createSpecificType($input: SpecificTypeInput!) {
+  createSpecificType(data: $input) {
+    data {
+      ...SpecificType
+    }
+  }
+}

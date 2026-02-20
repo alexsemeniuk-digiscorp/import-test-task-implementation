@@ -1,0 +1,9 @@
+query usersCount($filters: UsersPermissionsUserFiltersInput) {
+  usersPermissionsUsers(filters: $filters, pagination: { limit: -1 }) {
+    meta {
+      pagination {
+        total
+      }
+    }
+  }
+}

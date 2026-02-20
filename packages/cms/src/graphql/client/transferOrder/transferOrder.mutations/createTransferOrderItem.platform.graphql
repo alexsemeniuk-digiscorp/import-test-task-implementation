@@ -1,0 +1,7 @@
+mutation createTransferOrderItem($input: TransferOrderItemInput!) {
+  createTransferOrderItem(data: $input) {
+    data {
+      id
+    }
+  }
+}

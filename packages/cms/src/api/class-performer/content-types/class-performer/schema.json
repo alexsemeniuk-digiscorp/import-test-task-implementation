@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_performers",
+  "info": {
+    "singularName": "class-performer",
+    "pluralName": "class-performers",
+    "displayName": "Class Performer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "performer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "pointsGiven": {
+      "type": "float"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "pointsRedeem": {
+      "type": "float"
+    },
+    "numberOfSessions": {
+      "type": "integer"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "liveStreamPrice": {
+      "type": "integer"
+    },
+    "classLocationInfo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-location-info.class-location-info",
+      "inversedBy": "classPerformers"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "selling_class_order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-order-item.class-order-item",
+      "mappedBy": "class"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "isImported": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

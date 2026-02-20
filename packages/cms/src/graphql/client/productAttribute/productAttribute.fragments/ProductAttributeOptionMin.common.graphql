@@ -1,0 +1,6 @@
+fragment ProductAttributeOptionMin on ProductAttributeOptionEntity {
+  id
+  attributes {
+    name
+  }
+}

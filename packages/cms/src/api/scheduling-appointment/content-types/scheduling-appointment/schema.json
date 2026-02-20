@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scheduling_appointments",
+  "info": {
+    "singularName": "scheduling-appointment",
+    "pluralName": "scheduling-appointments",
+    "displayName": "SCHEDULING: Appointment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "schedulingAppointments"
+    },
+    "appointmentId": {
+      "type": "string"
+    },
+    "appointmentDate": {
+      "type": "date"
+    },
+    "startTime": {
+      "type": "datetime"
+    },
+    "endTime": {
+      "type": "datetime"
+    },
+    "isRecurrence": {
+      "type": "boolean"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "recurrenceRule": {
+      "type": "string"
+    }
+  }
+}

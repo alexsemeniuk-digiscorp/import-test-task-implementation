@@ -1,0 +1,7 @@
+fragment ProductBrand on ProductBrandEntity {
+  id
+  attributes {
+    name
+    editable
+  }
+}

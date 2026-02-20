@@ -1,0 +1,37 @@
+fragment InventoryQuantityNotification on InventoryQuantityNotificationEntity {
+  id
+  attributes {
+    type
+    productInventoryItem {
+      data {
+        id
+        attributes {
+          lowQuantity
+          quantity
+          businessLocation {
+            data {
+              id
+              attributes {
+                name
+              }
+            }
+          }
+          product {
+            data {
+              id
+              attributes {
+                uuid
+                name
+                files(pagination: { limit: 1 }) {
+                  data {
+                    ...FileMin
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

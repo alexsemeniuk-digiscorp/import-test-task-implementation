@@ -1,0 +1,151 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_locations",
+  "info": {
+    "singularName": "business-location",
+    "pluralName": "business-locations",
+    "displayName": "Business Location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "store",
+        "warehouse"
+      ],
+      "default": "store",
+      "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "businessLocation"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "businessLocation"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "businessLocationId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "unique": true
+    },
+    "isSublocation": {
+      "type": "boolean"
+    },
+    "sublocations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sublocation.sublocation",
+      "mappedBy": "businessLocation"
+    },
+    "graphItem": {
+      "type": "text"
+    },
+    "reviewLink": {
+      "type": "string"
+    },
+    "ecommerceDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-detail.ecommerce-detail",
+      "mappedBy": "businessLocation"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    },
+    "accServiceContacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-contact.acc-service-contact",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceVendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-vendor.acc-service-vendor",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceConns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-conn.acc-service-conn",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceEntities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-entity.acc-service-entity",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceTaxes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-tax.acc-service-tax",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceTxns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-txn.acc-service-txn",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceOrders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-order.acc-service-order",
+      "mappedBy": "businessLocation"
+    },
+    "accServiceTaxagn": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-taxagn.acc-service-taxagn",
+      "mappedBy": "businessLocation"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+export type UsageType =
+  | 'userCount'
+  | 'monthlySMS'
+  | 'monthlyEmailCount'
+  | 'storage'
+  | 'callTime'
+  | 'inventoryItemCount'
+  | 'callRecordingTime'
+  | 'transcriptionTime'
+  | 'smsReceiveCount'
+  | 'smsSendCount'
+  | 'mmsReceiveCount'
+  | 'mmsSendCount'
+  | 'giaApiCount'
+  | 'igiApiCount';
+
+export type ServiceCharge =
+  | 'userCharge'
+  | 'callRecordingCharge'
+  | 'transcriptionCharge'
+  | 'smsReceiveCharge'
+  | 'smsSendCharge'
+  | 'mmsReceiveCharge'
+  | 'mmsSendCharge'
+  | 'giaApiCharge'
+  | 'emailCharge'
+  | 'storageCharge'
+  | 'callCharge'
+  | 'inventoryItemCharge'
+  | 'igiApiCharge';

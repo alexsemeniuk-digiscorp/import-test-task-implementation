@@ -1,0 +1,7 @@
+mutation updateOnboardingUser($id: ID!, $input: OnboardingUserInput!) {
+  updateOnboardingUser(id: $id, data: $input) {
+    data {
+      ...OnboardingUser
+    }
+  }
+}

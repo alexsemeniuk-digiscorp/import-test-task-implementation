@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipments",
+  "info": {
+    "singularName": "shipment",
+    "pluralName": "shipments",
+    "displayName": "Shipment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shipmentDate": {
+      "type": "datetime"
+    },
+    "trackingNumber": {
+      "type": "string",
+      "required": false
+    },
+    "trackingUrl": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    },
+    "carrier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shipment-carrier.shipment-carrier"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "charge": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unshipped",
+        "shipped",
+        "delivered"
+      ],
+      "default": "unshipped"
+    }
+  }
+}

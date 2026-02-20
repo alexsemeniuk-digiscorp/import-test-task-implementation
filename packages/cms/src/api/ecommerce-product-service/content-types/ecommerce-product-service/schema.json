@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ecommerce_product_services",
+  "info": {
+    "singularName": "ecommerce-product-service",
+    "pluralName": "ecommerce-product-services",
+    "displayName": "Ecommerce Product Services",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ecommerceProductId": {
+      "type": "string",
+      "required": true
+    },
+    "isSynced": {
+      "type": "boolean",
+      "required": true
+    },
+    "syncDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "ecommerceType": {
+      "type": "enumeration",
+      "enum": [
+        "shopify",
+        "woocommerce",
+        "magento"
+      ],
+      "required": true
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "ecommerceProductServices"
+    },
+    "tenantId": {
+      "type": "string",
+      "required": true
+    },
+    "inventoryItemId": {
+      "type": "string"
+    }
+  }
+}

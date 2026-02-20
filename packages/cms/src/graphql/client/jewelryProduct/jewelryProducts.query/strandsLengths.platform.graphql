@@ -1,0 +1,14 @@
+query strandsLengths(
+  $filters: StrandsLengthFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  strandsLengths(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...StrandsLength
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

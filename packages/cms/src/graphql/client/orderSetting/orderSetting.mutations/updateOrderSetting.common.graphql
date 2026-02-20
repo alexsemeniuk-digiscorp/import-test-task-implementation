@@ -1,0 +1,7 @@
+mutation updateOrderSetting($id: ID!, $input: OrderSettingInput!) {
+  updateOrderSetting(id: $id, data: $input) {
+    data {
+      ...OrderSetting
+    }
+  }
+}

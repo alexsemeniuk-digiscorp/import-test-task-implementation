@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maintenance_events",
+  "info": {
+    "singularName": "maintenance-event",
+    "pluralName": "maintenance-events",
+    "displayName": "Maintenance Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "dateReported": {
+      "type": "datetime",
+      "required": true
+    },
+    "reportedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "completed",
+        "issue"
+      ],
+      "required": true,
+      "default": "completed"
+    },
+    "maintenance": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maintenance.maintenance",
+      "inversedBy": "maintenanceEvents"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

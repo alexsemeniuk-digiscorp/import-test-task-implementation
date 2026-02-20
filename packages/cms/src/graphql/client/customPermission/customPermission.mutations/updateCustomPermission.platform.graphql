@@ -1,0 +1,7 @@
+mutation updateCustomPermission($id: ID!, $input: CustomPermissionInput!) {
+  updateCustomPermission(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

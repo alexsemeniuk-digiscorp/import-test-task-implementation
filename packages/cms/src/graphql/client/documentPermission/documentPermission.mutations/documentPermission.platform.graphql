@@ -1,0 +1,7 @@
+mutation updateDocumentPermission($id: ID!, $input: DocumentPermissionInput!) {
+  updateDocumentPermission(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

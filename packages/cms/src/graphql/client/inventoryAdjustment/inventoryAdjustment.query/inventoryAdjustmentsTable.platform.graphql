@@ -1,0 +1,18 @@
+query inventoryAdjustmentsTable(
+  $filters: InventoryAdjustmentFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  inventoryAdjustments(
+    filters: $filters
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...InventoryAdjustmentsTable
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

@@ -1,0 +1,7 @@
+fragment TransferOrderItemMin on TransferOrderItemEntity {
+  attributes {
+    quantityFrom
+    quantityTo
+    transferQuantity
+  }
+}

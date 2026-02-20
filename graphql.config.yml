@@ -1,0 +1,8 @@
+schema: packages/cms/src/graphql/schema.graphql
+include:
+  - packages/cms/src/graphql/client/**/*.graphql
+  - packages/website/src/graphql/index.ts
+  - packages/customer-website/src/graphql/index.ts
+extensions:
+  endpoints:
+    cms: http://localhost:1337/graphql

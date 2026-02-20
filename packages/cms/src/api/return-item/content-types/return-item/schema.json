@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "return_items",
+  "info": {
+    "singularName": "return-item",
+    "pluralName": "return-items",
+    "displayName": "Return Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productOrderItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-order-item.product-order-item",
+      "inversedBy": "returnItems"
+    },
+    "quantityReturned": {
+      "type": "integer"
+    },
+    "return": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::return.return",
+      "inversedBy": "returnItems"
+    },
+    "serializes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-serialize.inventory-serialize",
+      "mappedBy": "returnItem"
+    }
+  }
+}

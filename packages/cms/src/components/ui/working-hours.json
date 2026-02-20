@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_ui_working_hours",
+  "info": {
+    "displayName": "workingHours",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "monday": {
+      "type": "string"
+    },
+    "tuesday": {
+      "type": "string"
+    },
+    "wednesday": {
+      "type": "string"
+    },
+    "thursday": {
+      "type": "string"
+    },
+    "friday": {
+      "type": "string"
+    },
+    "saturday": {
+      "type": "string"
+    },
+    "sunday": {
+      "type": "string"
+    }
+  }
+}

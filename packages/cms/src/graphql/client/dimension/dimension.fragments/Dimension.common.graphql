@@ -1,0 +1,9 @@
+fragment Dimension on DimensionEntity {
+  id
+  attributes {
+    height
+    length
+    width
+    unit
+  }
+}

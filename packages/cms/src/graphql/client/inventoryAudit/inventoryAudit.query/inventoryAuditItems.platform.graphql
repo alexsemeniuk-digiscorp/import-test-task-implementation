@@ -1,0 +1,11 @@
+query inventoryAuditItems(
+  $filters: InventoryAuditItemFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  inventoryAuditItems(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InventoryAuditItemScanner
+    }
+  }
+}

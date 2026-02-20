@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoice",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "invoiceId": {
+      "type": "string"
+    },
+    "orderId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "inversedBy": "invoice"
+    },
+    "shippingContact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invoice-shipping-contact.invoice-shipping-contact",
+      "inversedBy": "invoice"
+    },
+    "clientMessage": {
+      "type": "string"
+    },
+    "fileItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    },
+    "terms": {
+      "type": "text"
+    },
+    "isShowOrderItemsImages": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

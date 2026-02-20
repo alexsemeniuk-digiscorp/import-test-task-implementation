@@ -1,0 +1,14 @@
+query usages(
+  $filters: UsageFiltersInput, 
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  usages(filters: $filters, pagination: $pagination, sort: $sort) {
+    data{
+    ...Usage
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

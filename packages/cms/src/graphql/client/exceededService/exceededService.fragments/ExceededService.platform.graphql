@@ -1,0 +1,19 @@
+fragment ExceededService on ExceededServiceEntity {
+  id
+  attributes {
+    nextBillingCycle
+    employee {
+      data {
+        ...UserMin
+      }
+    }
+    tenant {
+      data {
+        id
+        attributes {
+          companyName
+        }
+      }
+    }
+  }
+}

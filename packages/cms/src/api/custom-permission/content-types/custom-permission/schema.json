@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_permissions",
+  "info": {
+    "singularName": "custom-permission",
+    "pluralName": "custom-permissions",
+    "displayName": "Custom Permission"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "permissions": {
+      "type": "json"
+    }
+  }
+}

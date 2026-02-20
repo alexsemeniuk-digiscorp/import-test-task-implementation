@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_inventory_items",
+  "info": {
+    "singularName": "resource-inventory-item",
+    "pluralName": "resource-inventory-items",
+    "displayName": "Resource Inventory Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "store": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "resource": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resource.resource",
+      "inversedBy": "resourceInventoryItems"
+    }
+  }
+}

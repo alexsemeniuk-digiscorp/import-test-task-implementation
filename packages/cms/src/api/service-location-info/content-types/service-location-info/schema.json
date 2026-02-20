@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_location_infos",
+  "info": {
+    "singularName": "service-location-info",
+    "pluralName": "service-location-infos",
+    "displayName": "Service Location Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "serviceLocationInfos"
+    },
+    "servicePerformers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-performer.service-performer",
+      "mappedBy": "serviceLocationInfo"
+    },
+    "resourceCounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-count.resource-count",
+      "mappedBy": "serviceLocationInfo"
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    }
+  }
+}

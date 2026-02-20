@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales_commissions",
+  "info": {
+    "singularName": "sales-commission",
+    "pluralName": "sales-commissions",
+    "displayName": "Sales Commission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "salesCommission"
+    },
+    "productCommissionType": {
+      "type": "enumeration",
+      "enum": [
+        "percentage",
+        "gross margin"
+      ],
+      "default": "percentage"
+    },
+    "productPercentageCommission": {
+      "type": "decimal"
+    },
+    "compositeProductPercentageCommission": {
+      "type": "decimal"
+    },
+    "servicePercentageCommission": {
+      "type": "decimal"
+    },
+    "excludedProductTypes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-type.product-type"
+    },
+    "gmCommissions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gm-commission.gm-commission",
+      "mappedBy": "salesCommissions"
+    }
+  }
+}

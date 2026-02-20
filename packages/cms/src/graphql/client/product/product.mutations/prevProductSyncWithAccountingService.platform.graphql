@@ -1,0 +1,3 @@
+mutation prevProductSyncWithAccountingService($input: PrevProductSyncWithAccountingServiceInput!) {
+  prevProductSyncWithAccountingService(input: $input)
+}

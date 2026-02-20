@@ -1,0 +1,7 @@
+mutation createMetalType($input: MetalTypeInput!) {
+  createMetalType(data: $input) {
+    data {
+      ...MetalType
+    }
+  }
+}

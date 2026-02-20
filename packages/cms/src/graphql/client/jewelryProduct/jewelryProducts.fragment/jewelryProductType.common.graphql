@@ -1,0 +1,6 @@
+fragment JewelryProductType on JewelryProductTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

@@ -1,0 +1,81 @@
+fragment ProductSetting on ProductSettingEntity {
+  id
+  attributes {
+    returnableItem
+    trackProductInventory
+    allowNegativeQuantity
+    visibleItem
+    bulkProductsAiPrompt {
+      productName
+      MPN
+      quantity
+      unit
+      weight
+      SKU
+      brand
+      productType
+      metalType
+      metalGrade
+      defaultPrice
+      description
+      discount
+    }
+    aiPrompt {
+      productName
+      tagProductName
+      ecommerceName
+      shopifyTags
+      appraisalDescription
+      ecommerceDescription
+      SKU
+      note
+    }
+    defaultPurchaseTax {
+      data {
+        id
+      }
+    }
+    defaultPaymentMethod {
+      data {
+        id
+      }
+    }
+    isAppraisalDescriptionEnabled
+    isBrandEnabled
+    isCostEnabled
+    isDimensionEnabled
+    isEanEnabled
+    isEcommerceDescriptionEnabled
+    isEcommerceNameEnabled
+    isExpiresEnabled
+    isForBundleUseOnlyEnabled
+    isForBusinessOnlyEnabled
+    isIsbnEnabled
+    isLaborWarrantyEnabled
+    isLowQuantityEnabled
+    isMaxQuantityEnabled
+    isMinimumOrderQuantityEnabled
+    isModelEnabled
+    isMpnEnabled
+    isNoteEnabled
+    isPackagingProductEnabled
+    isPartsWarrantyEnabled
+    isPointsGivenEnabled
+    isPointsRedeemEnabled
+    isPriceEnabled
+    isRentableEnabled
+    isRetailPriceMultiplierEnabled
+    isReturnableItemEnabled
+    isRevenueEnabled
+    isShopifyCollectionEnabled
+    isShopifyTagsEnabled
+    isSkuEnabled
+    isStorageNotesEnabled
+    isTaxEnabled
+    isUpcEnabled
+    isVendorEnabled
+    isWeightEnabled
+    isWholesalePriceMultiplierEnabled
+    isWoocommerceCategoryEnabled
+  }
+}

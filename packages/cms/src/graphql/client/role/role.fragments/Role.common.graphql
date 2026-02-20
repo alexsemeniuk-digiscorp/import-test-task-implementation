@@ -1,0 +1,10 @@
+fragment Role on UsersPermissionsRoleEntityResponse {
+  data {
+    id
+    attributes {
+      name
+      description
+      type
+    }
+  }
+}

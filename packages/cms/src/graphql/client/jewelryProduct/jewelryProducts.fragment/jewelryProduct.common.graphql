@@ -1,0 +1,16 @@
+fragment JewelryProduct on JewelryProductEntity {
+  ...JewelryProductMin
+  id
+  attributes {
+    productInventoryItems {
+      data {
+        ...ProductInventoryItem
+      }
+    }
+    productAttributeOptions {
+      data {
+        ...ProductAttributeOption
+      }
+    }
+  }
+}

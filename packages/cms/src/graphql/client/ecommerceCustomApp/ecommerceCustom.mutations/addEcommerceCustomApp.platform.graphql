@@ -1,0 +1,7 @@
+mutation createEcommerceCustomAppService($data: EcommerceCustomAppServiceInput!) {
+  createEcommerceCustomAppService(data: $data) {
+    data {
+      ...EcommerceCustomAppService
+    }
+  }
+}

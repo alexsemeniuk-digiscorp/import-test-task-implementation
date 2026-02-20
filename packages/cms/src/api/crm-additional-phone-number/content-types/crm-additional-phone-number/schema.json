@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crm_additional_phone_numbers",
+  "info": {
+    "singularName": "crm-additional-phone-number",
+    "pluralName": "crm-additional-phone-numbers",
+    "displayName": "CRM: Additional Phone Number",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "additionalPhoneNumbers"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "additionalPhoneNumbers"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lead.lead",
+      "inversedBy": "additionalPhoneNumbers"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ui_customer_review_sections",
+  "info": {
+    "displayName": "CustomerReviewSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "visible": {
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.review-card"
+    }
+  }
+}

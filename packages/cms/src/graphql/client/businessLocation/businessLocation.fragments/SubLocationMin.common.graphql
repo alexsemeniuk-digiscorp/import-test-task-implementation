@@ -1,0 +1,7 @@
+fragment SubLocationMin on SublocationEntity {
+  id
+  attributes {
+    name
+    regexedId
+  }
+}

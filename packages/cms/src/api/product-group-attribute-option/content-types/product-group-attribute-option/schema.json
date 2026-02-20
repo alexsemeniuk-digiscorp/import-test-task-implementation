@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_group_attribute_options",
+  "info": {
+    "singularName": "product-group-attribute-option",
+    "pluralName": "product-group-attribute-options",
+    "displayName": "Product Group Attribute Option",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "productGroupAttribute": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-group-attribute.product-group-attribute",
+      "inversedBy": "productGroupAttributeOptions"
+    }
+  }
+}

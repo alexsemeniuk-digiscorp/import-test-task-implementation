@@ -1,0 +1,36 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &.hover {
+    :global(.ant-dropdown-menu-item) {
+      &:hover,
+      &:focus {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  :global(.ant-dropdown-menu-item) {
+    padding: 0 !important;
+  }
+
+  :global(.ant-dropdown-menu-item-divider) {
+    height: 1px !important;
+    min-height: 1px !important;
+    margin: 0 !important;
+    background-color: #e7e7e7 !important;
+  }
+}
+
+.button {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px !important;
+  color: #1f2933;
+  font-weight: 500;
+  text-transform: capitalize;
+}

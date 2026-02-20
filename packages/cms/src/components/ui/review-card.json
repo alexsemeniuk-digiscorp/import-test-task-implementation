@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_review_cards",
+  "info": {
+    "displayName": "ReviewCard"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer",
+      "max": 5
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

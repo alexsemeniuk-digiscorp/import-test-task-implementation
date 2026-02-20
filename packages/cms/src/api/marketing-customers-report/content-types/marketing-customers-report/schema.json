@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marketing_customers_reports",
+  "info": {
+    "singularName": "marketing-customers-report",
+    "pluralName": "marketing-customers-reports",
+    "displayName": "REPORTS: Marketing Customers Report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "enrolledContact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign-enrolled-contact.campaign-enrolled-contact"
+    },
+    "enrolledLead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign-enrolled-lead.campaign-enrolled-lead"
+    },
+    "SMSsent": {
+      "type": "integer"
+    },
+    "EMAILsent": {
+      "type": "integer"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "MMSsent": {
+      "type": "integer"
+    }
+  }
+}

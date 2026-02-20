@@ -1,0 +1,17 @@
+fragment UserMin on UsersPermissionsUserEntity {
+  id
+  attributes {
+    fullName
+    email
+    jobTitle
+    defaultRoute
+    defaultPaymentTerminalId
+    isGoogleAddressInputEnabled
+    avatar {
+      data {
+        ...File
+      }
+    }
+    preferredCurrency
+  }
+}

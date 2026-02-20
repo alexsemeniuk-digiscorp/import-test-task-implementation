@@ -1,0 +1,6 @@
+query productInventoryItemAgeRange {
+  productInventoryItemAgeRange {
+    minAge
+    maxAge
+  }
+}

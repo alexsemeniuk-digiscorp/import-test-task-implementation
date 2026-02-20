@@ -1,0 +1,8 @@
+fragment InvtCmpTrckMin on InvtCmpTrckEntity {
+  id
+  attributes {
+    multiplier
+    margin
+    createdAt
+  }
+}

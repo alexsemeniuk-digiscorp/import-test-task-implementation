@@ -1,0 +1,7 @@
+mutation createRate($input: RateInput!) {
+  createRate(data: $input) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation deleteProductInventoryItemEvent($id: ID!) {
+  deleteProductInventoryItemEvent(id: $id) {
+    data {
+      id
+    }
+  }
+}

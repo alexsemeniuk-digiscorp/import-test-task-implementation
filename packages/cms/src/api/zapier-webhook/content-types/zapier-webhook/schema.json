@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zapier_webhooks",
+  "info": {
+    "singularName": "zapier-webhook",
+    "pluralName": "zapier-webhooks",
+    "displayName": "Zapier Webhook",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "webhook": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "zapierWebhooks"
+    },
+    "entityType": {
+      "type": "enumeration",
+      "enum": [
+        "task",
+        "order"
+      ],
+      "default": "task"
+    }
+  }
+}

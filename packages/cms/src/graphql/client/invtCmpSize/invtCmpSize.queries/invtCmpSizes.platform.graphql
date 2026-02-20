@@ -1,0 +1,14 @@
+query invtCmpSizes(
+  $filters: InvtCmpSizeFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  invtCmpSizes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InvtCmpSize
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

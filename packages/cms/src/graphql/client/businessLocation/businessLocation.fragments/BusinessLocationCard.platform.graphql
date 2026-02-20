@@ -1,0 +1,34 @@
+fragment BusinessLocationCard on BusinessLocationEntity {
+  id
+  attributes {
+    uuid
+    createdAt
+    name
+    businessLocationId
+    archived
+    email
+    phoneNumber
+    reviewLink
+    location {
+      data {
+        ...Location
+      }
+    }
+    tax {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    taxCollection {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+}

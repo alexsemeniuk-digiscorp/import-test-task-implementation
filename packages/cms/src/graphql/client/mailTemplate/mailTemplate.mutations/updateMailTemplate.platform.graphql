@@ -1,0 +1,7 @@
+mutation updateMailTemplate($id: ID!, $input: MailTemplateInput!) {
+  updateMailTemplate(id: $id, data: $input) {
+    data {
+      ...MailTemplate
+    }
+  }
+}

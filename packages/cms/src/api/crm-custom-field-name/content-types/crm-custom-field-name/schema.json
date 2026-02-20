@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crm_custom_field_names",
+  "info": {
+    "singularName": "crm-custom-field-name",
+    "pluralName": "crm-custom-field-names",
+    "displayName": "CRM: Custom Field Name",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "crmType": {
+      "type": "enumeration",
+      "enum": [
+        "contact",
+        "company",
+        "lead"
+      ],
+      "default": "contact",
+      "required": true
+    }
+  }
+}

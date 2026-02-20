@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/timeline/webhook/:tenantId?",
+      "handler": "timeline.webhook",
+      "config": {
+        "auth": false
+      }
+    }
+  ]
+}

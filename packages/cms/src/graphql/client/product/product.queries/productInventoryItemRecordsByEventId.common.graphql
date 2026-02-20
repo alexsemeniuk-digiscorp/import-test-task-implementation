@@ -1,0 +1,19 @@
+query productInventoryItemRecordsByEventId(
+  $id: ID!
+  $pagination: PaginationArg
+  $sort: [String] = []
+  $businessLocationId: Int
+) {
+  invtItmRecords(
+    filters: { productInventoryItemEvent: { id: { eq: $id } } }
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...ProductInventoryItemRecord
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

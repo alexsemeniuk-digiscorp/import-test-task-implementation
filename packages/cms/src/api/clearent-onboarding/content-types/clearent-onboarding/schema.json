@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clearent_onboardings",
+  "info": {
+    "singularName": "clearent-onboarding",
+    "pluralName": "clearent-onboardings",
+    "displayName": "Clearent Onboarding",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "merchantId": {
+      "type": "string"
+    },
+    "terminalId": {
+      "type": "string"
+    },
+    "hppKey": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "clearent_onboarding"
+    }
+  }
+}

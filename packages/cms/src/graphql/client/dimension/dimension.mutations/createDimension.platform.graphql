@@ -1,0 +1,7 @@
+mutation createDimension($input: DimensionInput!) {
+  createDimension(data: $input) {
+    data {
+      id
+    }
+  }
+}

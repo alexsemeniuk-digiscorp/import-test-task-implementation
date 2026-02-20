@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bulk_images_notifies",
+  "info": {
+    "singularName": "bulk-images-notify",
+    "pluralName": "bulk-images-notifies",
+    "displayName": "NOTIFICATIONS: Bulk Images Notify",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userNotifies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-notification.user-notification",
+      "mappedBy": "imagesNotify"
+    }
+  }
+}

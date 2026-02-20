@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_attribute_options",
+  "info": {
+    "singularName": "product-attribute-option",
+    "pluralName": "product-attribute-options",
+    "displayName": "Product Attribute Option",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productAttribute": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-attribute.product-attribute",
+      "inversedBy": "productAttributeOptions"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "productAttributeOptions"
+    },
+    "jewelryProducts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::jewelry-product.jewelry-product",
+      "mappedBy": "productAttributeOptions"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usages",
+  "info": {
+    "singularName": "usage",
+    "pluralName": "usages",
+    "displayName": "Service Usage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "usages"
+    },
+    "usageCounts": {
+      "type": "json",
+      "required": true
+    },
+    "currentMonth": {
+      "type": "date"
+    }
+  }
+}

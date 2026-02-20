@@ -1,0 +1,7 @@
+query customPermission($id: ID!) {
+  customPermission(id: $id) {
+    data {
+      ...CustomPermission
+    }
+  }
+}

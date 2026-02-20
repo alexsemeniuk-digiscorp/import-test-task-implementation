@@ -1,0 +1,7 @@
+query productGroupAttribute($id: ID!) {
+  productGroupAttribute(id: $id) {
+    data {
+      ...ProductGroupAttribute
+    }
+  }
+}

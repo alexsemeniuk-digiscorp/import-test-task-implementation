@@ -1,0 +1,7 @@
+mutation createDeal($input: DealInput!) {
+  createDeal(data: $input) {
+    data {
+      id
+    }
+  }
+}

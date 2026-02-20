@@ -1,0 +1,11 @@
+query roles($filters: UsersPermissionsRoleFiltersInput!) {
+  usersPermissionsRoles(filters: $filters) {
+    data {
+      id
+      attributes {
+        name
+        type
+      }
+    }
+  }
+}

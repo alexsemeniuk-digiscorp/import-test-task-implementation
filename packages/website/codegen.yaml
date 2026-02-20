@@ -1,0 +1,46 @@
+schema:
+  - ../cms/src/graphql/schema.graphql
+documents:
+  - ../cms/src/graphql/client/**/*.common.graphql
+  - ../cms/src/graphql/client/**/*.global.graphql
+  - ../cms/src/graphql/client/**/*.platform.graphql
+hooks:
+  afterAllFileWrite:
+    - npx lint ts --fix
+watch: true
+emitLegacyCommonJSImports: true
+config:
+  namingConvention:
+    transformUnderscore: true
+  maybeValue: T | null | undefined
+  inputMaybeValue: T | null | undefined
+  experimentalFragmentVariables: true
+  scalars:
+    Date: string
+    DateTime: Date
+    I18NLocaleCode: string
+    JSON: Record<string, any|any[]|string|number|boolean|null|undefined>|any[]
+    Long: number
+    Time: string
+    Upload: unknown
+generates:
+  'src/graphql/index.ts':
+    plugins:
+      - fragment-matcher:
+          useExplicitTyping: true
+          module: es2015
+      - typescript-react-apollo:
+          dedupeFragments: true
+          optimizeDocumentNode: true
+          addDocBlocks: false
+          withComponent: false
+          withHooks: true
+          withMutationOptionsType: false
+  'src/types/graphql.d.ts':
+    config:
+      noExport: true
+      skipTypename: true
+      enumsAsTypes: true
+    plugins:
+      - typescript
+      - typescript-operations

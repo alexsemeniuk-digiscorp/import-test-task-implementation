@@ -1,0 +1,7 @@
+mutation createBusinessLocation($input: BusinessLocationInput!) {
+  createBusinessLocation(data: $input) {
+    data {
+      id
+    }
+  }
+}

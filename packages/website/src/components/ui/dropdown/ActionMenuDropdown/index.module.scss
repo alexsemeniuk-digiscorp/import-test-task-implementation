@@ -1,0 +1,43 @@
+.button {
+  display: flex;
+  gap: 12px !important;
+  justify-content: flex-start;
+  padding: 0;
+  color: #959595 !important;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    color: #4876d5 !important;
+  }
+
+  svg {
+    path {
+      fill: #4876d5;
+    }
+  }
+
+  &.delete {
+    &:hover,
+    &:focus {
+      color: #c62421 !important;
+    }
+
+    svg {
+      path {
+        fill: #c62421;
+      }
+    }
+  }
+
+  &:disabled {
+    color: #6c6c6c;
+    pointer-events: none;
+
+    svg {
+      path {
+        fill: #6c6c6c;
+      }
+    }
+  }
+}

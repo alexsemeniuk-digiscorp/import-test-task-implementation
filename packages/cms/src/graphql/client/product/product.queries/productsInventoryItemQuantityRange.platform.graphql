@@ -1,0 +1,6 @@
+query productsInventoryItemQuantityRange($businessLocationId: ID!) {
+  productsInventoryItemQuantityRange(businessLocationId: $businessLocationId) {
+    minQuantity
+    maxQuantity
+  }
+}

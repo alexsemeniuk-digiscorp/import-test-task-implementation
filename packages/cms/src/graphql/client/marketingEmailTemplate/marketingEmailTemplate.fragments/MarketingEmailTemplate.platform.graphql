@@ -1,0 +1,11 @@
+fragment MarketingEmailTemplate on MarketingEmailTemplateEntity {
+  id
+  attributes {
+    createdAt
+    name
+    subject
+    uuid
+    templateJSON
+    templateHtml
+  }
+}

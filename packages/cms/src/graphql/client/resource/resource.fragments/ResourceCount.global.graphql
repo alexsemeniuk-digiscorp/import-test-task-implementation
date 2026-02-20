@@ -1,0 +1,11 @@
+fragment ResourceCount on ResourceCountEntity {
+  id
+  attributes {
+    count
+    resourceInventoryItem {
+      data {
+        ...ResourceInventoryItem
+      }
+    }
+  }
+}

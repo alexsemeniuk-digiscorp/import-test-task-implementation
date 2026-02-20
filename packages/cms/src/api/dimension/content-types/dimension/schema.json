@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dimensions",
+  "info": {
+    "singularName": "dimension",
+    "pluralName": "dimensions",
+    "displayName": "Dimension",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "height": {
+      "type": "float"
+    },
+    "length": {
+      "type": "float"
+    },
+    "width": {
+      "type": "float"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "mm",
+        "cm",
+        "m",
+        "in",
+        "ft",
+        "yd"
+      ]
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product",
+      "mappedBy": "dimension"
+    },
+    "jewelryProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jewelry-product.jewelry-product",
+      "inversedBy": "dimension"
+    }
+  }
+}

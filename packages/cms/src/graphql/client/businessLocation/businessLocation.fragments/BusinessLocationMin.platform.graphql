@@ -1,0 +1,14 @@
+fragment BusinessLocationMin on BusinessLocationEntity {
+  id
+  attributes {
+    uuid
+    name
+    email
+    phoneNumber
+    location {
+      data {
+        ...Location
+      }
+    }
+  }
+}

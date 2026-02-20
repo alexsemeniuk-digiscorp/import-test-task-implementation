@@ -1,0 +1,5 @@
+mutation deleteSessions($input: DeleteSessionsInput!) {
+  deleteSessions(input: $input) {
+    ok
+  }
+}

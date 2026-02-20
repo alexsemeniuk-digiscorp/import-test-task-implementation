@@ -1,0 +1,13 @@
+query businessLocationsDropdown(
+  $filters: BusinessLocationFiltersInput
+  $sort: [String]
+) {
+  businessLocations(filters: $filters, pagination: { limit: -1 }, sort: $sort) {
+    data {
+      ...BusinessLocationDropdown
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

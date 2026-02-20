@@ -1,0 +1,36 @@
+fragment Deal on DealEntity {
+  ...DealMin
+  id
+  attributes {
+    products {
+      data {
+        id
+      }
+    }
+    lead {
+      data {
+        id
+      }
+    }
+    contact {
+      data {
+        id
+      }
+    }
+    company {
+      data {
+        id
+      }
+    }
+    files {
+      data {
+        ...File
+      }
+    }
+    employee {
+      data {
+        id
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation updatePdfTemplate($id: ID!, $data: PdfTemplateInput!) {
+  updatePdfTemplate(id: $id, data: $data) {
+    data {
+      id
+    }
+  }
+}

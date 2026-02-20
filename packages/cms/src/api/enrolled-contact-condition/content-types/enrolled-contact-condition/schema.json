@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrolled_contact_conditions",
+  "info": {
+    "singularName": "enrolled-contact-condition",
+    "pluralName": "enrolled-contact-conditions",
+    "displayName": "MARKETING: Campaign Enrolled Contact Condition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "conditionId": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "valueStart": {
+      "type": "string"
+    },
+    "valueEnd": {
+      "type": "string"
+    },
+    "periodStart": {
+      "type": "date"
+    },
+    "periodEnd": {
+      "type": "date"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "enrolledContactConditions"
+    },
+    "periodValue": {
+      "type": "string"
+    },
+    "periodValueStart": {
+      "type": "string"
+    },
+    "periodValueEnd": {
+      "type": "string"
+    },
+    "periodOperator": {
+      "type": "string"
+    },
+    "operator": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.set"
+    },
+    "bought": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.bought-condition"
+    },
+    "notBought": {
+      "type": "component",
+      "repeatable": false,
+      "component": "data.bought-condition"
+    }
+  }
+}

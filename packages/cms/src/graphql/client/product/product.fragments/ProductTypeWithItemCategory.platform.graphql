@@ -1,0 +1,14 @@
+fragment ProductTypeWithItemCategory on ProductTypeEntity {
+  id
+  attributes {
+    name
+    itemCategory {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation createTaxAuthority($data: TaxAuthorityInput!) {
+  createTaxAuthority(data: $data) {
+    data {
+      id
+    }
+  }
+}

@@ -1,0 +1,9 @@
+mutation createProductGroupAttributeOption(
+  $input: ProductGroupAttributeOptionInput!
+) {
+  createProductGroupAttributeOption(data: $input) {
+    data {
+      id
+    }
+  }
+}

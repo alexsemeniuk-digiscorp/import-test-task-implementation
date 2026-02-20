@@ -1,0 +1,14 @@
+fragment TaxMin on TaxEntity {
+  id
+  attributes {
+    name
+    rate
+    createdAt
+    fixedFee
+    perUnitFee
+    maxTaxAmount
+    startAfterPrice
+    endAfterPrice
+    exemptionThreshold
+  }
+}

@@ -1,0 +1,31 @@
+fragment ProductInventoryItemCompact on ProductInventoryItemEntity {
+  id
+  attributes {
+    price
+    quantity
+    serializes {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    tax {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    taxCollection {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+  }
+}

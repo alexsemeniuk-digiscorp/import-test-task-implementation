@@ -1,0 +1,7 @@
+mutation updateQuickPaySetting($id: ID!, $input: QuickPaySettingInput!) {
+  updateQuickPaySetting(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

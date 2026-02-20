@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crm_custom_field_values",
+  "info": {
+    "singularName": "crm-custom-field-value",
+    "pluralName": "crm-custom-field-values",
+    "displayName": "CRM: Custom Field Value",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "customFieldName": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::crm-custom-field-name.crm-custom-field-name"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "customFieldValues"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "lead": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead.lead"
+    }
+  }
+}

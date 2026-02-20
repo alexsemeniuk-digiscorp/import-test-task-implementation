@@ -1,0 +1,14 @@
+query mailTemplates(
+  $filters: MailTemplateFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  mailTemplates(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...MailTemplate
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

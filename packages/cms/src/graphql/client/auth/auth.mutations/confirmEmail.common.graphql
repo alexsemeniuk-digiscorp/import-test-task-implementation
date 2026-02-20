@@ -1,0 +1,7 @@
+mutation confirmEmail($confirmation: String!) {
+  emailConfirmation(confirmation: $confirmation) {
+    user {
+      id
+    }
+  }
+}

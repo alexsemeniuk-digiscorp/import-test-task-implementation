@@ -1,0 +1,7 @@
+mutation updateImportingSession($id: ID!, $input: ImportingSessionInput!) {
+  updateImportingSession(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

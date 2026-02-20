@@ -1,0 +1,144 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "singularName": "class",
+    "pluralName": "classes",
+    "displayName": "Class",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "tax": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax.tax"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "showOnline": {
+      "type": "boolean",
+      "default": false
+    },
+    "workshop": {
+      "type": "boolean",
+      "default": false
+    },
+    "resourceCounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-count.resource-count",
+      "mappedBy": "class"
+    },
+    "selling_class_order_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class-order-item.class-order-item",
+      "mappedBy": "class"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "classLocationInfos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-location-info.class-location-info",
+      "mappedBy": "class"
+    },
+    "defaultPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "classId": {
+      "type": "string",
+      "unique": true,
+      "regex": "^#[A-Z0-9]{11}$"
+    },
+    "revenue": {
+      "type": "string",
+      "required": false
+    },
+    "cost": {
+      "type": "string"
+    },
+    "accServiceEntities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-entity.acc-service-entity",
+      "mappedBy": "class"
+    },
+    "revenueChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "classes"
+    },
+    "revenueChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "classes"
+    },
+    "revenueChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "classes"
+    },
+    "costChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "classes"
+    },
+    "costChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "classes"
+    },
+    "costChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "classes"
+    },
+    "taxCollection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tax-collection.tax-collection"
+    }
+  }
+}

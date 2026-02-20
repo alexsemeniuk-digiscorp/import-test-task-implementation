@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_cmp_sizes",
+  "info": {
+    "singularName": "invt-cmp-size",
+    "pluralName": "invt-cmp-sizes",
+    "displayName": "Composite Product Size"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    }
+  }
+}

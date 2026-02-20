@@ -1,0 +1,12 @@
+query inventoryAuditItemRangeData($uuid: String!) {
+  inventoryAuditItemRangeData(uuid: $uuid) {
+    minScannedQty
+    maxScannedQty
+    minActualQty
+    maxActualQty
+    minInventoryQty
+    maxInventoryQty
+    minPrice
+    maxPrice
+  }
+}

@@ -1,0 +1,1 @@
+const ERRORS_FIELD_NAME = 'ERRORS';

@@ -1,0 +1,7 @@
+mutation deleteInvtCmpTrckItm($id: ID!) {
+  deleteInvtCmpTrckItm(id: $id) {
+    data {
+      ...InvtCmpTrckItm
+    }
+  }
+}

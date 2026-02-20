@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_requests",
+  "info": {
+    "singularName": "purchase-request",
+    "pluralName": "purchase-requests",
+    "displayName": "Purchase Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "orderId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "inversedBy": "purchaseRequest"
+    },
+    "requestId": {
+      "type": "string"
+    },
+    "shippingInfo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::purchase-request-shipping-info.purchase-request-shipping-info",
+      "mappedBy": "purchaseRequest"
+    },
+    "fileItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item",
+      "inversedBy": "purchaseRequest"
+    },
+    "terms": {
+      "type": "text"
+    }
+  }
+}

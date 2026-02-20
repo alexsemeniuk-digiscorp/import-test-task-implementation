@@ -1,0 +1,7 @@
+query productGroupByUuid($uuid: String!) {
+  productGroups(filters: { uuid: { eq: $uuid } }) {
+    data {
+      ...ProductGroup
+    }
+  }
+}

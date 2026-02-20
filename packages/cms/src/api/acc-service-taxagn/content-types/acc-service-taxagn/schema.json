@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_taxagns",
+  "info": {
+    "singularName": "acc-service-taxagn",
+    "pluralName": "acc-service-taxagns",
+    "displayName": "Acc service taxagn"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "syncToken": {
+      "type": "string",
+      "required": false
+    },
+    "taxAuthority": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tax-authority.tax-authority",
+      "inversedBy": "accServiceTaxagns"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceTaxagn"
+    }
+  }
+}

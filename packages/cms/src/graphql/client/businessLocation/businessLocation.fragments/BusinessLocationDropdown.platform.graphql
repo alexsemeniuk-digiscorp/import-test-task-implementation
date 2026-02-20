@@ -1,0 +1,23 @@
+fragment BusinessLocationDropdown on BusinessLocationEntity {
+  id
+  attributes {
+    uuid
+    createdAt
+    name
+    email
+    tenant {
+      data {
+        id
+      }
+    }
+    phoneNumber
+    businessLocationId
+    archived
+    reviewLink
+    location {
+      data {
+        ...Location
+      }
+    }
+  }
+}

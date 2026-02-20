@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gender_types",
+  "info": {
+    "singularName": "gender-type",
+    "pluralName": "gender-types",
+    "displayName": "INVENTORY: GenderType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_entities",
+  "info": {
+    "singularName": "acc-service-entity",
+    "pluralName": "acc-service-entities",
+    "displayName": "Acc service entity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "syncToken": {
+      "type": "string",
+      "required": true
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceEntities"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "accServiceEntities"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "accServiceEntities"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "product",
+        "service",
+        "class",
+        "membership"
+      ],
+      "default": "product",
+      "required": true
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "accServiceConn": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-conn.acc-service-conn",
+      "inversedBy": "accServiceEntities"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class.class",
+      "inversedBy": "accServiceEntities"
+    },
+    "membership": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::membership.membership",
+      "inversedBy": "accServiceEntities"
+    }
+  }
+}

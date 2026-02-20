@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoice_shipping_contacts",
+  "info": {
+    "singularName": "invoice-shipping-contact",
+    "pluralName": "invoice-shipping-contacts",
+    "displayName": "invoiceShippingContact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "invoice": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invoice.invoice",
+      "mappedBy": "shippingContact"
+    }
+  }
+}

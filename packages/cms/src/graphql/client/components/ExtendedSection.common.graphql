@@ -1,0 +1,30 @@
+fragment ExtendedSection on ComponentUiExtendedSection {
+  id
+  visible
+  heading {
+    id
+    title
+    subtitle
+  }
+  media {
+    data {
+      ...File
+    }
+  }
+  button {
+    id
+    title
+    url
+    icon
+  }
+  image {
+    id
+    title
+    subtitle
+    media {
+      data {
+        ...File
+      }
+    }
+  }
+}

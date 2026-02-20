@@ -1,0 +1,7 @@
+mutation createJewelryProduct($input: JewelryProductInput!) {
+  createJewelryProduct(data: $input) {
+    data {
+      ...JewelryProduct
+    }
+  }
+}

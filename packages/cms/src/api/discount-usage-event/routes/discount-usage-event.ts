@@ -1,0 +1,8 @@
+/**
+ * discount-usage-event router
+ */
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter(
+  'api::discount-usage-event.discount-usage-event',
+);

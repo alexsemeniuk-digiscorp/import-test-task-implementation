@@ -1,0 +1,7 @@
+mutation deleteFileItem($id: ID!) {
+  deleteFileItem(id: $id) {
+    data {
+      ...FileItem
+    }
+  }
+}

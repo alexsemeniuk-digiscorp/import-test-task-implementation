@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_location_infos",
+  "info": {
+    "singularName": "class-location-info",
+    "pluralName": "class-location-infos",
+    "displayName": "Class Location Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "businessLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-location.business-location"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class.class",
+      "inversedBy": "classLocationInfos"
+    },
+    "classPerformers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-performer.class-performer",
+      "mappedBy": "classLocationInfo"
+    },
+    "resourceCounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resource-count.resource-count",
+      "mappedBy": "classLocationInfo"
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    }
+  }
+}

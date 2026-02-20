@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stripe_plan_categories",
+  "info": {
+    "singularName": "stripe-plan-category",
+    "pluralName": "stripe-plan-categories",
+    "displayName": "Stripe Plan Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "string"
+    }
+  }
+}

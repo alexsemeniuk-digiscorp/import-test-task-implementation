@@ -1,0 +1,14 @@
+query inventoryTransferOrders(
+  $filters: TransferOrderFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  transferOrders(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InventoryTransferOrder
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

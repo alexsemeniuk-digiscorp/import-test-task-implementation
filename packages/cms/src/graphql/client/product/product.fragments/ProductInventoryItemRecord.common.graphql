@@ -1,0 +1,118 @@
+fragment ProductInventoryItemRecord on InvtItmRecordEntity {
+  id
+  ...ProductInventoryItemRecordMin
+  attributes {
+    quantityOnOrder(businessLocationId: $businessLocationId)
+    sellingOrder {
+      data {
+        id
+        attributes {
+          orderId
+          customCreationDate
+          contact {
+            data {
+              id
+              attributes {
+                fullName
+                uuid
+              }
+            }
+          }
+          company {
+            data {
+              id
+              attributes {
+                name
+                uuid
+              }
+            }
+          }
+        }
+      }
+    }
+    productInventoryItemEvent {
+      data {
+        id
+        attributes {
+          change
+          remainingQuantity
+          itemCost
+          receiveDate
+          memoNumber
+          order {
+            data {
+              id
+              attributes {
+                orderId
+                memoNumber
+              }
+            }
+          }
+          itemVendor {
+            data {
+              id
+              attributes {
+                name
+                uuid
+              }
+            }
+          }
+          itemContactVendor {
+            data {
+              id
+              attributes {
+                fullName
+                uuid
+              }
+            }
+          }
+        }
+      }
+    }
+    productInventoryItem {
+      data {
+        id
+        attributes {
+          uuid
+          quantity
+          price
+          product {
+            data {
+              id
+              attributes {
+                uuid
+                name
+                SKU
+                barcode
+                model
+                defaultPrice
+                multiplier
+                files(pagination: { limit: 1 }) {
+                  data {
+                    ...FileMin
+                  }
+                }
+                productType {
+                  data {
+                    id
+                    attributes {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+          businessLocation {
+            data {
+              id
+              attributes {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

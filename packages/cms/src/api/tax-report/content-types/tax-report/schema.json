@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tax_reports",
+  "info": {
+    "singularName": "tax-report",
+    "pluralName": "tax-reports",
+    "displayName": "Tax Report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dealTransaction": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deal-transaction.deal-transaction"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    }
+  }
+}

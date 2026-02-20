@@ -1,0 +1,23 @@
+fragment UserNotification on UserNotificationEntity {
+  id
+  attributes {
+    hasBeenSeen
+    createdAt
+    type
+    inventoryQuantityNotification {
+      data {
+        ...InventoryQuantityNotification
+      }
+    }
+    maintenanceQuantityNotification {
+      data {
+        ...MaintenanceQuantityNotification
+      }
+    }
+    nylasGrantExpire {
+      data {
+        ...NylasGrantExpireNotification
+      }
+    }
+  }
+}

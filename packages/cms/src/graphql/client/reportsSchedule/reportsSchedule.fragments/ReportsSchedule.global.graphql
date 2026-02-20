@@ -1,0 +1,12 @@
+fragment ReportsSchedule on ReportsScheduleEntity {
+  id
+  attributes {
+    scheduleCustomersReport
+    scheduleInventoryReport
+    scheduleMarketingReport
+    scheduleSalesReport
+    scheduleSalesItemReport
+    scheduleTaxesReport
+    scheduleDailySummaryReport
+  }
+}

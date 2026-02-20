@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acc_service_vendors",
+  "info": {
+    "singularName": "acc-service-vendor",
+    "pluralName": "acc-service-vendors",
+    "displayName": "Acc service vendor"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "syncToken": {
+      "type": "string",
+      "required": true
+    },
+    "syncDate": {
+      "type": "datetime"
+    },
+    "isSynced": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "accountingServiceId": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "enum": [
+        "quickBooks",
+        "xero",
+        "sage"
+      ],
+      "required": true
+    },
+    "businessLocation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-location.business-location",
+      "inversedBy": "accServiceVendors"
+    },
+    "accServiceConn": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acc-service-conn.acc-service-conn",
+      "inversedBy": "accServiceVendors"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "accServiceVendors"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "accServiceVendors"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "contact",
+        "company"
+      ]
+    }
+  }
+}

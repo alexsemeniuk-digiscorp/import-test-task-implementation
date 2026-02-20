@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_data_pages",
+  "info": {
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    },
+    "pageId": {
+      "type": "string"
+    },
+    "parentPageId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

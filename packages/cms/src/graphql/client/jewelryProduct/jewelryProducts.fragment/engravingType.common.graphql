@@ -1,0 +1,6 @@
+fragment EngravingType on EngravingTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

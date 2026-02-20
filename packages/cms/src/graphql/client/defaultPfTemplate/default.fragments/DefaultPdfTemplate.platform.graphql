@@ -1,0 +1,8 @@
+fragment DefaultPdfTemplate on DefaultPdfTemplateEntity {
+    id
+    attributes {
+      name
+      templateId
+      type
+    }
+}

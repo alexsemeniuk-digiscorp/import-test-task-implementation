@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ui_product_types_visibilities",
+  "info": {
+    "displayName": "ProductTypesVisibility",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Product": {
+      "type": "boolean"
+    },
+    "CompositeProduct": {
+      "type": "boolean"
+    },
+    "Membership": {
+      "type": "boolean"
+    },
+    "Class": {
+      "type": "boolean"
+    },
+    "Service": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipment_cards",
+  "info": {
+    "singularName": "shipment-card",
+    "pluralName": "shipment-cards",
+    "displayName": "ShipmentCard",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "streetName": {
+      "type": "string"
+    },
+    "apartment": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "isDefault": {
+      "type": "boolean",
+      "default": false
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "shipmentCards"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "kind": "collectionType",
+  "collectionName": "websites",
+  "info": {
+    "singularName": "website",
+    "pluralName": "websites",
+    "displayName": "Website",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "websites"
+    },
+    "customerReview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.customer-review-section"
+    },
+    "followUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "aboutUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "shopHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.section"
+    },
+    "subscribeNewsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "aboutUsHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "statistics": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "blogHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.section"
+    },
+    "faqHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "subdomain": {
+      "type": "string",
+      "unique": true
+    },
+    "privacyPolicy": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.paragraph"
+    },
+    "termsConditions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.paragraph"
+    },
+    "initialSettings": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.extended-section"
+    },
+    "sectionsVisibility": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.sections-visibility"
+    },
+    "websiteType": {
+      "type": "enumeration",
+      "enum": [
+        "public",
+        "draft"
+      ]
+    },
+    "ProductTypesVisibility": {
+      "displayName": "ProductTypesVisibility",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.product-types-visibility"
+    },
+    "shipmentCost": {
+      "displayName": "shipmentCost",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.shipment-cost"
+    },
+    "websiteContacts": {
+      "displayName": "websiteContacts",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.website-contacts"
+    },
+    "workingHours": {
+      "displayName": "workingHours",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.working-hours"
+    }
+  }
+}

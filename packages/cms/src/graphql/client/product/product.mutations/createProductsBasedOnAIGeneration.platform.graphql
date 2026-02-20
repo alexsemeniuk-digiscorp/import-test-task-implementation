@@ -1,0 +1,3 @@
+mutation createProductsBasedOnAIGeneration($input: CreateProductsBasedOnAIGenerationInput!) {
+  createProductsBasedOnAIGeneration(input: $input)
+}

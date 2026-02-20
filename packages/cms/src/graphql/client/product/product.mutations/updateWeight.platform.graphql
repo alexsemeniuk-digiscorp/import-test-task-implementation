@@ -1,0 +1,7 @@
+mutation updateWeight($id: ID!, $input: WeightInput!) {
+  updateWeight(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

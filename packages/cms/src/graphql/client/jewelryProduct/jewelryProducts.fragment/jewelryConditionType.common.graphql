@@ -1,0 +1,6 @@
+fragment JewelryConditionType on ConditionTypeEntity {
+  id
+  attributes {
+    name
+  }
+}

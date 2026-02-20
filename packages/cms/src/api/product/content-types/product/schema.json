@@ -1,0 +1,264 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "SKU": {
+      "type": "string",
+      "required": false
+    },
+    "serialNumber": {
+      "type": "string"
+    },
+    "UPC": {
+      "type": "string"
+    },
+    "MPN": {
+      "type": "string"
+    },
+    "EAN": {
+      "type": "string"
+    },
+    "ISBN": {
+      "type": "string"
+    },
+    "partsWarranty": {
+      "type": "datetime"
+    },
+    "laborWarranty": {
+      "type": "datetime"
+    },
+    "expiryDate": {
+      "type": "datetime"
+    },
+    "returnable": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenant.tenant",
+      "inversedBy": "products"
+    },
+    "productInventoryItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-inventory-item.product-inventory-item",
+      "mappedBy": "product"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-brand.product-brand"
+    },
+    "barcode": {
+      "type": "text"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "model": {
+      "type": "text"
+    },
+    "dimension": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dimension.dimension",
+      "inversedBy": "product"
+    },
+    "weight": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::weight.weight",
+      "inversedBy": "product"
+    },
+    "businessUseOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "bundleUseOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "productType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-type.product-type"
+    },
+    "packagingProduct": {
+      "type": "boolean",
+      "default": false
+    },
+    "rentableData": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rentable-data.rentable-data",
+      "mappedBy": "product"
+    },
+    "compositeProducts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::composite-product.composite-product",
+      "mappedBy": "products"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "defaultPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "productOrderItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-order-item.product-order-item",
+      "mappedBy": "product"
+    },
+    "productAttributeOptions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-attribute-option.product-attribute-option",
+      "mappedBy": "products"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "productId": {
+      "type": "string",
+      "regex": "^#[A-Z0-9]{11}$",
+      "unique": true
+    },
+    "isNegativeCount": {
+      "type": "boolean",
+      "default": false
+    },
+    "ecommerceProductServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-product-service.ecommerce-product-service",
+      "mappedBy": "product"
+    },
+    "isCreatedByOpenApi": {
+      "type": "boolean",
+      "default": false
+    },
+    "deal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::deal.deal",
+      "inversedBy": "products"
+    },
+    "ecommerceName": {
+      "type": "string"
+    },
+    "note": {
+      "type": "text"
+    },
+    "appraisalDescription": {
+      "type": "text"
+    },
+    "shopifyTags": {
+      "type": "string"
+    },
+    "shopifyCollections": {
+      "type": "string"
+    },
+    "ecommerceDescription": {
+      "type": "text"
+    },
+    "multiplier": {
+      "type": "decimal"
+    },
+    "wholeSaleMultiplier": {
+      "type": "decimal"
+    },
+    "tagProductName": {
+      "type": "string"
+    },
+    "woocommerceCategory": {
+      "type": "string"
+    },
+    "revenue": {
+      "type": "string",
+      "required": false
+    },
+    "cost": {
+      "type": "string"
+    },
+    "accServiceEntities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-entity.acc-service-entity",
+      "mappedBy": "product"
+    },
+    "revenueChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "products"
+    },
+    "revenueChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "products"
+    },
+    "revenueChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "products"
+    },
+    "costChartAccount": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-account.chart-account",
+      "inversedBy": "products"
+    },
+    "costChartCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-category.chart-category",
+      "inversedBy": "products"
+    },
+    "costChartSubcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chart-subcategory.chart-subcategory",
+      "inversedBy": "products"
+    },
+    "ecommerceDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ecommerce-detail.ecommerce-detail",
+      "mappedBy": "defaultShippingProduct"
+    }
+  }
+}

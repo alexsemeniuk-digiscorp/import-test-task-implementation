@@ -1,0 +1,7 @@
+mutation updateInventoryAudit($id: ID!, $input: InventoryAuditInput!) {
+  updateInventoryAudit(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

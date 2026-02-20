@@ -1,0 +1,14 @@
+query specificTypes(
+  $filters: SpecificTypeFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  specificTypes(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...SpecificType
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

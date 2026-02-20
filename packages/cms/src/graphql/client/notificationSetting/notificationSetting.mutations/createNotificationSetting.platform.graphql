@@ -1,0 +1,7 @@
+mutation createNotificationSetting($input: SettingNotificationInput!) {
+  createSettingNotification(data: $input) {
+    data {
+      ...NotificationSetting
+    }
+  }
+}

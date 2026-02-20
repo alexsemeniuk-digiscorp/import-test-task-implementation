@@ -1,0 +1,36 @@
+fragment InventoryAuditTable on InventoryAuditEntity {
+  id
+  attributes {
+    auditId
+    auditDate
+    name
+    uuid
+    finalize
+    adjusted
+    isAdjustmentRequired
+    businessLocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    sublocation {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
+    employee {
+      data {
+        id
+        attributes {
+          fullName
+        }
+      }
+    }
+  }
+}

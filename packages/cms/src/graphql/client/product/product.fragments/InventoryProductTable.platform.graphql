@@ -1,0 +1,28 @@
+fragment InventoryProductTable on ProductEntity {
+  id
+  attributes {
+    name
+    defaultPrice
+    productId
+    barcode
+    uuid
+    SKU
+    UPC
+    MPN
+    tagProductName
+    quantity(businessLocationId: $businessLocationId)
+    createdAt
+    productType {
+      data {
+        attributes {
+          name
+        }
+      }
+    }
+    files(pagination: { limit: 1 }) {
+      data {
+        ...FileMin
+      }
+    }
+  }
+}

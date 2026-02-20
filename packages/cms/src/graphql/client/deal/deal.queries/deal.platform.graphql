@@ -1,0 +1,7 @@
+query deal($id: ID!) {
+  deal(id: $id) {
+    data {
+      ...Deal
+    }
+  }
+}

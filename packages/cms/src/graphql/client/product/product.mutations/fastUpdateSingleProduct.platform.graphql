@@ -1,0 +1,3 @@
+mutation fastUpdateSingleProduct($input: FastUpdateSingleProductInput!) {
+  fastUpdateSingleProduct(input: $input)
+}

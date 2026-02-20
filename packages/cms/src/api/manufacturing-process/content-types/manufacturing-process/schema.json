@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manufacturing_processes",
+  "info": {
+    "singularName": "manufacturing-process",
+    "pluralName": "manufacturing-processes",
+    "displayName": "INVENTORY: Manufacturing Process",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "editable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

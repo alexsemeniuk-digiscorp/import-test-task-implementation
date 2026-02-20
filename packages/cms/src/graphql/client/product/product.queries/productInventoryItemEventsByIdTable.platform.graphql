@@ -1,0 +1,22 @@
+query productInventoryItemEventsByIdTable(
+  $id: ID!
+  $pagination: PaginationArg
+  $sort: [String] = []
+  $eventType: String
+) {
+  productInventoryItemEvents(
+    filters: {
+      productInventoryItem: { id: { eq: $id } }
+      eventType: { eq: $eventType }
+    }
+    pagination: $pagination
+    sort: $sort
+  ) {
+    data {
+      ...ProductInventoryItemEventTable
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

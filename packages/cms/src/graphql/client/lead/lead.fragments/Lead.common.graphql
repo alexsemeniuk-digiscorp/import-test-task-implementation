@@ -1,0 +1,42 @@
+fragment Lead on LeadEntity {
+  ...LeadMin
+  id
+  attributes {
+    user {
+      data {
+        id
+        attributes {
+          fullName
+          email
+          phoneNumber
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+    leadOwner {
+      data {
+        id
+        attributes {
+          fullName
+          email
+          phoneNumber
+          avatar {
+            data {
+              ...FileMin
+            }
+          }
+        }
+      }
+    }
+    fileItems {
+      data {
+        id
+      }
+    }
+    customFields
+  }
+}

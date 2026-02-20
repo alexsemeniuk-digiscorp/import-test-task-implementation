@@ -1,0 +1,36 @@
+fragment BusinessLocation on BusinessLocationEntity {
+  id
+  attributes {
+    uuid
+    reviewLink
+    type
+    name
+    email
+    phoneNumber
+    graphItem
+    location {
+      data {
+        ...Location
+      }
+    }
+    tax {
+      data {
+        ...TaxMin
+      }
+    }
+    taxCollection {
+      data {
+        ...TaxCollectionMin
+      }
+    }
+    businessLocationId
+    sublocations {
+      data {
+        ...SubLocationMin
+      }
+    }
+    createdAt
+    uuid
+    archived
+  }
+}

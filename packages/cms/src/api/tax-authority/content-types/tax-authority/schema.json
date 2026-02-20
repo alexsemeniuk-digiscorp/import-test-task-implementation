@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tax_authorities",
+  "info": {
+    "singularName": "tax-authority",
+    "pluralName": "tax-authorities",
+    "displayName": "Tax Authority",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "taxes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tax.tax",
+      "mappedBy": "taxAuthority"
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "accServiceTaxagns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acc-service-taxagn.acc-service-taxagn",
+      "mappedBy": "taxAuthority"
+    }
+  }
+}

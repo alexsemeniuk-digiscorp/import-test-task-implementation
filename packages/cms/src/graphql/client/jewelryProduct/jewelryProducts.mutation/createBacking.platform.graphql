@@ -1,0 +1,7 @@
+mutation createBacking($input: BackingInput!) {
+  createBacking(data: $input) {
+    data {
+      ...Backing
+    }
+  }
+}

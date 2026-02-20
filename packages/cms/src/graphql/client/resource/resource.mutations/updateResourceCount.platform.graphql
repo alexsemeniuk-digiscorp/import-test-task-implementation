@@ -1,0 +1,7 @@
+mutation updateResourceCount($id: ID!, $input: ResourceCountInput!) {
+  updateResourceCount(id: $id, data: $input) {
+    data {
+      id
+    }
+  }
+}

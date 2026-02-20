@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maintenances",
+  "info": {
+    "singularName": "maintenance",
+    "pluralName": "maintenances",
+    "displayName": "Maintenance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notes": {
+      "type": "text"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tenant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenant.tenant"
+    },
+    "resourceInventoryItem": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::resource-inventory-item.resource-inventory-item"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false
+    },
+    "maintainedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uuid": {
+      "type": "customField",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "maintenanceEvents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::maintenance-event.maintenance-event",
+      "mappedBy": "maintenance"
+    },
+    "frequencyDays": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    }
+  }
+}

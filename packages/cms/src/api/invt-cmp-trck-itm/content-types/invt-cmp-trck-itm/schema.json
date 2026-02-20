@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invt_cmp_trck_itms",
+  "info": {
+    "singularName": "invt-cmp-trck-itm",
+    "pluralName": "invt-cmp-trck-itms",
+    "displayName": "Composite Product Cost Tracker Item"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "vendor": {
+      "type": "string"
+    },
+    "invoice": {
+      "type": "string"
+    },
+    "note": {
+      "type": "text"
+    },
+    "itemId": {
+      "type": "string"
+    },
+    "costTrackerInfo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::invt-cmp-trck.invt-cmp-trck",
+      "inversedBy": "costTrackerItems"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query sublocationItemsQuantity(
+  $filters: SublocationItemFiltersInput
+  $pagination: PaginationArg
+  $sort: [String]
+) {
+  sublocationItems(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...SubLocationItemQuantity
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query inventoryAudit(
+  $filters: InventoryAuditFiltersInput
+  $pagination: PaginationArg = {}
+  $sort: [String] = []
+) {
+  inventoryAudits(filters: $filters, pagination: $pagination, sort: $sort) {
+    data {
+      ...InventoryAudit
+    }
+    meta {
+      ...Meta
+    }
+  }
+}

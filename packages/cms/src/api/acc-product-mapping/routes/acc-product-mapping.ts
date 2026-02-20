@@ -1,0 +1,9 @@
+/**
+ * acc-product-mapping router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter(
+  'api::acc-product-mapping.acc-product-mapping',
+);

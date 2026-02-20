@@ -1,0 +1,7 @@
+mutation createStrandsLength($input: StrandsLengthInput!) {
+  createStrandsLength(data: $input) {
+    data {
+      ...StrandsLength
+    }
+  }
+}
