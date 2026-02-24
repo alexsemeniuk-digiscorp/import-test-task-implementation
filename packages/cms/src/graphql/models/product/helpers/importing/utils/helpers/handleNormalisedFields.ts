@@ -19,7 +19,10 @@ import {
   handleSpoiledCreations,
 } from './../../../importing/productImport';
 import { validateProductQuantities } from './../../../importing/utils/utils';
-import { checkSerialNumbersAvailability } from './../helpers/actions/handleNormalisedFields/checkSerialNumbersAvailability';
+import {
+  batchGetUnavailableSerialNumbers,
+  checkSerialNumbersAvailability,
+} from './../helpers/actions/handleNormalisedFields/checkSerialNumbersAvailability';
 import {
   batchProcessCustomAttributes,
   getProductAttributeOptionIds,
@@ -53,6 +56,7 @@ export const handleNormalisedProductsFields = async (
     costOfGoodsAccountId,
     cashPaymentMethodId,
     customAttributeOptionsMap,
+    unavailableSerialNumbers,
   ] = await Promise.all([
     getExistingEntitiesByFieldBatch(
       'name',
@@ -107,6 +111,7 @@ export const handleNormalisedProductsFields = async (
     findCostOfGoodsAccountId(),
     findCashPaymentMethodId(tenantFilter?.tenant),
     batchProcessCustomAttributes(normalizedFields, tenantFilter?.tenant),
+    batchGetUnavailableSerialNumbers(normalizedFields, tenantFilter?.tenant),
   ]);
 
   const getEntityIdByName = (
@@ -291,17 +296,13 @@ export const handleNormalisedProductsFields = async (
               'company',
             );
 
-          let isAllSerialNumbersAvailable = true;
-          if (parsedProduct?.productItems?.length) {
-            const checks = parsedProduct.productItems.map((productItem: any) =>
-              checkSerialNumbersAvailability({
-                serialNumbers: productItem?.serialNumbers,
-                tenantFilter,
-              }).then((res) => res.isAllSerialNumbersAvailable),
-            );
-            const results = await Promise.all(checks);
-            isAllSerialNumbersAvailable = results.every(Boolean);
-          }
+          const isAllSerialNumbersAvailable = parsedProduct?.productItems
+            ?.length
+            ? checkSerialNumbersAvailability(
+                parsedProduct?.productItems,
+                unavailableSerialNumbers,
+              )
+            : true;
 
           if (
             !isImagesIds ||
