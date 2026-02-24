@@ -17,7 +17,13 @@ import {
   PRODUCTS_EXPECTED_VALUES,
 } from './../../models/product/helpers/importing/variables';
 import { handleError } from './../errors';
-import { validateAndGetAvatarFileId } from './../fileHelpers';
+import {
+  getImageFiles,
+  ImageFileMap,
+  ImageId,
+  validateAndGetAvatarFileId,
+  validateAndGetAvatarFileIdBatch,
+} from './../fileHelpers';
 
 export const parseAndProcessCSV = async (input, callback) => {
   const { uploadCsv } = input;
@@ -71,26 +77,79 @@ export const checkAllImages = async (
   tenantId,
   isImageCheck = false,
 ) => {
-  let isImages = true;
-  let imagesArray = [];
-  for (let i = 0; i < images.length; i++) {
-    const { isAvatarValid, fileFoundId } = await validateAndGetAvatarFileId(
-      images[i],
-      tenantId,
-      isImageCheck,
-    );
-    if (isAvatarValid) {
-      imagesArray.push(fileFoundId);
-    } else {
-      isImages = false;
-      imagesArray = [];
-      break;
+  const validationResults = await Promise.all(
+    images.map((image) =>
+      validateAndGetAvatarFileId(image, tenantId, isImageCheck),
+    ),
+  );
+
+  const imagesIdsArray = [];
+
+  for (const result of validationResults) {
+    const { isAvatarValid, fileFoundId } = result;
+
+    if (!isAvatarValid) {
+      return { isImagesIdsValid: false, imagesIdsArray: [] };
+    }
+
+    imagesIdsArray.push(fileFoundId);
+  }
+
+  return { isImagesIdsValid: true, imagesIdsArray };
+};
+
+const extractUniqueImageIdsFromProducts = (products: any[]): string[] => {
+  const imageIds: string[] = [];
+
+  for (const product of products) {
+    if (product?.images?.length) {
+      imageIds.push(...product.images);
     }
   }
-  return {
-    isImagesIdsValid: isImages,
-    imagesIdsArray: imagesArray,
-  };
+
+  return [...new Set(imageIds)];
+};
+
+export const batchGetAllImagesFromProducts = async (
+  normalizedFields: any[],
+): Promise<ImageFileMap> => {
+  const imageIds = extractUniqueImageIdsFromProducts(normalizedFields);
+  return getImageFiles(imageIds);
+};
+
+export const checkAllImagesBatch = async (
+  images: ImageId[],
+  imageFileMap: ImageFileMap,
+  tenantId: number,
+  isImageCheck = false,
+) => {
+  const notInMap = images.filter((image) => !imageFileMap.has(image));
+
+  // if some images are not in imageFileMap, the whole batch is invalid
+  if (!images.length || notInMap.length) {
+    return { isImagesIdsValid: true, imagesIdsArray: [] };
+  }
+
+  const validationResults = await validateAndGetAvatarFileIdBatch(
+    images,
+    imageFileMap,
+    tenantId,
+    isImageCheck,
+  );
+
+  const imagesIdsArray: string[] = [];
+
+  for (const result of validationResults) {
+    const { isAvatarValid, fileFoundId } = result;
+
+    if (!isAvatarValid) {
+      return { isImagesIdsValid: false, imagesIdsArray: [] };
+    }
+
+    imagesIdsArray.push(fileFoundId);
+  }
+
+  return { isImagesIdsValid: true, imagesIdsArray };
 };
 
 export const parseHeaders = (

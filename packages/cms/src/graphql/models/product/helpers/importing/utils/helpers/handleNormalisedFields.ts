@@ -4,7 +4,8 @@ import redis from './../../../../../../../api/redis/redis';
 import { handleLogger } from './../../../../../../helpers/errors';
 import { processAndUpdateImports } from './../../../../../../helpers/importingHelpers/fileHelper';
 import {
-  checkAllImages,
+  batchGetAllImagesFromProducts,
+  checkAllImagesBatch,
   findCashPaymentMethodId,
   findCostOfGoodsAccountId,
   findExistingRelationEntities,
@@ -57,6 +58,7 @@ export const handleNormalisedProductsFields = async (
     cashPaymentMethodId,
     customAttributeOptionsMap,
     unavailableSerialNumbers,
+    imageFileMap,
   ] = await Promise.all([
     getExistingEntitiesByFieldBatch(
       'name',
@@ -112,6 +114,7 @@ export const handleNormalisedProductsFields = async (
     findCashPaymentMethodId(tenantFilter?.tenant),
     batchProcessCustomAttributes(normalizedFields, tenantFilter?.tenant),
     batchGetUnavailableSerialNumbers(normalizedFields, tenantFilter?.tenant),
+    batchGetAllImagesFromProducts(normalizedFields),
   ]);
 
   const getEntityIdByName = (
@@ -255,11 +258,13 @@ export const handleNormalisedProductsFields = async (
           let imagesIds = [];
 
           if (parsedProduct?.images?.length) {
-            const { isImagesIdsValid, imagesIdsArray } = await checkAllImages(
-              parsedProduct?.images,
-              tenantFilter.tenant,
-              true,
-            );
+            const { isImagesIdsValid, imagesIdsArray } =
+              await checkAllImagesBatch(
+                parsedProduct?.images,
+                imageFileMap,
+                tenantFilter.tenant,
+                true,
+              );
             isImagesIds = isImagesIdsValid;
             imagesIds = imagesIdsArray;
           }

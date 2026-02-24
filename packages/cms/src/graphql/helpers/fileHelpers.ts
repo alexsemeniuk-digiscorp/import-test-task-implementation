@@ -9,6 +9,18 @@ import { generateCrypto, generateId } from './../../utils/randomBytes';
 import { handleLogger } from './../helpers/errors';
 import { UploadEntity } from './../models/contact/types/types';
 
+export type ImageId = string | number;
+export type ImageFileMap = Map<ImageId, any>;
+
+export const IMAGE_MIME_TYPES = [
+  'image/png',
+  'image/jpeg',
+  'image/gif',
+  'image/webp',
+  'image/svg+xml',
+  'video/mp4',
+];
+
 const s3 = new AWS.S3({
   credentials: {
     accessKeyId: process.env.S3_ACCESS_KEY_ID,
@@ -339,17 +351,8 @@ export const validateAndGetAvatarFileId = async (
     if (!fileFound) return { isAvatarValid: false, fileFoundId: null };
 
     if (isImageCheck) {
-      const imageMimeTypes = new Set([
-        'image/png',
-        'image/jpeg',
-        'image/gif',
-        'image/webp',
-        'image/svg+xml',
-        'video/mp4',
-      ]);
-
       return {
-        isAvatarValid: imageMimeTypes.has(fileFound.mime),
+        isAvatarValid: IMAGE_MIME_TYPES.includes(fileFound.mime),
         fileFoundId: fileFound.id,
       };
     }
@@ -359,4 +362,79 @@ export const validateAndGetAvatarFileId = async (
     handleLogger('error', 'validateAndGetAvatarFileId', error.message);
     return { isAvatarValid: false, fileFoundId: null };
   }
+};
+
+export const validateAndGetAvatarFileIdBatch = async (
+  imageIds: ImageId[],
+  imageFileMap: ImageFileMap,
+  tenantId,
+  isImageCheck = false,
+) => {
+  const config = strapi.config.get('plugin.upload');
+
+  try {
+    return await Promise.all(
+      imageIds.map(async (imageId) => {
+        const fileFetched = imageFileMap.get(imageId);
+
+        if (!fileFetched?.url) {
+          return { isAvatarValid: false, fileFoundId: null };
+        }
+
+        const key = new URL(fileFetched.url).pathname.slice(1);
+        const file = await s3
+          .getObject({ Bucket: process.env.S3_BUCKET, Key: key })
+          .promise();
+
+        const buffer = Buffer.isBuffer(file.Body)
+          ? file.Body
+          : Buffer.from(file.Body as Buffer);
+
+        const entity = createEntityFromBuffer(
+          { filename: fileFetched.name, mimetype: fileFetched.mime },
+          buffer,
+          config,
+          { userId: null, tenantId },
+        );
+
+        const fileFound = await uploadEntity(entity);
+
+        if (!fileFound) return { isAvatarValid: false, fileFoundId: null };
+
+        if (isImageCheck) {
+          return {
+            isAvatarValid: IMAGE_MIME_TYPES.includes(fileFound.mime),
+            fileFoundId: fileFound.id,
+          };
+        }
+
+        return { isAvatarValid: true, fileFoundId: fileFound.id };
+      }),
+    );
+  } catch (error) {
+    handleLogger('error', 'validateAndGetAvatarFileIdBatch', error.message);
+    return [];
+  }
+};
+
+export const getImageFiles = async (
+  imageIds: ImageId[],
+): Promise<ImageFileMap> => {
+  const uniqueIds = [...new Set(imageIds)];
+
+  if (!uniqueIds?.length) return new Map();
+
+  const imageFiles = await strapi.query('plugin::upload.file').findMany({
+    where: { alternativeText: { $in: uniqueIds } },
+  });
+
+  const imageFileMap: ImageFileMap = new Map<ImageId, any>();
+
+  for (const file of imageFiles) {
+    if (file?.alternativeText) {
+      imageFileMap.set(file.alternativeText, file);
+    }
+  }
+
+  return imageFileMap;
 };
