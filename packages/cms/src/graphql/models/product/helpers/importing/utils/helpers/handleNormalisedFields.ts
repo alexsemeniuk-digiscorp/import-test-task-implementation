@@ -209,7 +209,7 @@ export const handleNormalisedProductsFields = async (
 
   try {
     if (normalizedFields.length > 0) {
-      const CONCURRENCY_LIMIT = 20;
+      const CONCURRENCY_LIMIT = 100;
       const limit = pLimit(CONCURRENCY_LIMIT);
 
       console.log(
