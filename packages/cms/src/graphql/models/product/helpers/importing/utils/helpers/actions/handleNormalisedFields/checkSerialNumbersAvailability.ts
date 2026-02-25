@@ -20,6 +20,10 @@ const getExistingSerialNumbers = async (
   serialNumbers: string[],
   tenantFilter: any,
 ) => {
+  if (!serialNumbers.length) {
+    return [];
+  }
+
   return strapi.entityService.findMany(
     'api::inventory-serialize.inventory-serialize',
     {
