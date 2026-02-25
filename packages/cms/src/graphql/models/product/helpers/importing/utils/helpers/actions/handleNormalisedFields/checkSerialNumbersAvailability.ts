@@ -13,7 +13,7 @@ const extractSerialNumbersFromProducts = (products: any[]): string[] => {
     }
   }
 
-  return products;
+  return allSerialNumbers;
 };
 
 const getExistingSerialNumbers = async (
